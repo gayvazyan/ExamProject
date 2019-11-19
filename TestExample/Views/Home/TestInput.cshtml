@@ -1,0 +1,424 @@
+﻿@model CitizenTestResults
+
+
+@{
+    ViewData["Title"] = "Հարցաթերթիկ_"+ ViewBag.NumberTicket;
+}
+<form asp-controller="Results" asp-action="Test" asp-route-testTicket=@ViewBag.NumberTicket method="post">
+    <div class="text-center">
+        <h2> <p style="text-align: center;"><strong>Հարցաթերթիկ @ViewBag.NumberTicket</strong></p> </h2>
+        <p style="text-align: left;"><strong>Խնդիր</strong><strong>.</strong>&nbsp;Ազգային ժողովի 2027 թվականի հունիսի 10-ի ընտրություններին @ViewBag.Region մարզի @ViewBag.Community համայնքում (@ViewBag.CEC-րդ ընտրական տարածքի թիվ @ViewBag.TEC ընտրական տեղամասում) շրջիկ արկղով քվեարկողների թիվը`&nbsp;<strong>@ViewBag.AllMobileVoters&nbsp;</strong>է, ընտրողներից ստացված տեխնիկական սարքավորմամբ տպված կտրոնների թիվը`&nbsp;<strong>@ViewBag.VadTickets</strong>, ընտրողներից ստացված համարակալված կտրոնների թիվը`&nbsp;<strong>@ViewBag.NumerableTickets</strong>, չօգտագործված համարակալված կտրոնների թիվը`&nbsp;<strong>@ViewBag.UnusedNumerableTickets</strong>, չօգտագործված ինքնասոսնձվող դրոշմանիշերի թիվը`&nbsp;<strong>@ViewBag.UnusedGlueTickets</strong>:</p>
+
+        <p style="text-align: left;">Ընտրողների ցուցակում մասնակիցների թիվը&nbsp;<strong>@ViewBag.Participants</strong>&nbsp;է, քվեարկության օրը ընտրական տեղամասում կազմված ընտրողների լրացուցիչ ցուցակում`&nbsp;<strong>@ViewBag.AllAdditionallyDuringElDay</strong>, շրջիկ արկղով քվեարկողների ցուցակում`&nbsp;<strong>@ViewBag.PartMobileVoters</strong>:</p>
+        <p style="text-align: left;">Անվավեր քվեաթերթիկների թիվը&nbsp;<strong>@ViewBag.InvalidTickets</strong>&nbsp;է,&nbsp;<strong>A</strong>&nbsp;կուսակցության օգտին քվեարկել է&nbsp;<strong>@ViewBag.ForA</strong>,&nbsp;<strong>B</strong>&nbsp;կուսակցության օգտին`&nbsp;<strong>@ViewBag.ForB</strong>,&nbsp;<strong>C</strong>&nbsp;կուսակցության օգտին`&nbsp;<strong>@ViewBag.ForC</strong>&nbsp;ընտրող:</p>
+        <p><strong>&nbsp;</strong></p>
+
+        <p style="text-align: left;"><strong>A</strong> կուսակցության տարածքային ցուցակում ընդգրկված <strong>X</strong> թեկնածուի օգտին քվեարկել&nbsp; է <strong>@ViewBag.ForAx</strong>, <strong>Y</strong> թեկնածուի օգտին քվեարկել&nbsp; է <strong>@ViewBag.ForAy</strong> ընտրող:</p>
+        <p style="text-align: left;"><strong>B</strong> կուսակցության տարածքային ցուցակում ընդգրկված <strong>M</strong> թեկնածուի օգտին քվեարկել է <strong>@ViewBag.ForBm</strong>, <strong>N</strong> թեկնածուի օգտին քվեարկել&nbsp; է <strong>@ViewBag.ForBn</strong> ընտրող:</p>
+        <p style="text-align: left;"><strong>C</strong> կուսակցության տարածքային ցուցակում ընդգրկված <strong>K</strong> թեկնածուի օգտին քվեարկել է <strong>@ViewBag.ForCk</strong>, <strong>L</strong> թեկնածուի օգտին քվեարկել է <strong>@ViewBag.ForCl</strong> ընտրող:</p>
+        <p style="text-align: center;"><strong>Արձանագրություն</strong></p>
+
+        <div>
+            <input style="width:150px;text-align:center" asp-for="Region"> մարզ,  <input style="width:150px;text-align:center" asp-for="Community"> համայնք (Երևանի դեպքում վարչական շրջան)
+        </div>
+        <div>  <p>թիվ  <input style="width:50px;text-align:center" asp-for="CEC"> ընտրական տարածքի թիվ <input style="width:80px;text-align:center" asp-for="TEC"> ընտրական տեղամասում <strong>&nbsp;</strong>ընտրության քվեարկության արդյունքների</p></div>
+        <p>Տեղամասային ընտրական հանձնաժողովը, հիմք ընդունելով տեղամասում քվեարկության արդյունքները, արձանագրում է</p>
+
+
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <p>&nbsp;</p>
+                    </td>
+                    <td>
+                        <p style="text-align:center"><strong>Ընտրողների թիվը (Ը)</strong></p>
+                    </td>
+                    <td>
+                        <p style="text-align:center"><strong>Մասնակիցների թիվը (Մ)</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>1.</p>
+                    </td>
+                    <td>
+                        <p style="text-align: left;"><strong>Ընտրողների ցուցակում ընդգրկված</strong></p>
+                    </td>
+                    <td>
+                        <p>@ViewBag.ListAll</p>
+                    </td>
+                    <td>
+                        <input style="text-align:center" asp-for="Participants" class="form-control" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>2</p>
+                    </td>
+                    <td>
+                        <p style="text-align: left;">
+                            <strong>
+                                Քվեարկության օրն ընտրական տեղամասում
+                                կազմված ընտրողների լրացուցիչ ցուցակում
+                            </strong>
+                        </p>
+                    </td>
+                    <td>
+                        <input style="text-align:center" asp-for="AllAdditionallyDuringElDay" class="form-control" />
+
+                    </td>
+                    <td>
+                        <input style="text-align:center" asp-for="PartAdditionallyDuringElDay" class="form-control" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>3</p>
+                    </td>
+                    <td>
+
+                        <p style="text-align: left">
+                            <strong>
+                                Շրջիկ արկղով քվեարկողների
+                            </strong>
+                        </p>
+                    </td>
+                    <td>
+                        <input style="text-align:center" asp-for="AllMobileVoters" class="form-control" />
+
+                    </td>
+                    <td>
+                        <input style="text-align:center" asp-for="PartMobileVoters" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>4</p>
+                    </td>
+                    <td>
+
+                        <p style="text-align: left">
+                            <strong>
+                                Ընդհանուր թիվը 1-ին, 2-րդ, 3-րդ տողերի գումարը
+                            </strong>
+                        </p>
+                    </td>
+                    <td>
+                        <input style="text-align:center" asp-for="AllSum" class="form-control" />
+                    </td>
+                    <td>
+                        <input style="text-align:center" asp-for="PartSum" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>5</p>
+                    </td>
+                    <td>
+
+                        <p style="text-align: left">
+                            <strong>
+                                Տեղամասային ընտրական հանձնաժողովին հատկացված ինքնասոսնձվող դրոշմանիշների թիվ
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <p>@ViewBag.TecGlueTickets</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>6</p>
+                    </td>
+                    <td>
+                        <p style="text-align: left">
+                            <strong>
+                                Տեղամասային ընտրական հանձնաժողովին հատկացված համարակալված կտրոնների թիվը
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <p>@ViewBag.TecNumerableTickets</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>7</p>
+                    </td>
+                    <td>
+                        <p style="text-align: left">
+                            <strong>
+                                Ընտրողներից ստացված տեխնիկական սարքավորմամբ տպված կտրոնների թիվը
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="VadTickets" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>8</p>
+                    </td>
+                    <td>
+                        <p style="text-align: left">
+                            <strong>
+                                Ընտրողներից ստացված համարակալված քվեարկության կտրոնների թիվը
+                            </strong>
+                        </p>
+
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="NumerableTickets" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>9</p>
+                    </td>
+                    <td>
+                        <p style="text-align: left">
+                            <strong>
+                                Ընտրողներից ստացված կտրոնների ընդհանուր թիվը (հավասար է 7-րդ և 8-րդ տողերի թվերի գումարին)
+                            </strong>
+                        </p>
+
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="AllTickets" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>10</p>
+                    </td>
+                    <td>
+                        <p style="text-align: left">
+                            <strong>
+                                Չօգտագործված համարակալված կտրոնների թիվը
+                            </strong>
+                        </p>
+
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="UnusedNumerableTickets" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>11</p>
+                    </td>
+                    <td>
+                        <p style="text-align: left">
+                            <strong>
+                                Չօգտագործված ինքնասոսնձվող դրոշմանիշների թիվը
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="UnusedGlueTickets" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>12</p>
+                    </td>
+                    <td>
+                        <p style="text-align: left">
+                            <strong>
+                                Անվավեր&nbsp; քվեաթերթիկների թիվը
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="InvalidTickets" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                Կուսակցության, կուսակցությունների դաշինքի անվանումը
+                            </strong>
+                        </p>
+
+                    </td>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                Կողմ քվեարկված քվեաթերթիկների թիվը
+                            </strong>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                A
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="ForA" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                B
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="ForB" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                C
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="ForC" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: left">
+                            <strong>
+                                A կուսակցության տարածքային ընտրական ցուցակում ընդգրկված թեկնածուների ազգանունը, անունը, հայրանունը
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                Կողմ քվեարկված քվեաթերթիկների թիվը
+                            </strong>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                X
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="ForAx" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                Y
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="ForAy" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: left">
+                            <strong>
+                                B կուսակցության տարածքային ընտրական ցուցակում ընդգրկված թեկնածուների ազգանունը, անունը, հայրանունը
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                Կողմ քվեարկված քվեաթերթիկների թիվը
+                            </strong>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                M
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="ForBm" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                N
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="ForBn" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: left">
+                            <strong>
+                                C կուսակցության տարածքային ընտրական ցուցակում ընդգրկված թեկնածուների ազգանունը, անունը, հայրանունը
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                Կողմ քվեարկված քվեաթերթիկների թիվը
+                            </strong>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                K
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="ForCk" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center">
+                            <strong>
+                                L
+                            </strong>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        <input style="text-align:center" asp-for="ForCl" class="form-control" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <button type="submit" class="btn btn-primary">Ավարտել</button>
+
+
+
+        <p style="text-align: center;">Արձանագրությունում տվյալները լրացվում են թվերով և տառերով</p>
+
+    </div>
+    <div asp-validation-summary="All" class="text-danger" style="text-align:left"></div>
+</form>

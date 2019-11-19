@@ -1,0 +1,514 @@
+﻿@model CitizenTestViewModel
+@{
+    ViewData["Title"] = "Հարցաթերթիկ_" + ViewBag.NumberTicket;
+}
+
+<div style="text-align:center">
+    <h3> <strong>Հարգելի <span style="color:forestgreen">  @ViewBag.UserFullName </span> </strong> </h3>
+    <h3><strong> Դուք հավաքեցիք <span style="color:forestgreen"> @Model.Result </span> միավոր </strong> </h3>
+    <h3><strong>Ճիշտ պատասխանները նշված են <span style="color:forestgreen">կանաչ </span>  գույնով </strong></h3>
+    <h3> <strong>Սխալ պատասխանները նշված են<span style="color:red"> կարմիր</span> գույնով </strong></h3>
+</div>
+
+
+
+<div class="text-center">
+     <p style="text-align: center;"><h2><strong>Հարցաթերթիկ @ViewBag.NumberTicket</strong></h2></p> 
+    <p style="text-align: left;"><strong>Խնդիր</strong><strong>.</strong>&nbsp;Ազգային ժողովի 2027 թվականի հունիսի 10-ի ընտրություններին @ViewBag.Region մարզի @ViewBag.Community համայնքում (@ViewBag.CEC-րդ ընտրական տարածքի թիվ @ViewBag.TEC ընտրական տեղամասում) շրջիկ արկղով քվեարկողների թիվը`&nbsp;<strong>@ViewBag.AllMobileVoters&nbsp;</strong>է, ընտրողներից ստացված տեխնիկական սարքավորմամբ տպված կտրոնների թիվը`&nbsp;<strong>@ViewBag.VadTickets</strong>, ընտրողներից ստացված համարակալված կտրոնների թիվը`&nbsp;<strong>@ViewBag.NumerableTickets</strong>, չօգտագործված համարակալված կտրոնների թիվը`&nbsp;<strong>@ViewBag.UnusedNumerableTickets</strong>, չօգտագործված ինքնասոսնձվող դրոշմանիշերի թիվը`&nbsp;<strong>@ViewBag.UnusedGlueTickets</strong>:</p>
+
+    <p style="text-align: left;">Ընտրողների ցուցակում մասնակիցների թիվը&nbsp;<strong>@ViewBag.Participants</strong>&nbsp;է, քվեարկության օրը ընտրական տեղամասում կազմված ընտրողների լրացուցիչ ցուցակում`&nbsp;<strong>@ViewBag.AllAdditionallyDuringElDay</strong>, շրջիկ արկղով քվեարկողների ցուցակում`&nbsp;<strong>@ViewBag.PartMobileVoters</strong>:</p>
+    <p style="text-align: left;">Անվավեր քվեաթերթիկների թիվը&nbsp;<strong>@ViewBag.InvalidTickets</strong>&nbsp;է,&nbsp;<strong>A</strong>&nbsp;կուսակցության օգտին քվեարկել է&nbsp;<strong>@ViewBag.ForA</strong>,&nbsp;<strong>B</strong>&nbsp;կուսակցության օգտին`&nbsp;<strong>@ViewBag.ForB</strong>,&nbsp;<strong>C</strong>&nbsp;կուսակցության օգտին`&nbsp;<strong>@ViewBag.ForC</strong>&nbsp;ընտրող:</p>
+    <p><strong>&nbsp;</strong></p>
+
+    <p style="text-align: left;"><strong>A</strong> կուսակցության տարածքային ցուցակում ընդգրկված <strong>X</strong> թեկնածուի օգտին քվեարկել&nbsp; է <strong>@ViewBag.ForAx</strong>, <strong>Y</strong> թեկնածուի օգտին քվեարկել&nbsp; է <strong>@ViewBag.ForAy</strong> ընտրող:</p>
+    <p style="text-align: left;"><strong>B</strong> կուսակցության տարածքային ցուցակում ընդգրկված <strong>M</strong> թեկնածուի օգտին քվեարկել է <strong>@ViewBag.ForBm</strong>, <strong>N</strong> թեկնածուի օգտին քվեարկել&nbsp; է <strong>@ViewBag.ForBn</strong> ընտրող:</p>
+    <p style="text-align: left;"><strong>C</strong> կուսակցության տարածքային ցուցակում ընդգրկված <strong>K</strong> թեկնածուի օգտին քվեարկել է <strong>@ViewBag.ForCk</strong>, <strong>L</strong> թեկնածուի օգտին քվեարկել է <strong>@ViewBag.ForCl</strong> ընտրող:</p>
+    <p style="text-align: center;"><strong>Արձանագրություն</strong></p>
+
+    <div>
+        @if (@Model.RegionBool == true)
+        {<strong style="color:green;text-decoration:underline">@Model.Region</strong> }
+    else
+    { <strong style="color:red;text-decoration:underline"> @Model.Region </strong>} մարզ,
+        @if (@Model.CommunityBool == true)
+        {<strong style="color:green;text-decoration:underline">@Model.Community</strong>}
+    else
+
+    {<strong style="color:red;text-decoration:underline">@Model.Community</strong>}
+        համայնք (Երևանի դեպքում վարչական շրջան)
+    </div>
+    <div>
+        <p>
+            թիվ  @if (@Model.CECBool == true)
+            {<strong style="color:green;text-decoration:underline"> @Model.CEC</strong>}
+        else
+        {<strong style="color:red;text-decoration:underline"> @Model.CEC</strong>}
+            ընտրական տարածքի թիվ
+            @if (@Model.TECBool == true)
+            {<strong style="color:green;text-decoration:underline"> @Model.TEC</strong>}
+        else
+        {<strong style="color:red;text-decoration:underline"> @Model.TEC</strong>}
+            ընտրական տեղամասում <strong>&nbsp;</strong>ընտրության քվեարկության արդյունքների
+        </p>
+    </div>
+    <p>Տեղամասային ընտրական հանձնաժողովը, հիմք ընդունելով տեղամասում քվեարկության արդյունքները, արձանագրում է</p>
+
+
+    <table border="1">
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <p>&nbsp;</p>
+                </td>
+                <td>
+                    <p style="text-align:center"><strong>Ընտրողների թիվը (Ը)</strong></p>
+                </td>
+                <td>
+                    <p style="text-align:center"><strong>Մասնակիցների թիվը (Մ)</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>1.</p>
+                </td>
+                <td>
+                    <p style="text-align: left;"><strong>Ընտրողների ցուցակում ընդգրկված</strong></p>
+                </td>
+                <td>
+                    <p>@ViewBag.ListAll</p>
+                </td>
+                <td>
+                    @if (@Model.ParticipantsBool == true)
+                    {<strong style="color:green"> @Model.Participants</strong>}
+                else
+                {<strong style="color:red"> @Model.Participants</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p style="text-align: left;">
+                        <strong>
+                            Քվեարկության օրն ընտրական տեղամասում
+                            կազմված ընտրողների լրացուցիչ ցուցակում
+                        </strong>
+                    </p>
+                </td>
+                <td>
+                    @if (@Model.AllAdditionallyDuringElDayBool == true)
+                    {<strong style="color:green"> @Model.AllAdditionallyDuringElDay</strong>}
+                else
+                {<strong style="color:red"> @Model.AllAdditionallyDuringElDay</strong>}
+                </td>
+                <td>
+                    @if (@Model.PartAdditionallyDuringElDayBool == true)
+                    {<strong style="color:green"> @Model.PartAdditionallyDuringElDay</strong>}
+                else
+                {<strong style="color:red"> @Model.PartAdditionallyDuringElDay</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>3</p>
+                </td>
+                <td>
+
+                    <p style="text-align: left">
+                        <strong>
+                            Շրջիկ արկղով քվեարկողների
+                        </strong>
+                    </p>
+                </td>
+                <td>
+                    @if (@Model.AllMobileVotersBool == true)
+                    {<strong style="color:green"> @Model.AllMobileVoters</strong>}
+                else
+                {<strong style="color:red"> @Model.AllMobileVoters</strong>}
+                </td>
+                <td>
+                    @if (@Model.PartMobileVotersBool == true)
+                    {<strong style="color:green"> @Model.PartMobileVoters</strong>}
+                else
+                {<strong style="color:red"> @Model.PartMobileVoters</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>4</p>
+                </td>
+                <td>
+
+                    <p style="text-align: left">
+                        <strong>
+                            Ընդհանուր թիվը 1-ին, 2-րդ, 3-րդ տողերի գումարը
+                        </strong>
+                    </p>
+                </td>
+                <td>
+                    @if (@Model.AllSumBool == true)
+                    {<strong style="color:green"> @Model.AllSum</strong>}
+                else
+                {<strong style="color:red"> @Model.AllSum</strong>}
+                </td>
+                <td>
+                    @if (@Model.PartSumBool == true)
+                    {<strong style="color:green"> @Model.PartSum</strong>}
+                else
+                {<strong style="color:red"> @Model.PartSum</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>5</p>
+                </td>
+                <td>
+
+                    <p style="text-align: left">
+                        <strong>
+                            Տեղամասային ընտրական հանձնաժողովին հատկացված ինքնասոսնձվող դրոշմանիշների թիվ
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    <p> @ViewBag.TecGlueTickets</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>6</p>
+                </td>
+                <td>
+                    <p style="text-align: left">
+                        <strong>
+                            Տեղամասային ընտրական հանձնաժողովին հատկացված համարակալված կտրոնների թիվը
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    <p>@ViewBag.TecNumerableTickets</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>7</p>
+                </td>
+                <td>
+                    <p style="text-align: left">
+                        <strong>
+                            Ընտրողներից ստացված տեխնիկական սարքավորմամբ տպված կտրոնների թիվը
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.VadTicketsBool == true)
+                    {<strong style="color:green"> @Model.VadTickets</strong>}
+                else
+                {<strong style="color:red"> @Model.VadTickets</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>8</p>
+                </td>
+                <td>
+                    <p style="text-align: left">
+                        <strong>
+                            Ընտրողներից ստացված համարակալված քվեարկության կտրոնների թիվը
+                        </strong>
+                    </p>
+
+                </td>
+                <td colspan="2">
+                    @if (@Model.NumerableTicketsBool == true)
+                    {<strong style="color:green"> @Model.NumerableTickets</strong>}
+                else
+                {<strong style="color:red"> @Model.NumerableTickets</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>9</p>
+                </td>
+                <td>
+                    <p style="text-align: left">
+                        <strong>
+                            Ընտրողներից ստացված կտրոնների ընդհանուր թիվը (հավասար է 7-րդ և 8-րդ տողերի թվերի գումարին)
+                        </strong>
+                    </p>
+
+                </td>
+                <td colspan="2">
+                    @if (@Model.AllTicketsBool == true)
+                    {<strong style="color:green"> @Model.AllTickets</strong>}
+                else
+                {<strong style="color:red"> @Model.AllTickets</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>10</p>
+                </td>
+                <td>
+                    <p style="text-align: left">
+                        <strong>
+                            Չօգտագործված համարակալված կտրոնների թիվը
+                        </strong>
+                    </p>
+
+                </td>
+                <td colspan="2">
+                    @if (@Model.UnusedNumerableTicketsBool == true)
+                    {<strong style="color:green"> @Model.UnusedNumerableTickets</strong>}
+                else
+                {<strong style="color:red"> @Model.UnusedNumerableTickets</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>11</p>
+                </td>
+                <td>
+                    <p style="text-align: left">
+                        <strong>
+                            Չօգտագործված ինքնասոսնձվող դրոշմանիշների թիվը
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.UnusedGlueTicketsBool == true)
+                    {<strong style="color:green"> @Model.UnusedGlueTickets</strong>}
+                else
+                {<strong style="color:red"> @Model.UnusedGlueTickets</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>12</p>
+                </td>
+                <td>
+                    <p style="text-align: left">
+                        <strong>
+                            Անվավեր&nbsp; քվեաթերթիկների թիվը
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.InvalidTicketsBool == true)
+                    {<strong style="color:green"> @Model.InvalidTickets</strong>}
+                else
+                {<strong style="color:red"> @Model.InvalidTickets</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            Կուսակցության, կուսակցությունների դաշինքի անվանումը
+                        </strong>
+                    </p>
+
+                </td>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            Կողմ քվեարկված քվեաթերթիկների թիվը
+                        </strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            A
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.ForABool == true)
+                    {<strong style="color:green"> @Model.ForA</strong>}
+                else
+                {<strong style="color:red"> @Model.ForA</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            B
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.ForBBool == true)
+                    {<strong style="color:green"> @Model.ForB</strong>}
+                else
+                {<strong style="color:red"> @Model.ForB</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            C
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.ForCBool == true)
+                    {<strong style="color:green"> @Model.ForC</strong>}
+                else
+                {<strong style="color:red"> @Model.ForC</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: left">
+                        <strong>
+                            A կուսակցության տարածքային ընտրական ցուցակում ընդգրկված թեկնածուների ազգանունը, անունը, հայրանունը
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            Կողմ քվեարկված քվեաթերթիկների թիվը
+                        </strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            X
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.ForAxBool == true)
+                    {<strong style="color:green"> @Model.ForAx</strong>}
+                else
+                {<strong style="color:red"> @Model.ForAx</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            Y
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.ForAyBool == true)
+                    {<strong style="color:green"> @Model.ForAy</strong>}
+                else
+                {<strong style="color:red"> @Model.ForAy</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: left">
+                        <strong>
+                            B կուսակցության տարածքային ընտրական ցուցակում ընդգրկված թեկնածուների ազգանունը, անունը, հայրանունը
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            Կողմ քվեարկված քվեաթերթիկների թիվը
+                        </strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            M
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.ForBmBool == true)
+                    {<strong style="color:green"> @Model.ForBm</strong>}
+                else
+                {<strong style="color:red"> @Model.ForBm</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            N
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.ForBnBool == true)
+                    {<strong style="color:green"> @Model.ForBn</strong>}
+                else
+                {<strong style="color:red"> @Model.ForBn</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: left">
+                        <strong>
+                            C կուսակցության տարածքային ընտրական ցուցակում ընդգրկված թեկնածուների ազգանունը, անունը, հայրանունը
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            Կողմ քվեարկված քվեաթերթիկների թիվը
+                        </strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            K
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.ForCkBool == true)
+                    {<strong style="color:green"> @Model.ForCk</strong>}
+                else
+                {<strong style="color:red"> @Model.ForCk</strong>}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center">
+                        <strong>
+                            L
+                        </strong>
+                    </p>
+                </td>
+                <td colspan="2">
+                    @if (@Model.ForClBool == true)
+                    {<strong style="color:green"> @Model.ForCl</strong>}
+                else
+                {<strong style="color:red"> @Model.ForCl</strong>}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+
+
+
+
+    <p style="text-align: center;">Արձանագրությունում տվյալները լրացվում են թվերով և տառերով</p>
+
+</div>
+
