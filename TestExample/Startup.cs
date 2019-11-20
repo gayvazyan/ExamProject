@@ -44,6 +44,9 @@ namespace TestExample
             services.AddDbContextPool<ExamDbContect>(options =>
                                     options.UseSqlServer(Configuration.GetConnectionString("ExamDBConnection")));
 
+          
+
+
             //change defult password requarment 
             services.Configure<IdentityOptions>(options =>
             {
@@ -52,9 +55,9 @@ namespace TestExample
                
             });
 
+           
 
-
-            //dipendance injection
+            //   dipendance injection
             services.AddScoped<ITestChecked, TestChecked>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

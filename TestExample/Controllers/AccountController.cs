@@ -15,6 +15,7 @@ namespace TestExample.Controllers
     {
         private readonly UserManager<CitizenUser> _userManager;
         private readonly SignInManager<CitizenUser> _signInManager;
+      
 
         public AccountController(UserManager<CitizenUser> userManager,
             SignInManager<CitizenUser> signInManager)
@@ -25,6 +26,7 @@ namespace TestExample.Controllers
 
         public IActionResult Index()
         {
+           
             return View();
         }
 

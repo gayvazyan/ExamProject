@@ -10,6 +10,7 @@ using TestExample.Services;
 using TestExample.ViewModels;
 using MailKit.Net.Smtp;
 using MimeKit;
+using Microsoft.Extensions.Configuration;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,21 +22,35 @@ namespace TestExample.Controllers
         private readonly ExamDbContect _examDBContect;
         private readonly UserManager<CitizenUser> _userManager;
         private readonly SignInManager<CitizenUser> _signInManager;
+        private readonly IConfiguration _configuration;
 
         public ResultsController(ITestChecked testChecked,
                                  ExamDbContect examDBContect,
                                  UserManager<CitizenUser> userManager,
-                                 SignInManager<CitizenUser> signInManager)
+                                 SignInManager<CitizenUser> signInManager,
+                                 IConfiguration configuration)
         {
             _testChecked = testChecked;
             _examDBContect = examDBContect;
             _userManager = userManager;
             _signInManager = signInManager;
+            _configuration = configuration;
+
         }
+
+
         [HttpGet]
         public IActionResult Test()
-        { 
-                return View();
+        {
+
+            var SmtpServer = _configuration["EmailConfiguration:SmtpServer"];
+            var SmtpPort =  Convert.ToInt32(_configuration["EmailConfiguration:SmtpPort"]);
+            var SmtpUsername = _configuration["EmailConfiguration:SmtpUsername"];
+            var SmtpPassword = _configuration["EmailConfiguration:SmtpPassword"];
+
+            MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername,SmtpPassword,"yelenaa@elections.am");
+
+            return View();
         }
         [HttpPost]
         public IActionResult Test(CitizenTestResults citizenTestResults, int testTicket)
