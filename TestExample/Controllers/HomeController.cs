@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using TestExample.Models;
 using TestExample.MyModels;
 using TestExample.Services;
@@ -17,11 +18,15 @@ namespace TestExample.Controllers
     {
         private readonly ITestChecked _testChecked;
         private readonly ExamDbContect _examDBContect;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(ITestChecked testChecked, ExamDbContect examDBContect)
+        public HomeController(ITestChecked testChecked, 
+                              ExamDbContect examDBContect,
+                              IConfiguration configuration)
         {
             _testChecked = testChecked;
             _examDBContect = examDBContect;
+            _configuration = configuration;
         }
 
         [HttpGet]
@@ -121,6 +126,41 @@ namespace TestExample.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Email(int id)
+        {
+          
+            if (id!=0)
+            {
+                CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Id == id);
+
+                var SmtpServer = _configuration["EmailConfiguration:SmtpServer"];
+                var SmtpPort = Convert.ToInt32(_configuration["EmailConfiguration:SmtpPort"]);
+                var SmtpUsername = _configuration["EmailConfiguration:SmtpUsername"];
+                var SmtpPassword = _configuration["EmailConfiguration:SmtpPassword"];
+
+                var text = "Քաղաքացի " + citizenReport.LastName + " " + citizenReport.FirstName + " Դուք " +
+                    citizenReport.TestDataTime +"-ին"
+                    + " , մասնակցել էք Գարոի կազմակերպած դասընթացին  և ստացել եք " + citizenReport.Result + " միավոր:";
+
+                MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername, SmtpPassword, citizenReport.Email, text);
+
+                citizenReport.Notification = "Ծանուցվել է";
+                _examDBContect.Update(citizenReport);
+                _examDBContect.SaveChanges();
+
+
+            }
+            
+               
+
+                List<CitizenReport> citizenReportList = _examDBContect.DbCitizenReport.ToList();
+
+                return View(citizenReportList);
+
+        }
+
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -27,5 +27,7 @@ namespace TestExample.Models
 
         public DateTime TestDataTime { get; set; }
 
+        public string Notification { get; set; }
+
     }
 }

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<CitizenReport>
+
+@{
+    ViewData["Title"] = "Ծանուցում";
+}
+
+<h2>Ծանուցում</h2>
+
+<table  >
+    <thead>
+        <tr>
+            <th>
+                Անուն
+            </th>
+            <th>
+                Ազգանուն
+            </th>
+            <th>
+                Հայրանուն
+            </th>
+            <th>
+                Անձնագիր
+            </th>
+            <th>
+                Հեռախոսահամար
+            </th>
+            <th>
+                Տեստի միավոր
+            </th>
+            <th>
+                Տեստի համարը
+            </th>
+            <th>
+                Էլեկտրոցանց
+            </th>
+            <th>
+                Տեստի ամսաթիվը
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Result)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberTicket)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestDataTime)
+            </td>
+            <td>
+                @if (item.Notification == "Ծանուցվել է")
+                {
+                    <button class="btn btn-success">@item.Notification</button>
+                }
+                else
+                {
+                    <button class="btn btn-danger">@item.Notification</button>
+                }
+              
+            </td>
+            <td>
+                <a class="btn btn-outline-primary" asp-action="Email" asp-route-Id="@item.Id">Ծանուցել</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -22,19 +22,18 @@ namespace TestExample.Controllers
         private readonly ExamDbContect _examDBContect;
         private readonly UserManager<CitizenUser> _userManager;
         private readonly SignInManager<CitizenUser> _signInManager;
-        private readonly IConfiguration _configuration;
+       
 
         public ResultsController(ITestChecked testChecked,
                                  ExamDbContect examDBContect,
                                  UserManager<CitizenUser> userManager,
-                                 SignInManager<CitizenUser> signInManager,
-                                 IConfiguration configuration)
+                                 SignInManager<CitizenUser> signInManager)
         {
             _testChecked = testChecked;
             _examDBContect = examDBContect;
             _userManager = userManager;
             _signInManager = signInManager;
-            _configuration = configuration;
+           
 
         }
 
@@ -42,16 +41,10 @@ namespace TestExample.Controllers
         [HttpGet]
         public IActionResult Test()
         {
-
-            var SmtpServer = _configuration["EmailConfiguration:SmtpServer"];
-            var SmtpPort =  Convert.ToInt32(_configuration["EmailConfiguration:SmtpPort"]);
-            var SmtpUsername = _configuration["EmailConfiguration:SmtpUsername"];
-            var SmtpPassword = _configuration["EmailConfiguration:SmtpPassword"];
-
-            MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername,SmtpPassword,"yelenaa@elections.am");
-
             return View();
         }
+
+
         [HttpPost]
         public IActionResult Test(CitizenTestResults citizenTestResults, int testTicket)
         {
@@ -123,7 +116,9 @@ namespace TestExample.Controllers
                 TestDataTime = DateTime.Now,
                 Result = citizenTestViewModel.Result,
                 NumberTicket = citizenTestViewModel.NumberTicket,
-                Passport = citizenUser.Passport
+                Passport = citizenUser.Passport,
+                Notification= "Ծանուցված չէ"
+                
             };
             _examDBContect.Add(citizenReport);
             _examDBContect.SaveChanges();

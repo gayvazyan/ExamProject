@@ -13,16 +13,16 @@ namespace TestExample.MyModels
     {
        
 
-        public static void Sender(string Server, int Port, string Username, string Password,string toMail)
+        public static void Sender(string Server, int Port, string Username, string Password,string toMail,string text)
         {
             
             var message = new  MimeMessage();
             message.From.Add(new MailboxAddress(Username));
             message.To.Add(new MailboxAddress(toMail));
-            message.Subject = "MailFromGaro";
+            message.Subject = "Test_Result";
             message.Body = new TextPart("html")
             {
-                Text = "Քաղաքացի Ելենա Այվազյան , Դուք մասնակցել էք Գարոի կազմակերպած դասընթացին և ստացել եք 3.6 միավոր: "
+                Text = text
             };
             using (var client = new SmtpClient())
             {
