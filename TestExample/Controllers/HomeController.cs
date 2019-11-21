@@ -141,7 +141,7 @@ namespace TestExample.Controllers
 
                 var text = "Քաղաքացի " + citizenReport.LastName + " " + citizenReport.FirstName + " Դուք " +
                     citizenReport.TestDataTime +"-ին"
-                    + " , մասնակցել էք Գարոի կազմակերպած դասընթացին  և ստացել եք " + citizenReport.Result + " միավոր:";
+                    + " , մասնակցել էք Գարոի կազմակերպած դասընթացին  և ստացել եք " + citizenReport.Result_Test1+ citizenReport.Result_Test2 + " միավոր:";
 
                 MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername, SmtpPassword, citizenReport.Email, text);
 

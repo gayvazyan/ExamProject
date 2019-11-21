@@ -2,21 +2,22 @@
 
 namespace TestExample.Migrations
 {
-    public partial class AddindNotification : Migration
+    public partial class AddingCheckdMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Notification",
-                table: "DbCitizenReport",
-                nullable: true);
+            migrationBuilder.AddColumn<bool>(
+                name: "CheckdAnswer",
+                table: "DbAnswer",
+                nullable: false,
+                defaultValue: false);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Notification",
-                table: "DbCitizenReport");
+                name: "CheckdAnswer",
+                table: "DbAnswer");
         }
     }
 }

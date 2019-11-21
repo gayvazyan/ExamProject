@@ -46,6 +46,8 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
+
+    var result = item.Result_Test1 + item.Result_Test2;
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
@@ -63,7 +65,7 @@
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Result)
+                @Html.DisplayFor(modelItem => result)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NumberTicket)

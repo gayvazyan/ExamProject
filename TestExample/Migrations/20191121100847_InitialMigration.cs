@@ -53,6 +53,21 @@ namespace TestExample.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DbAnswer",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    QuestionVariantContent = table.Column<string>(nullable: true),
+                    CorrectAnswer = table.Column<bool>(nullable: false),
+                    QuestionId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DbAnswer", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "DbCitizenReport",
                 columns: table => new
                 {
@@ -63,10 +78,12 @@ namespace TestExample.Migrations
                     SecondName = table.Column<string>(nullable: true),
                     Passport = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
-                    Result = table.Column<double>(nullable: false),
+                    Result_Test1 = table.Column<double>(nullable: false),
+                    Result_Test2 = table.Column<double>(nullable: false),
                     NumberTicket = table.Column<int>(nullable: false),
                     Email = table.Column<string>(nullable: true),
-                    TestDataTime = table.Column<DateTime>(nullable: false)
+                    TestDataTime = table.Column<DateTime>(nullable: false),
+                    Notification = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -148,6 +165,19 @@ namespace TestExample.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DbEmptyTextViewModel", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DbQuestion",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    QuestionContent = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DbQuestion", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -257,6 +287,19 @@ namespace TestExample.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "DbAnswer",
+                columns: new[] { "Id", "CorrectAnswer", "QuestionId", "QuestionVariantContent" },
+                values: new object[,]
+                {
+                    { 1, false, 1, "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի" },
+                    { 2, true, 1, "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի" },
+                    { 3, false, 1, "եթե կողմ են քվեարկել հանձնաժողովի նախագահն ու քարտուղարը, բացառությամբ օրենքով սահմանցած դեպքերի" },
+                    { 4, false, 2, "քվեարկության օրվանից 1 օր առաջ" },
+                    { 5, true, 2, "քվեարկության օրվանից 2 օր առաջ" },
+                    { 6, false, 2, "քվեարկության օրը" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "DbEmptyTextViewModel",
                 columns: new[] { "Id", "AllAdditionallyDuringElDay", "AllMobileVoters", "CEC", "Community", "ForA", "ForAx", "ForAy", "ForB", "ForBm", "ForBn", "ForC", "ForCk", "ForCl", "InvalidTickets", "ListAll", "NumerableTickets", "PartMobileVoters", "Participants", "Region", "TEC", "TecGlueTickets", "TecNumerableTickets", "UnusedGlueTickets", "UnusedNumerableTickets", "VadTickets" },
                 values: new object[,]
@@ -268,6 +311,15 @@ namespace TestExample.Migrations
                     { 5, 2, 7, 55, "Շիրակ", 40, 13, 27, 250, 150, 100, 110, 45, 65, 7, 420, 17, 5, 400, "Շիրակի", "55/1", 500, 441, 93, 424, 390 },
                     { 6, 3, 10, 55, "Շիրակ", 300, 170, 130, 290, 60, 230, 236, 136, 100, 15, 960, 41, 8, 830, "Շիրակի", "55/1", 1000, 1008, 159, 967, 800 },
                     { 7, 3, 10, 55, "Շիրակ", 10, 5, 5, 40, 10, 30, 60, 40, 20, 3, 120, 18, 10, 100, "Շիրակի", "55/1", 200, 126, 87, 108, 95 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DbQuestion",
+                columns: new[] { "Id", "QuestionContent" },
+                values: new object[,]
+                {
+                    { 1, "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝" },
+                    { 2, "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ " }
                 });
 
             migrationBuilder.CreateIndex(
@@ -328,6 +380,9 @@ namespace TestExample.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "DbAnswer");
+
+            migrationBuilder.DropTable(
                 name: "DbCitizenReport");
 
             migrationBuilder.DropTable(
@@ -335,6 +390,9 @@ namespace TestExample.Migrations
 
             migrationBuilder.DropTable(
                 name: "DbEmptyTextViewModel");
+
+            migrationBuilder.DropTable(
+                name: "DbQuestion");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

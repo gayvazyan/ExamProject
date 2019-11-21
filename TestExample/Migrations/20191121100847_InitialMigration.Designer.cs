@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestExample.Models;
 
 namespace TestExample.Migrations
 {
     [DbContext(typeof(ExamDbContect))]
-    partial class ExamDbContectModelSnapshot : ModelSnapshot
+    [Migration("20191121100847_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -224,10 +226,6 @@ namespace TestExample.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("CheckCorrectAnswer");
-
-                    b.Property<bool>("CheckdAnswer");
-
                     b.Property<bool>("CorrectAnswer");
 
                     b.Property<int>("QuestionId");
@@ -242,8 +240,6 @@ namespace TestExample.Migrations
                         new
                         {
                             Id = 1,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի"
@@ -251,8 +247,6 @@ namespace TestExample.Migrations
                         new
                         {
                             Id = 2,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
                             CorrectAnswer = true,
                             QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
@@ -260,8 +254,6 @@ namespace TestExample.Migrations
                         new
                         {
                             Id = 3,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել հանձնաժողովի նախագահն ու քարտուղարը, բացառությամբ օրենքով սահմանցած դեպքերի"
@@ -269,8 +261,6 @@ namespace TestExample.Migrations
                         new
                         {
                             Id = 4,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 2,
                             QuestionVariantContent = "քվեարկության օրվանից 1 օր առաջ"
@@ -278,8 +268,6 @@ namespace TestExample.Migrations
                         new
                         {
                             Id = 5,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
                             CorrectAnswer = true,
                             QuestionId = 2,
                             QuestionVariantContent = "քվեարկության օրվանից 2 օր առաջ"
@@ -287,8 +275,6 @@ namespace TestExample.Migrations
                         new
                         {
                             Id = 6,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 2,
                             QuestionVariantContent = "քվեարկության օրը"

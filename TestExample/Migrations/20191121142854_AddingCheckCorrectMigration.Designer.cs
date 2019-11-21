@@ -10,8 +10,8 @@ using TestExample.Models;
 namespace TestExample.Migrations
 {
     [DbContext(typeof(ExamDbContect))]
-    [Migration("20191120174526_AddindNotification")]
-    partial class AddindNotification
+    [Migration("20191121142854_AddingCheckCorrectMigration")]
+    partial class AddingCheckCorrectMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -207,7 +207,9 @@ namespace TestExample.Migrations
 
                     b.Property<string>("PhoneNumber");
 
-                    b.Property<double>("Result");
+                    b.Property<double>("Result_Test1");
+
+                    b.Property<double>("Result_Test2");
 
                     b.Property<string>("SecondName");
 
@@ -216,6 +218,75 @@ namespace TestExample.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DbCitizenReport");
+                });
+
+            modelBuilder.Entity("TestExample.MyModels.Answer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("CheckCorrectAnswer");
+
+                    b.Property<bool>("CorrectAnswer");
+
+                    b.Property<int>("QuestionId");
+
+                    b.Property<string>("QuestionVariantContent");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DbAnswer");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CheckCorrectAnswer = false,
+                            CorrectAnswer = false,
+                            QuestionId = 1,
+                            QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CheckCorrectAnswer = false,
+                            CorrectAnswer = true,
+                            QuestionId = 1,
+                            QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CheckCorrectAnswer = false,
+                            CorrectAnswer = false,
+                            QuestionId = 1,
+                            QuestionVariantContent = "եթե կողմ են քվեարկել հանձնաժողովի նախագահն ու քարտուղարը, բացառությամբ օրենքով սահմանցած դեպքերի"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CheckCorrectAnswer = false,
+                            CorrectAnswer = false,
+                            QuestionId = 2,
+                            QuestionVariantContent = "քվեարկության օրվանից 1 օր առաջ"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CheckCorrectAnswer = false,
+                            CorrectAnswer = true,
+                            QuestionId = 2,
+                            QuestionVariantContent = "քվեարկության օրվանից 2 օր առաջ"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CheckCorrectAnswer = false,
+                            CorrectAnswer = false,
+                            QuestionId = 2,
+                            QuestionVariantContent = "քվեարկության օրը"
+                        });
                 });
 
             modelBuilder.Entity("TestExample.MyModels.CitizenTestResults", b =>
@@ -286,6 +357,31 @@ namespace TestExample.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DbCitizenTestResults");
+                });
+
+            modelBuilder.Entity("TestExample.MyModels.Question", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("QuestionContent");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DbQuestion");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
+                        });
                 });
 
             modelBuilder.Entity("TestExample.ViewModels.EmptyTextViewModel", b =>

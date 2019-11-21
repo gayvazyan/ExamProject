@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using TestExample.Models;
 using TestExample.MyModels;
 using TestExample.ViewModels;
 
@@ -15,13 +16,16 @@ namespace TestExample.Controllers
     {
         private readonly UserManager<CitizenUser> _userManager;
         private readonly SignInManager<CitizenUser> _signInManager;
-      
+        private readonly ExamDbContect _examDBContect;
+
 
         public AccountController(UserManager<CitizenUser> userManager,
-            SignInManager<CitizenUser> signInManager)
+            SignInManager<CitizenUser> signInManager,
+            ExamDbContect examDBContect)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _examDBContect = examDBContect;
         }
 
         public IActionResult Index()
@@ -60,6 +64,25 @@ namespace TestExample.Controllers
                 // SignInManager and redirect to index action of HomeController
                 if (result.Succeeded)
                 {
+                    CitizenReport citizenReport = new CitizenReport()
+                    {
+
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        SecondName = user.SecondName,
+                        PhoneNumber = user.PhoneNumber,
+                        Email = user.Email,
+                        TestDataTime = DateTime.MinValue,
+                        Result_Test1 = 0,
+                        NumberTicket = 0,
+                        Passport = user.Passport,
+                        Notification = "Ծանուցված չէ"
+
+                    };
+
+                    _examDBContect.DbCitizenReport.Update(citizenReport);
+                    _examDBContect.SaveChanges();
+
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("index", "home");
                 }

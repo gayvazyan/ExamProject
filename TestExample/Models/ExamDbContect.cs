@@ -15,12 +15,18 @@ namespace TestExample.Models
             : base(options) { }
 
         public DbSet<CitizenTestResults> DbCitizenTestResults { get; set; }
-      
+
         public DbSet<EmptyTextViewModel> DbEmptyTextViewModel { get; set; }
 
         public DbSet<CitizenUser> DbCitizenUser { get; set; }
 
         public DbSet<CitizenReport> DbCitizenReport { get; set; }
+
+        public DbSet<Answer> DbAnswer { get; set; }
+
+        public DbSet<Question> DbQuestion { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -57,7 +63,7 @@ namespace TestExample.Models
                      TecNumerableTickets = 263
                  },
                  new EmptyTextViewModel
-                  {
+                 {
                      Id = 2,
                      Region = "Շիրակի",
                      Community = "Շիրակ",
@@ -202,7 +208,7 @@ namespace TestExample.Models
                      TecNumerableTickets = 1008
                  },
                  new EmptyTextViewModel
-                    {
+                 {
                      Id = 7,
                      Region = "Շիրակի",
                      Community = "Շիրակ",
@@ -232,6 +238,76 @@ namespace TestExample.Models
                  }
 
                 );
+
+            modelBuilder.Entity<Answer>().HasData(
+              new Answer
+              {
+                  Id = 1,
+                  QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                  CorrectAnswer = false,
+                  CheckCorrectAnswer = false,
+                  CheckdAnswer = false,
+                  QuestionId = 1
+              },
+              new Answer
+              {
+                  Id = 2,
+                  QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                  CorrectAnswer = true,
+                  CheckCorrectAnswer = false,
+                  CheckdAnswer=false,
+                  QuestionId = 1
+              },
+              new Answer
+              {
+                  Id = 3,
+                  QuestionVariantContent = "եթե կողմ են քվեարկել հանձնաժողովի նախագահն ու քարտուղարը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                  CorrectAnswer = false,
+                  CheckCorrectAnswer = false,
+                  CheckdAnswer = false,
+                  QuestionId = 1
+              },
+              new Answer
+              {
+                  Id = 4,
+                  QuestionVariantContent = "քվեարկության օրվանից 1 օր առաջ",
+                  CorrectAnswer = false,
+                  CheckCorrectAnswer = false,
+                  CheckdAnswer = false,
+                  QuestionId = 2
+              },
+              new Answer
+              {
+                  Id = 5,
+                  QuestionVariantContent = "քվեարկության օրվանից 2 օր առաջ",
+                  CorrectAnswer = true,
+                  CheckCorrectAnswer = false,
+                  CheckdAnswer = false,
+                  QuestionId = 2
+              },
+              new Answer
+              {
+                  Id = 6,
+                  QuestionVariantContent = "քվեարկության օրը",
+                  CorrectAnswer = false,
+                  CheckCorrectAnswer=false,
+                  CheckdAnswer = false,
+                  QuestionId = 2
+              }
+                );
+            modelBuilder.Entity<Question>().HasData(
+                new Question
+                {
+                    Id = 1,
+                    QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
+                },
+                new Question
+                {
+                    Id = 2,
+                    QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
+                }
+                );
+
         }
     }
 }

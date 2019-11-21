@@ -99,28 +99,23 @@ namespace TestExample.Controllers
                 var userName = User.Identity.Name;
                 citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
 
-                ViewBag.UserFullName = citizenUser.LastName + " " +
-                                   citizenUser.FirstName + " " +
-                                    citizenUser.SecondName;
+                ViewBag.UserFullName = citizenUser.FirstName + " " +
+                                   citizenUser.SecondName + " " +
+                                    citizenUser.LastName;
                 
             }
 
-            CitizenReport citizenReport = new CitizenReport()
-            {
+            CitizenReport citizenReport = _examDBContect.DbCitizenReport
+                                    .FirstOrDefault(p => p.Passport == citizenUser.Passport);
 
-                FirstName = citizenUser.FirstName,
-                LastName = citizenUser.LastName,
-                SecondName = citizenUser.SecondName,
-                PhoneNumber = citizenUser.PhoneNumber,
-                Email = citizenUser.Email,
-                TestDataTime = DateTime.Now,
-                Result = citizenTestViewModel.Result,
-                NumberTicket = citizenTestViewModel.NumberTicket,
-                Passport = citizenUser.Passport,
-                Notification= "Ծանուցված չէ"
+            citizenReport.TestDataTime = DateTime.Now;
+            citizenReport.Result_Test1 = citizenTestViewModel.Result;
+            citizenReport.NumberTicket = citizenTestViewModel.NumberTicket;
+              
                 
-            };
-            _examDBContect.Add(citizenReport);
+                
+        
+            _examDBContect.Update(citizenReport);
             _examDBContect.SaveChanges();
 
 

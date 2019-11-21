@@ -19,7 +19,9 @@ namespace TestExample.Models
 
         public string PhoneNumber { get; set; }
 
-        public double Result { get; set; }
+        public double Result_Test1 { get; set; }
+
+        public double Result_Test2 { get; set; }
 
         public int NumberTicket { get; set; }
 
