@@ -108,7 +108,8 @@ namespace TestExample.Controllers
             CitizenReport citizenReport = _examDBContect.DbCitizenReport
                                     .FirstOrDefault(p => p.Passport == citizenUser.Passport);
 
-            citizenReport.TestDataTime = DateTime.Now;
+            citizenReport.Test1DataTime = DateTime.Now;
+            citizenReport.Test1Check = true;
             citizenReport.Result_Test1 = citizenTestViewModel.Result;
             citizenReport.NumberTicket = citizenTestViewModel.NumberTicket;
               
@@ -121,5 +122,7 @@ namespace TestExample.Controllers
 
             return View(citizenTestViewModel);
         }
+
+
     }
 }

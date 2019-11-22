@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using TestExample.Models;
@@ -19,14 +20,20 @@ namespace TestExample.Controllers
         private readonly ITestChecked _testChecked;
         private readonly ExamDbContect _examDBContect;
         private readonly IConfiguration _configuration;
+        private readonly UserManager<CitizenUser> _userManager;
+        private readonly SignInManager<CitizenUser> _signInManager;
 
-        public HomeController(ITestChecked testChecked, 
+        public HomeController(ITestChecked testChecked,
                               ExamDbContect examDBContect,
-                              IConfiguration configuration)
+                              IConfiguration configuration,
+                              UserManager<CitizenUser> userManager,
+                              SignInManager<CitizenUser> signInManager)
         {
             _testChecked = testChecked;
             _examDBContect = examDBContect;
             _configuration = configuration;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -35,6 +42,12 @@ namespace TestExample.Controllers
             return View();
         }
 
+
+        [HttpGet]
+        public IActionResult TestQ()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult Test(int testId)
         {
@@ -129,8 +142,8 @@ namespace TestExample.Controllers
         [HttpGet]
         public IActionResult Email(int id)
         {
-          
-            if (id!=0)
+
+            if (id != 0)
             {
                 CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Id == id);
 
@@ -138,12 +151,18 @@ namespace TestExample.Controllers
                 var SmtpPort = Convert.ToInt32(_configuration["EmailConfiguration:SmtpPort"]);
                 var SmtpUsername = _configuration["EmailConfiguration:SmtpUsername"];
                 var SmtpPassword = _configuration["EmailConfiguration:SmtpPassword"];
+                var testSumResult = citizenReport.Result_Test1 + citizenReport.Result_Test2;
+                var Time1 = (citizenReport.Test1DataTime).ToString("dd/MM/yyyy HH:mm");
+                var Time2 = (citizenReport.Test2DataTime).ToString("dd/MM/yyyy HH:mm");
+                var subject = "Հարգելի " + citizenReport.LastName + " " + citizenReport.FirstName;
 
-                var text = "Քաղաքացի " + citizenReport.LastName + " " + citizenReport.FirstName + " Դուք " +
-                    citizenReport.TestDataTime +"-ին"
-                    + " , մասնակցել էք Գարոի կազմակերպած դասընթացին  և ստացել եք " + citizenReport.Result_Test1+ citizenReport.Result_Test2 + " միավոր:";
+                var text = " Դուք  , մասնակցել էք <<Ընտրությունների անցկացման մասնագիտական դասընթացներ>> ստուգարքին համակարգչային եղանակով և ստացել եք " + testSumResult + " միավոր: "
+                 + " Խնդիրը հանձնել եք " + Time1 + "-ին, և ստացել եք " + citizenReport.Result_Test1 + " միավոր "
+                  + " Հարցաշարը հանձնել եք " + Time2 + "-ին, և ստացել եք " + citizenReport.Result_Test2 + " միավոր: "
+                  + " Դասընթացների մասին լրացուցիչ ինֆորմացիա կարող եք ստանալ այցելելով https://www.elections.am կայք <<Մասնագիտական դասընտացներ>> բաժին:  ";
 
-                MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername, SmtpPassword, citizenReport.Email, text);
+
+                MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername, SmtpPassword, citizenReport.Email, subject, text);
 
                 citizenReport.Notification = "Ծանուցվել է";
                 _examDBContect.Update(citizenReport);
@@ -151,16 +170,59 @@ namespace TestExample.Controllers
 
 
             }
-            
-               
 
-                List<CitizenReport> citizenReportList = _examDBContect.DbCitizenReport.ToList();
+            List<CitizenReport> citizenReportList = _examDBContect.DbCitizenReport.ToList();
 
-                return View(citizenReportList);
+            return View(citizenReportList);
 
         }
 
-        
+        [HttpGet]
+        public IActionResult MyEmail(int id)
+        {
+
+
+            CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Id == id);
+
+            var SmtpServer = _configuration["EmailConfiguration:SmtpServer"];
+            var SmtpPort = Convert.ToInt32(_configuration["EmailConfiguration:SmtpPort"]);
+            var SmtpUsername = _configuration["EmailConfiguration:SmtpUsername"];
+            var SmtpPassword = _configuration["EmailConfiguration:SmtpPassword"];
+            var testSumResult = citizenReport.Result_Test1 + citizenReport.Result_Test2;
+            var Time1 = (citizenReport.Test1DataTime).ToString("dd/MM/yyyy HH:mm");
+            var Time2 = (citizenReport.Test2DataTime).ToString("dd/MM/yyyy HH:mm");
+            var subject = "Հարգելի " + citizenReport.LastName + " " + citizenReport.FirstName;
+
+            var text = " Դուք  , մասնակցել էք <<Ընտրությունների անցկացման մասնագիտական դասընթացներ>> ստուգարքին համակարգչային եղանակով և ստացել եք " + testSumResult + " միավոր: "
+               + " Խնդիրը հանձնել եք " + Time1 + "-ին, և ստացել եք " + citizenReport.Result_Test1 + " միավոր "
+                + " Հարցաշարը հանձնել եք " + Time2 + "-ին, և ստացել եք " + citizenReport.Result_Test2 + " միավոր: "
+                + " Դասընթացների մասին լրացուցիչ ինֆորմացիա կարող եք ստանալ այցելելով https://www.elections.am կայք <<Մասնագիտական դասընտացներ>> բաժին:  ";
+
+            MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername, SmtpPassword, citizenReport.Email, subject, text);
+
+            citizenReport.Notification = "Ծանուցվել է";
+            _examDBContect.Update(citizenReport);
+            _examDBContect.SaveChanges();
+            return View("Result", citizenReport);
+
+        }
+
+        [HttpGet]
+        public IActionResult Result()
+        {
+            CitizenUser citizenUser = new CitizenUser();
+            if (User.Identity.IsAuthenticated)
+            {
+                var userName = User.Identity.Name;
+                citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
+
+            }
+            CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+
+
+            return View(citizenReport);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

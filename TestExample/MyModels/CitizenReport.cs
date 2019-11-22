@@ -21,13 +21,19 @@ namespace TestExample.Models
 
         public double Result_Test1 { get; set; }
 
+        public bool Test1Check { get; set; }
+
         public double Result_Test2 { get; set; }
+
+        public bool Test2Check { get; set; }
 
         public int NumberTicket { get; set; }
 
         public string Email { get; set; }
 
-        public DateTime TestDataTime { get; set; }
+        public DateTime Test1DataTime { get; set; }
+
+        public DateTime Test2DataTime { get; set; }
 
         public string Notification { get; set; }
 

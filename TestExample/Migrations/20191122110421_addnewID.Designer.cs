@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestExample.Models;
 
 namespace TestExample.Migrations
 {
     [DbContext(typeof(ExamDbContect))]
-    partial class ExamDbContectModelSnapshot : ModelSnapshot
+    [Migration("20191122110421_addnewID")]
+    partial class addnewID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,13 +213,7 @@ namespace TestExample.Migrations
 
                     b.Property<string>("SecondName");
 
-                    b.Property<bool>("Test1Check");
-
-                    b.Property<DateTime>("Test1DataTime");
-
-                    b.Property<bool>("Test2Check");
-
-                    b.Property<DateTime>("Test2DataTime");
+                    b.Property<DateTime>("TestDataTime");
 
                     b.HasKey("Id");
 

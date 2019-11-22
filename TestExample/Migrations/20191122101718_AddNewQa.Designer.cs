@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestExample.Models;
 
 namespace TestExample.Migrations
 {
     [DbContext(typeof(ExamDbContect))]
-    partial class ExamDbContectModelSnapshot : ModelSnapshot
+    [Migration("20191122101718_AddNewQa")]
+    partial class AddNewQa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,13 +213,7 @@ namespace TestExample.Migrations
 
                     b.Property<string>("SecondName");
 
-                    b.Property<bool>("Test1Check");
-
-                    b.Property<DateTime>("Test1DataTime");
-
-                    b.Property<bool>("Test2Check");
-
-                    b.Property<DateTime>("Test2DataTime");
+                    b.Property<DateTime>("TestDataTime");
 
                     b.HasKey("Id");
 
@@ -409,7 +405,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
                         },
                         new
@@ -418,7 +414,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = false,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի"
                         },
                         new
@@ -427,7 +423,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
                         });
                 });
@@ -486,7 +482,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
                         },
                         new
@@ -495,7 +491,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = false,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի"
                         },
                         new
@@ -504,7 +500,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
                         });
                 });
@@ -563,7 +559,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
                         },
                         new
@@ -572,7 +568,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = false,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի"
                         },
                         new
@@ -581,7 +577,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
                         });
                 });
@@ -640,7 +636,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
                         },
                         new
@@ -649,7 +645,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = false,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի"
                         },
                         new
@@ -658,7 +654,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
                         });
                 });
@@ -717,7 +713,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
                         },
                         new
@@ -726,7 +722,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = false,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի"
                         },
                         new
@@ -735,7 +731,7 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 2,
+                            QuestionId = 1,
                             QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
                         });
                 });

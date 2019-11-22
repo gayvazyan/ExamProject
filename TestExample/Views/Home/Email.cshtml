@@ -6,7 +6,7 @@
 
 <h2>Ծանուցում</h2>
 
-<table  >
+<table border="1" >
     <thead>
         <tr>
             <th>
@@ -25,16 +25,16 @@
                 Հեռախոսահամար
             </th>
             <th>
-                Տեստի միավոր
-            </th>
-            <th>
-                Տեստի համարը
+                Թեստի միավոր
             </th>
             <th>
                 Էլեկտրոցանց
             </th>
             <th>
-                Տեստի ամսաթիվը
+                Խնդրի լրացման ամսաթիվը
+            </th>
+            <th>
+                Հարցաշարի լրացման ամսաթիվը
             </th>
             <th>
 
@@ -68,13 +68,13 @@
                 @Html.DisplayFor(modelItem => result)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NumberTicket)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TestDataTime)
+                @Html.DisplayFor(modelItem => item.Test1DataTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test2DataTime)
             </td>
             <td>
                 @if (item.Notification == "Ծանուցվել է")
@@ -85,10 +85,10 @@
                 {
                     <button class="btn btn-danger">@item.Notification</button>
                 }
-              
+
             </td>
             <td>
-                <a class="btn btn-outline-primary" asp-action="Email" asp-route-Id="@item.Id">Ծանուցել</a>
+                <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Email" asp-route-Id="@item.Id">Ծանուցել</a>
 
             </td>
         </tr>

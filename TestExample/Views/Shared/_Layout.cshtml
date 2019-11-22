@@ -41,16 +41,11 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" asp-controller="Home"
-                                   asp-action="Index">Ընտրել</a>
+                                   asp-action="TestQ">Ընտրել</a>
                                 <a class="dropdown-item" asp-controller="Home"
                                    asp-action="Random">Պատահական</a>
                             </div>
                         </li>
-
-
-                        @*<li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Questions" asp-action="Index">Հարցաշար</a>
-                        </li>*@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
@@ -65,6 +60,9 @@
                             </div>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Result">Իմ տվյալները</a>
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Email">Ծանուցում</a>
@@ -79,14 +77,14 @@
                     @if (signInManager.IsSignedIn(User))
                     {
                         var userName = User.Identity.Name;
-                       var citizenUser = userManager.Users.FirstOrDefault(p => p.Email == userName);
+                        var citizenUser = userManager.Users.FirstOrDefault(p => p.Email == userName);
                         <li class="nav-item">
                             <form method="post" asp-controller="account" asp-action="logout">
                                 <button type="submit" style="width:auto"
                                         class="nav-link btn btn-link py-0">
-                                    Ելք համակարգից 
+                                    Ելք համակարգից
                                     <br />
-                                  Օգտատեր՝  @citizenUser.LastName  @citizenUser.FirstName
+                                    Օգտատեր՝  @citizenUser.LastName  @citizenUser.FirstName
                                 </button>
                             </form>
                         </li>

@@ -24,12 +24,20 @@ namespace TestExample.Models
         public DbSet<CitizenReport> DbCitizenReport { get; set; }
 
         public DbSet<Answer1> DbAnswer1 { get; set; }
+        public DbSet<Answer2> DbAnswer2 { get; set; }
+        public DbSet<Answer3> DbAnswer3 { get; set; }
+        public DbSet<Answer4> DbAnswer4 { get; set; }
+        public DbSet<Answer5> DbAnswer5 { get; set; }
+        public DbSet<Answer6> DbAnswer6 { get; set; }
+        public DbSet<Answer7> DbAnswer7 { get; set; }
 
         public DbSet<Question1> DbQuestion1 { get; set; }
-
-        public DbSet<Answer2> DbAnswer2 { get; set; }
-
         public DbSet<Question2> DbQuestion2 { get; set; }
+        public DbSet<Question3> DbQuestion3 { get; set; }
+        public DbSet<Question4> DbQuestion4 { get; set; }
+        public DbSet<Question5> DbQuestion5 { get; set; }
+        public DbSet<Question6> DbQuestion6 { get; set; }
+        public DbSet<Question7> DbQuestion7 { get; set; }
 
 
 
@@ -260,7 +268,7 @@ namespace TestExample.Models
                   QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
                   CorrectAnswer = true,
                   CheckCorrectAnswer = false,
-                  CheckdAnswer=false,
+                  CheckdAnswer = false,
                   QuestionId = 1
               },
               new Answer1
@@ -295,7 +303,7 @@ namespace TestExample.Models
                   Id = 6,
                   QuestionVariantContent = "քվեարկության օրը",
                   CorrectAnswer = false,
-                  CheckCorrectAnswer=false,
+                  CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 2
               },
@@ -466,6 +474,292 @@ namespace TestExample.Models
              }
                );
 
+            modelBuilder.Entity<Answer3>().HasData(
+             new Answer3
+             {
+                 Id = 1,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer3
+             {
+                 Id = 2,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer3
+             {
+                 Id = 3,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer3
+             {
+                 Id = 4,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             },
+             new Answer3
+             {
+                 Id = 5,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             },
+             new Answer3
+             {
+                 Id = 6,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             }
+
+               );
+
+            modelBuilder.Entity<Answer4>().HasData(
+             new Answer4
+             {
+                 Id = 1,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer4
+             {
+                 Id = 2,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer4
+             {
+                 Id = 3,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer4
+             {
+                 Id = 4,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             },
+             new Answer4
+             {
+                 Id = 5,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             },
+             new Answer4
+             {
+                 Id = 6,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             }
+               );
+
+            modelBuilder.Entity<Answer5>().HasData(
+             new Answer5
+             {
+                 Id = 1,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer5
+             {
+                 Id = 2,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer5
+             {
+                 Id = 3,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer5
+             {
+                 Id = 4,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             },
+             new Answer5
+             {
+                 Id = 5,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             },
+             new Answer5
+             {
+                 Id = 6,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             }
+               );
+
+            modelBuilder.Entity<Answer6>().HasData(
+             new Answer6
+             {
+                 Id = 1,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer6
+             {
+                 Id = 2,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer6
+             {
+                 Id = 3,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer6
+             {
+                 Id = 4,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             },
+             new Answer6
+             {
+                 Id = 5,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             },
+             new Answer6
+             {
+                 Id = 6,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             }
+               );
+
+            modelBuilder.Entity<Answer7>().HasData(
+             new Answer7
+             {
+                 Id = 1,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer7
+             {
+                 Id = 2,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer7
+             {
+                 Id = 3,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 1
+             },
+             new Answer7
+             {
+                 Id = 4,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             },
+             new Answer7
+             {
+                 Id = 5,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = false,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             },
+             new Answer7
+             {
+                 Id = 6,
+                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                 CorrectAnswer = true,
+                 CheckCorrectAnswer = false,
+                 CheckdAnswer = false,
+                 QuestionId = 2
+             }
+               );
+
             modelBuilder.Entity<Question1>().HasData(
                 new Question1
                 {
@@ -478,10 +772,10 @@ namespace TestExample.Models
                     QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
                 },
                 new Question1
-                 {
-                     Id = 3,
-                     QuestionContent = "Հարց 3. "
-                 },
+                {
+                    Id = 3,
+                    QuestionContent = "Հարց 3. "
+                },
                 new Question1
                 {
                     Id = 4,
@@ -543,10 +837,10 @@ namespace TestExample.Models
                     QuestionContent = "Հարց 15. "
                 },
                 new Question1
-                 {
-                     Id = 16,
-                     QuestionContent = "Հարց 16. "
-                 },
+                {
+                    Id = 16,
+                    QuestionContent = "Հարց 16. "
+                },
                 new Question1
                 {
                     Id = 17,
@@ -564,7 +858,7 @@ namespace TestExample.Models
                 },
                 new Question1
                 {
-                    Id =20,
+                    Id = 20,
                     QuestionContent = "Հարց 20. "
                 },
                 new Question1
@@ -604,7 +898,7 @@ namespace TestExample.Models
                 },
                 new Question1
                 {
-                    Id =28,
+                    Id = 28,
                     QuestionContent = "Հարց 28. "
                 },
                 new Question1
@@ -771,6 +1065,67 @@ namespace TestExample.Models
                     QuestionContent = "Հարց 30. "
                 }
                 );
+            modelBuilder.Entity<Question3>().HasData(
+                new Question3
+                {
+                    Id = 1,
+                    QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
+                },
+                new Question3
+                {
+                    Id = 2,
+                    QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
+                }
+                );
+            modelBuilder.Entity<Question4>().HasData(
+            new Question4
+            {
+                Id = 1,
+                QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
+            },
+            new Question4
+            {
+                Id = 2,
+                QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
+            }
+             );
+            modelBuilder.Entity<Question5>().HasData(
+                new Question5
+                {
+                    Id = 1,
+                    QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
+                },
+                new Question5
+                {
+                    Id = 2,
+                    QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
+                }
+                 );
+            modelBuilder.Entity<Question6>().HasData(
+                new Question6
+                {
+                    Id = 1,
+                    QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
+                },
+                new Question6
+                {
+                    Id = 2,
+                    QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
+                }
+                 );
+        
+            modelBuilder.Entity<Question7>().HasData(
+            new Question7
+            {
+                Id = 1,
+                QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
+            },
+            new Question7
+            {
+                Id = 2,
+                QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
+            }
+            );
 
         }
     }

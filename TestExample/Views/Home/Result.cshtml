@@ -1,0 +1,55 @@
+﻿@model CitizenReport
+
+@{
+    ViewData["Title"] = "Իմ տվյալները";
+}
+
+@{ var sumResult = Model.Result_Test1 + Model.Result_Test2; }
+
+<div style="text-align:center">
+    <h3> <strong>Ամբողրական անուն: <span style="color:forestgreen">  @Model.LastName @Model.FirstName @Model.SecondName </span> </strong> </h3>
+    <h3> <strong> Անձը հաստատող պաստաթուղթ: <span style="color:forestgreen">  @Model.Passport </span> </strong> </h3>
+    <h3> <strong> Հեռախոսահամար: <span style="color:forestgreen">  @Model.PhoneNumber </span> </strong> </h3>
+
+
+    @if (Model.Test1Check == true)
+    {
+        <h3><strong>Խնդրը լրացնելու վերջին փորձը կատարել եք @Model.Test1DataTime-ին, որի արդյունքում ստացել եք <span style="color:forestgreen"> @Model.Result_Test1</span> միավոր </strong> </h3>
+
+    }
+    else
+    {
+        <h3><strong>Խնդրը դեռ չէք լրացրել</strong> </h3>
+    }
+
+    @if (Model.Test2Check == true)
+    {
+        <h3><strong>Հարցաշարիը լրացնելու վերջին փորձը կատարել եք @Model.Test2DataTime-ին, որի արդյունքում ստացել եք <span style="color:forestgreen"> @Model.Result_Test2</span> միավոր </strong> </h3>
+
+    }
+    else
+    {
+        <h3><strong>Հարցաշարը դեռ չէք լրացրել</strong> </h3>
+    }
+
+
+    @if ((Model.Test2Check == true) && (Model.Test2Check == true))
+    {
+        <h3><strong>Խնդրի և հարցաշարի պատասխանների արդյունքում դուք ստացել եք <span style="color:forestgreen"> @sumResult </span> միավոր </strong> </h3>
+
+        if (Model.Notification != "Ծանուցվել է")
+        {
+            <span>Թեստի արդյունքների մասնին ինֆորմացիան </span>
+            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MyEmail" asp-route-Id="@Model.Id">Ուղարկել</a>
+            <span> @Model.Email էլ հասցեին</span>
+        }
+        else
+        {
+            <span>Թեստի արդյունքների մասնին ինֆորմացիան </span>
+            <a class="btn btn-success">Ուղարկվեց</a>
+            <span> @Model.Email էլ հասցեին</span>
+        }
+
+    }
+
+</div>

@@ -13,13 +13,13 @@ namespace TestExample.MyModels
     {
        
 
-        public static void Sender(string Server, int Port, string Username, string Password,string toMail,string text)
+        public static void Sender(string Server, int Port, string Username, string Password,string toMail,string subject,string text)
         {
             
             var message = new  MimeMessage();
             message.From.Add(new MailboxAddress(Username));
             message.To.Add(new MailboxAddress(toMail));
-            message.Subject = "Test_Result";
+            message.Subject = subject;
             message.Body = new TextPart("html")
             {
                 Text = text
