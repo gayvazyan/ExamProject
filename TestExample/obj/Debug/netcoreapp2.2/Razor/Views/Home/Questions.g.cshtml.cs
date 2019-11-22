@@ -29,17 +29,22 @@ using TestExample.MyModels;
 #line default
 #line hidden
 #line 4 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
-using TestExample.ViewModels;
+using TestExample.QAmodels;
 
 #line default
 #line hidden
 #line 5 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
+using TestExample.ViewModels;
+
+#line default
+#line hidden
+#line 6 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"151af73a94067bb1133756437dbc693509a27ea3", @"/Views/Home/Questions.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3bb5a412e3e2bbe721e48f20a5f04822cfaf45ae", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"377696425e675c2a8630f5500b90f0610bf0632d", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Questions : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

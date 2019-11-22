@@ -1,14 +1,19 @@
-﻿@model List<Answer>
+﻿@model List<Answer1>
+
+@{
+    ViewData["Title"] = "Հարցաշար 1";
+
+}
 
 <div style="text-align:center">
-        <h3> <strong>Հարգելի <span style="color:forestgreen">  @ViewBag.UserFullName </span> </strong> </h3>
-        <h3><strong>Դուք հավաքեցիք <span style="color:forestgreen"> @ViewBag.Result_Test2 </span> միավոր </strong> </h3>
-        <h3><strong>Ճիշտ պատասխանները նշված են <span style="color:forestgreen">կանաչ </span>  գույնով </strong></h3>
-        <h3> <strong>Սխալ պատասխանները նշված են<span style="color:red"> կարմիր</span> գույնով </strong></h3>
-    </div>
+    <h3> <strong>Հարգելի <span style="color:forestgreen">  @ViewBag.UserFullName </span> </strong> </h3>
+    <h3><strong>Դուք հավաքեցիք <span style="color:forestgreen"> @ViewBag.Result_Test2 </span> միավոր </strong> </h3>
+    <h3><strong>Ճիշտ պատասխանները նշված են <span style="color:forestgreen">կանաչ </span>  գույնով </strong></h3>
+    <h3> <strong>Սխալ պատասխանները նշված են<span style="color:red"> կարմիր</span> գույնով </strong></h3>
+</div>
 
 
-<h3 style="text-align:center">ՀԱՐՑԱԹԵՐԹԻԿ 4</h3>
+<h3 style="text-align:center">Հարցաշար 1</h3>
 <form asp-controller="Questions" asp-action="Submit">
 
     <ol type="1">
@@ -28,33 +33,26 @@
                                 {
                                     @if (answer.CorrectAnswer == true)
                                     {
-                                        <stromg><span style="color:green">  @answer.QuestionVariantContent </span></stromg>
+                                        <strong>
+                                            <span style="color:green">  @answer.QuestionVariantContent </span>
+                                        </strong>
                                     }
                                     else
                                     {
-
-                                        <stromg>
+                                        <strong>
                                             <span style="color:red">  @answer.QuestionVariantContent </span>
-                                        </stromg>
-
-
+                                        </strong>
                                     }
                                 }
                                 else
                                 {
                                     @answer.QuestionVariantContent
                                 }
-
-
-
                             </li>
-
                         }
                     }
-
                 </ol>
             </li>
         }
     </ol>
-    
 </form>

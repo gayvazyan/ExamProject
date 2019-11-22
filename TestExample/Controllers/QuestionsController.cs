@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TestExample.Models;
 using TestExample.MyModels;
+using TestExample.QAmodels;
 
 namespace TestExample.Controllers
 {
@@ -28,17 +29,41 @@ namespace TestExample.Controllers
         }
         public IActionResult Index()
         {
+            return View();
+        }
+
+        public IActionResult Test1()
+        {
 
 
-            ViewBag.Questions = _examDBContect.DbQuestion.ToList();
+            ViewBag.Questions = _examDBContect.DbQuestion1.ToList();
 
-            List<Answer> answersList = _examDBContect.DbAnswer.ToList();
+            List<Answer1> answersList = _examDBContect.DbAnswer1.ToList();
 
             foreach (var answer in answersList)
             {
                 answer.CheckdAnswer = false;
                 answer.CheckCorrectAnswer = false;
-                _examDBContect.DbAnswer.Update(answer);
+                _examDBContect.DbAnswer1.Update(answer);
+                _examDBContect.SaveChanges();
+            }
+
+            return View(answersList);
+        }
+
+        public IActionResult Test2()
+        {
+
+
+            ViewBag.Questions = _examDBContect.DbQuestion2.ToList();
+
+            List<Answer2> answersList = _examDBContect.DbAnswer2.ToList();
+
+            foreach (var answer in answersList)
+            {
+                answer.CheckdAnswer = false;
+                answer.CheckCorrectAnswer = false;
+                _examDBContect.DbAnswer2.Update(answer);
                 _examDBContect.SaveChanges();
             }
 
@@ -46,31 +71,31 @@ namespace TestExample.Controllers
         }
 
         [HttpPost]
-        public IActionResult Submit(IFormCollection ifromCollection)
+        public IActionResult Submit1(IFormCollection ifromCollection)
         {
             int score = 0;
             string[] questionIds = ifromCollection["questionId"];
             foreach (var questionId in questionIds)
             {
 
-         //lucel null-i problemy
-                 int value1 = int.Parse(ifromCollection["question_" + questionId]);
-                
+         // null-i problemy
+                string  checkedValueString = ifromCollection["question_" + questionId];
 
-
-                Answer answer = _examDBContect.DbAnswer.FirstOrDefault(p => p.Id == value1);
-                answer.CheckdAnswer = true;
-
-
-                if (answer.CorrectAnswer == true)
+                int checkedValueInt = Convert.ToInt32(checkedValueString);
+                if (checkedValueInt != 0)
                 {
+                    Answer1 answer = _examDBContect.DbAnswer1.FirstOrDefault(p => p.Id == checkedValueInt);
+                    answer.CheckdAnswer = true;
 
-                 
-                    score++;
-                    answer.CheckCorrectAnswer = true;
-                    _examDBContect.DbAnswer.Update(answer);
-                    _examDBContect.SaveChanges();
+                    if (answer.CorrectAnswer == true)
+                    {
+                        score++;
+                        answer.CheckCorrectAnswer = true;
+                        _examDBContect.DbAnswer1.Update(answer);
+                        _examDBContect.SaveChanges();
+                    }
                 }
+               
                 
             }
            
@@ -91,13 +116,68 @@ namespace TestExample.Controllers
             _examDBContect.DbCitizenReport.Update(citizenReport);
             _examDBContect.SaveChanges();
             ViewBag.Result_Test2 = score;
-            ViewBag.Questions = _examDBContect.DbQuestion.ToList();
+            ViewBag.Questions = _examDBContect.DbQuestion1.ToList();
 
-            List<Answer> answersList = _examDBContect.DbAnswer.ToList();
+            List<Answer1> answersList = _examDBContect.DbAnswer1.ToList();
 
             return View("Result",answersList);
 
             
+        }
+
+        [HttpPost]
+        public IActionResult Submit2(IFormCollection ifromCollection)
+        {
+            int score = 0;
+            string[] questionIds = ifromCollection["questionId"];
+            foreach (var questionId in questionIds)
+            {
+
+                // null-i problemy
+                string checkedValueString = ifromCollection["question_" + questionId];
+
+                int checkedValueInt = Convert.ToInt32(checkedValueString);
+                if (checkedValueInt != 0)
+                {
+                    Answer2 answer = _examDBContect.DbAnswer2.FirstOrDefault(p => p.Id == checkedValueInt);
+                    answer.CheckdAnswer = true;
+
+                    if (answer.CorrectAnswer == true)
+                    {
+                        score++;
+                        answer.CheckCorrectAnswer = true;
+                        _examDBContect.DbAnswer2.Update(answer);
+                        _examDBContect.SaveChanges();
+                    }
+                }
+
+
+            }
+
+
+            CitizenUser citizenUser = new CitizenUser();
+            if (User.Identity.IsAuthenticated)
+            {
+                var userName = User.Identity.Name;
+                citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
+
+                ViewBag.UserFullName = citizenUser.FirstName + " " +
+                                   citizenUser.SecondName + " " +
+                                    citizenUser.LastName;
+
+            }
+            CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+            citizenReport.Result_Test2 = score;
+            _examDBContect.DbCitizenReport.Update(citizenReport);
+            _examDBContect.SaveChanges();
+            ViewBag.Result_Test2 = score;
+            ViewBag.Questions = _examDBContect.DbQuestion2.ToList();
+
+            List<Answer2> answersList = _examDBContect.DbAnswer2.ToList();
+
+            return View("Result2", answersList);
+
+
         }
     }
 }
