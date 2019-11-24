@@ -156,10 +156,10 @@ namespace TestExample.Controllers
                 var Time2 = (citizenReport.Test2DataTime).ToString("dd/MM/yyyy HH:mm");
                 var subject = "Հարգելի " + citizenReport.LastName + " " + citizenReport.FirstName;
 
-                var text = " Դուք  , մասնակցել էք <<Ընտրությունների անցկացման մասնագիտական դասընթացներ>> ստուգարքին համակարգչային եղանակով և ստացել եք " + testSumResult + " միավոր: "
+                var text = " Դուք  , մասնակցել էք Ընտրությունների անցկացման մասնագիտական դասընթացներ ստուգարքին համակարգչային եղանակով և ստացել եք " + testSumResult + " միավոր: "
                  + " Խնդիրը հանձնել եք " + Time1 + "-ին, և ստացել եք " + citizenReport.Result_Test1 + " միավոր "
                   + " Հարցաշարը հանձնել եք " + Time2 + "-ին, և ստացել եք " + citizenReport.Result_Test2 + " միավոր: "
-                  + " Դասընթացների մասին լրացուցիչ ինֆորմացիա կարող եք ստանալ այցելելով https://www.elections.am կայք <<Մասնագիտական դասընտացներ>> բաժին:  ";
+                  + " Դասընթացների մասին լրացուցիչ ինֆորմացիա կարող եք ստանալ այցելելով https://www.elections.am կայք  Մասնագիտական դասընտացներ բաժին:  ";
 
 
                 MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername, SmtpPassword, citizenReport.Email, subject, text);
@@ -193,10 +193,10 @@ namespace TestExample.Controllers
             var Time2 = (citizenReport.Test2DataTime).ToString("dd/MM/yyyy HH:mm");
             var subject = "Հարգելի " + citizenReport.LastName + " " + citizenReport.FirstName;
 
-            var text = " Դուք  , մասնակցել էք <<Ընտրությունների անցկացման մասնագիտական դասընթացներ>> ստուգարքին համակարգչային եղանակով և ստացել եք " + testSumResult + " միավոր: "
+            var text = " Դուք  , մասնակցել էք Ընտրությունների անցկացման մասնագիտական դասընթացներ ստուգարքին համակարգչային եղանակով և ստացել եք " + testSumResult + " միավոր: "
                + " Խնդիրը հանձնել եք " + Time1 + "-ին, և ստացել եք " + citizenReport.Result_Test1 + " միավոր "
                 + " Հարցաշարը հանձնել եք " + Time2 + "-ին, և ստացել եք " + citizenReport.Result_Test2 + " միավոր: "
-                + " Դասընթացների մասին լրացուցիչ ինֆորմացիա կարող եք ստանալ այցելելով https://www.elections.am կայք <<Մասնագիտական դասընտացներ>> բաժին:  ";
+                + " Դասընթացների մասին լրացուցիչ ինֆորմացիա կարող եք ստանալ այցելելով https://www.elections.am կայք Մասնագիտական դասընտացներ բաժին:  ";
 
             MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername, SmtpPassword, citizenReport.Email, subject, text);
 

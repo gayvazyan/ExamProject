@@ -14,7 +14,8 @@
 
     @if (Model.Test1Check == true)
     {
-        <h3><strong>Խնդրը լրացնելու վերջին փորձը կատարել եք @Model.Test1DataTime-ին, որի արդյունքում ստացել եք <span style="color:forestgreen"> @Model.Result_Test1</span> միավոր </strong> </h3>
+        var Time1 = (Model.Test1DataTime).ToString("dd/MM/yyyy HH:mm");
+        <h3><strong>Խնդրը լրացնելու վերջին փորձը կատարել եք  <span style="color:forestgreen"> @Time1</span>-ին, որի արդյունքում ստացել եք <span style="color:forestgreen"> @Model.Result_Test1</span> միավոր </strong> </h3>
 
     }
     else
@@ -24,7 +25,8 @@
 
     @if (Model.Test2Check == true)
     {
-        <h3><strong>Հարցաշարիը լրացնելու վերջին փորձը կատարել եք @Model.Test2DataTime-ին, որի արդյունքում ստացել եք <span style="color:forestgreen"> @Model.Result_Test2</span> միավոր </strong> </h3>
+        var Time2 = (Model.Test2DataTime).ToString("dd/MM/yyyy HH:mm");
+        <h3><strong>Հարցաշարիը լրացնելու վերջին փորձը կատարել եք <span style="color:forestgreen"> @Time2</span>-ին, որի արդյունքում ստացել եք <span style="color:forestgreen"> @Model.Result_Test2</span> միավոր </strong> </h3>
 
     }
     else

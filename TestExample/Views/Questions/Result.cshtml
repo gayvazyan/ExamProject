@@ -1,7 +1,7 @@
 ﻿@model List<Answer>
 
 @{
-    ViewData["Title"] = "Հարցաշար 1";
+    ViewData["Title"] = "Հարցաշար";
 
 }
 
@@ -15,44 +15,45 @@
 
 <h3 style="text-align:center">Հարցաշար 1</h3>
 <form asp-controller="Questions" asp-action="Submit">
-
-    <ol type="1">
+    @{ var i = 0; }
+    <ul style="list-style-type:none">
         @foreach (var question in ViewBag.Questions)
         {
-            <li>
-                <strong style="text-align:center"> @question.QuestionContent</strong>
-                <input type="hidden" name="questionId" value="@question.Id" />
-                <ol type="a">
+         i++;
+        <li>
+            <strong style="text-align:center"> Հարց @i @question.QuestionContent</strong>
+            <input type="hidden" name="questionId" value="@question.Id" />
+            <ol type="A">
 
-                    @foreach (var answer in Model)
+                @foreach (var answer in Model)
                     {
                         if (answer.QuestionId == question.Id)
                         {
-                            <li>
-                                @if (answer.CheckdAnswer == true)
+                <li>
+                    @if (answer.CheckdAnswer == true)
                                 {
-                                    @if (answer.CorrectAnswer == true)
+                    @if (answer.CorrectAnswer == true)
                                     {
-                                        <strong>
-                                            <span style="color:green">  @answer.QuestionVariantContent </span>
-                                        </strong>
+                    <strong>
+                        <span style="color:green">  @answer.QuestionVariantContent </span>
+                    </strong>
                                     }
                                     else
                                     {
-                                        <strong>
-                                            <span style="color:red">  @answer.QuestionVariantContent </span>
-                                        </strong>
+                    <strong>
+                        <span style="color:red">  @answer.QuestionVariantContent </span>
+                    </strong>
                                     }
                                 }
                                 else
                                 {
-                                    @answer.QuestionVariantContent
+                    @answer.QuestionVariantContent
                                 }
-                            </li>
+                </li>
                         }
                     }
-                </ol>
-            </li>
+            </ol>
+        </li>
         }
-    </ol>
+        </ol>
 </form>

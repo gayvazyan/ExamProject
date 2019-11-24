@@ -7,7 +7,7 @@ namespace TestExample.MyModels
 {
     public static class RandomNumber
     {
-        public static List<int> GetRandomNumbers(int count)
+        public static List<int> GetRandomNumbers(int count,int start, int end)
         {
             Random random = new Random();
             List<int> randomNumbers = new List<int>();
@@ -16,7 +16,7 @@ namespace TestExample.MyModels
             {
                 int number;
 
-                do number = random.Next(1,6);
+                do number = random.Next(start, end);
                 while (randomNumbers.Contains(number));
 
                 randomNumbers.Add(number);
