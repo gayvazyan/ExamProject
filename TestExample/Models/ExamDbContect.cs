@@ -295,7 +295,7 @@ namespace TestExample.Models
               {
                   Id = 6,
                   QuestionVariantContent = "sxal",
-                  CorrectAnswer = true,
+                  CorrectAnswer = false,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 2
@@ -1536,16 +1536,17 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 144,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "տվյալ տեխնիկական սարքավորման միջոցով գրանցված ընտրողների բացակայությունը հավաստող տեղեկանք",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 48
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 145,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "արգելվում է",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 49
@@ -1567,7 +1568,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 49
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 148,
                   QuestionVariantContent = "sxal",
@@ -1579,8 +1581,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 149,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "քվեաթերթիկի վրա ինքնասոսնձվող դրոշմանիշը փակցնելուց հետո",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 50
@@ -1593,11 +1595,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 50
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 151,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "իրավասու է իր որոշմամբ սահմանելու քվեարկության սենյակում միաժամանակյա գտնվելու իրավունք ունեցող դիտորդների և զանգվածային լրատվության միջոցների ներկայացուցիչների առավելագույն թիվը",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 51
@@ -1619,7 +1622,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 51
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 154,
                   QuestionVariantContent = "sxal",
@@ -1631,8 +1635,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 155,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "գրառվում են տեղամասային ընտրական հանձնաժողովի գրանցամատյանում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 52
@@ -1645,7 +1649,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 52
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 157,
                   QuestionVariantContent = "sxal",
@@ -1657,8 +1662,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 158,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "ընտրական հանձնաժողովի անդամ, վստահված անձ, դիտորդ, այցելու, զանգվածային լրատվության միջոցի ներկայացուցիչ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 53
@@ -1675,8 +1680,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 160,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հանձնաժողովի անդամը տեղեկացնում է տեղամասային հանձնաժողովի նախագահին, որն ընտրողից վերցնում է քվեարկության ծրարը, անհապաղ մարում է՝ առանց պարունակությունը ստուգելու",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 54
@@ -1698,11 +1703,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 54
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 163,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "ոչ ուշ, քան մինչև ժամը 20:00-ն",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 55
@@ -1724,7 +1730,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 55
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 166,
                   QuestionVariantContent = "sxal",
@@ -1736,8 +1743,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 167,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "շրջիկ արկղով քվեարկության դեպքում ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 56
@@ -1750,7 +1757,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 56
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 169,
                   QuestionVariantContent = "sxal",
@@ -1762,8 +1770,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 170,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "տեխնիկակական սարքավորման խափանման կամ չլինելու պարագայում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 57
@@ -1776,7 +1784,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 57
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 172,
                   QuestionVariantContent = "sxal",
@@ -1797,16 +1806,17 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 174,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "քրեակատարողական հիմնարկում ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 58
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 175,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "միայն մեկ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 59
@@ -1828,7 +1838,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 59
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 178,
                   QuestionVariantContent = "sxal",
@@ -1840,8 +1851,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 179,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "քվեարկության օրը՝ ժամը 8:00-ից հետո, բայց այն հաշվարկով, որ քվեարկությունն ավարտվի մինչև ժամը 18:00-ն",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 60
@@ -1854,7 +1865,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 60
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 181,
                   QuestionVariantContent = "sxal",
@@ -1875,12 +1887,13 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 183,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "ստացիոնար բուժման մեջ գտնվող, քվեարկության օրը տեղամասային կենտրոն ինքնուրույն ներկայանալու հնարավորություն չունեցող անձանց համար ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 61
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 184,
                   QuestionVariantContent = "sxal",
@@ -1892,8 +1905,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 185,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "ձերբակալված անձանց պահելու վայրում քվեարկության օրը գտնվող ընտրողների համար",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 62
@@ -1906,7 +1919,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 62
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 187,
                   QuestionVariantContent = "sxal",
@@ -1918,8 +1932,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 188,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "կցվում են քվեարկության օրն ընտրական տեղամասում կազմվող ընտրողների լրացուցիչ ցուցակին",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 63
@@ -1936,8 +1950,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 190,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "քրեակատարողական հիմնարկում քվեարկության ժամանակ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 64
@@ -1959,7 +1973,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 64
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 193,
                   QuestionVariantContent = "sxal",
@@ -1971,8 +1986,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 194,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "շրջիկ արկղով քվեարկության ժամանակ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 65
@@ -1985,7 +2000,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 65
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 196,
                   QuestionVariantContent = "sxal",
@@ -2006,16 +2022,17 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 198,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "տեխնիկական սարքավորման խափանման կամ չլինելու պարագայում քվեարկության ժամանակ ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 66
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 199,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հանձնաժողովի նախագահը, կամ նրա հանձնարարությամբ հանձնաժողովի քարտուղարը կամ այլ անդամ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 67
@@ -2037,11 +2054,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 67
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 202,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "մասնագետն այդ մասին տեղեկացնում է հանձնաժողովի նախագահին, ով քվեարկության սենյակ է հրավիրում ոստիկանության ծառայողներին, որոնք ձեռնարկում են օրենքով սահմանված միջոցներ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 68
@@ -2063,7 +2081,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 68
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 205,
                   QuestionVariantContent = "sxal",
@@ -2075,8 +2094,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 206,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "տեղամասային ընտրական հանձնաժողովի նախագահի կողմից",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 69
@@ -2089,7 +2108,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 69
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 208,
                   QuestionVariantContent = "sxal",
@@ -2101,8 +2121,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 209,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "դիմում է հանձնաժողովի նախագահին` նոր քվեաթերթիկ (ԱԺ ընտրության ժամանակ՝ յուրաքանչյուր կուսակցության մեկական քվեաթերթիկ) ստանալու համար",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 70
@@ -2115,11 +2135,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 70
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 211,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հանձնաժողովի նախագահի հանձնարարությամբ ընտրողին հատկացնում է նոր քվեաթերթիկ, սխալ լրացված (վնասված) քվեաթերթիկը (քվեաթերթիկները) անհապաղ մարվում են",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 71
@@ -2141,11 +2162,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 71
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 214,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "ստացիոնար բուժման մեջ գտնվող ընտրողների լրացուցիչ ցուցակները",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 72
@@ -2167,7 +2189,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 72
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 217,
                   QuestionVariantContent = "sxal",
@@ -2179,8 +2202,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 218,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "քվեարկության օրը, այն պահին, երբ ընտրական տեղամաս են այցելում զորամասի ցուցակում ընդգրկված ընտրողները",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 73
@@ -2193,11 +2216,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 73
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 220,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "տեղամասային կենտրոնում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 74
@@ -2219,11 +2243,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 74
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 223,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հանձնաժողովի անդամի առաջարկությունը",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 75
@@ -2245,7 +2270,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 75
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 226,
                   QuestionVariantContent = "sxal",
@@ -2257,8 +2283,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 227,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հաշվի չեն առնվում և չեն հաշվարկվում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 76
@@ -2271,7 +2297,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 76
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 229,
                   QuestionVariantContent = "sxal",
@@ -2283,8 +2310,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 230,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = ". համայնքի ավագանու ընտրության քվեարկության արդյունքները",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 77
@@ -2297,11 +2324,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 77
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 232,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "ըստ առավել կողմ քվեարկված քվեաթերթիկներ ստացած կուսակցությունների ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 78
@@ -2323,7 +2351,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 78
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 235,
                   QuestionVariantContent = "sxal",
@@ -2344,16 +2373,17 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 237,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "քվեաթերթիկը ծրարից չի հանվում, քվեարկության ծրարը դրանում գտնվող քվեաթերթիկի հետ անհապաղ մարվում է",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 79
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 238,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հաշվարկված և տեսակավորված քվեաթերթիկները",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 80
@@ -2375,7 +2405,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 80
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 241,
                   QuestionVariantContent = "sxal",
@@ -2387,8 +2418,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 242,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հանձնաժողովի անդամների անհատական կնիքները",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 81
@@ -2401,11 +2432,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 81
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 244,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "քվեարկության արդյունքների արձանագրության մեկ օրինակը ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 82
@@ -2427,7 +2459,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 82
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 247,
                   QuestionVariantContent = "sxal",
@@ -2439,8 +2472,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 248,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հաշվարկում ընդգրկվում է միայն ինքնասոսնձվող դրոշմանիշով քվեաթերթիկը",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 83
@@ -2457,8 +2490,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 250,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "լրացուցիչ ցուցակների ընտրողների և ընտրողների ցուցակում ընդգրկված ընտրողների թվերի գումարին ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 84
@@ -2480,11 +2513,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 84
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 253,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "տեղամասային ընտրական հանձնաժողովի նախագահը",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 85
@@ -2506,7 +2540,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 85
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 256,
                   QuestionVariantContent = "sxal",
@@ -2518,8 +2553,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 257,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "սահմանված  նմուշի քվեաթերթիկն անվավեր է, եթե ներառում է ավելորդ գրառում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 86
@@ -2532,7 +2567,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 86
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 259,
                   QuestionVariantContent = "sxal",
@@ -2544,8 +2580,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 260,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "մեկից ավելի կուսակցության օգտին նշումներ է ներառում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 87
@@ -2558,7 +2594,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 87
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 262,
                   QuestionVariantContent = "sxal",
@@ -2570,8 +2607,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 263,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "եթե բացի քվեարկության համար սահմանված կամ դրան նմանվող նշանից ներառում է ավելորդ գրառում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 88
@@ -2584,7 +2621,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 88
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 265,
                   QuestionVariantContent = "sxal",
@@ -2596,8 +2634,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 266,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "որևէ նշում չի ներառում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 89
@@ -2610,11 +2648,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 89
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 268,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "մեկ թեկնածու քվեարկվելու դեպքում միաժամանակ «կողմ եմ» և «դեմ եմ» բառերի դիմաց նշումներ է ներառում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 90
@@ -2636,11 +2675,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 90
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 271,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հաստատված նմուշի այն քվեաթերթիկը, որը հանվել է ծրարից, և որի վրա փակցված է այդ ընտրական տեղամասի ինքնասոսնձվող դրոշմանիշը",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 91
@@ -2662,7 +2702,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 91
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 274,
                   QuestionVariantContent = "sxal",
@@ -2674,8 +2715,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 275,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հաշվում է չօգտագործված ինքնասոսնձվող դրոշմանիշերը, փաթեթավորում, փաթեթը կնքում և տեղադրում է պարկում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 92
@@ -2688,7 +2729,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 92
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 277,
                   QuestionVariantContent = "sxal",
@@ -2709,16 +2751,17 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 279,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "ըստ ընտրողների ցուցակում առկա ընտրողների ստորագրությունների հաշվում է քվեարկության մասնակիցների ընդհանուր թիվը",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 93
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 280,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "փաթեթավորվում են հանձնաժողովի անդամների անհատական կնիքները, փաթեթը կնքվում և տեղադրվում է ընտրական փաստաթղթերի պարկում",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 94
@@ -2740,11 +2783,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 94
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 283,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "առանց հաշվելու փաթեթավորվում են չօգտագործված քվեաթերթիկները",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 95
@@ -2766,11 +2810,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 95
-              }, new Answer
+              }, 
+              new Answer
               {
                   Id = 286,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "առանձին-առանձին հաշվվում են ընտրողներից ստացված տեխնիկական սարքավորման միջոցով տպված և համարակալված քվեարկության կտրոնները",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 96
@@ -2792,7 +2837,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 96
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 289,
                   QuestionVariantContent = "sxal",
@@ -2804,8 +2850,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 290,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "տեղամասային ընտրական հանձնաժողովի մյուս անդամները և վստահված անձինք",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 97
@@ -2818,7 +2864,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 97
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 292,
                   QuestionVariantContent = "sxal",
@@ -2830,8 +2877,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 293,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "չօգտագործված քվեաթերթիկները ",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 98
@@ -2844,11 +2891,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 98
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 295,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հանձնաժողովի գրանցամատյանը և քվեարկության արդյունքների արձանագրության երկու օրինակը",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 99
@@ -2870,7 +2918,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 99
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 298,
                   QuestionVariantContent = "sxal",
@@ -2882,8 +2931,8 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 299,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "հանձնաժողովի կնիքը",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 100
@@ -2896,11 +2945,12 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 100
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 301,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "ոչ ուշ, քան 14 ժամվա ընթացքում, ներկայացնում են տարածքային ընտրական հանձնաժողով",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 101
@@ -2922,7 +2972,8 @@ namespace TestExample.Models
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 101
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 304,
                   QuestionVariantContent = "sxal",
@@ -2943,12 +2994,13 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 306,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "չի կարող ընդհատվել",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 102
-              }, new Answer
+              },
+              new Answer
               {
                   Id = 307,
                   QuestionVariantContent = "sxal",
@@ -2969,39 +3021,13 @@ namespace TestExample.Models
               new Answer
               {
                   Id = 309,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "չորս օրինակից",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 103
-              }, new Answer
-              {
-                  Id = 310,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
-                  CheckCorrectAnswer = false,
-                  CheckdAnswer = false,
-                  QuestionId = 104
-              },
-              new Answer
-              {
-                  Id = 311,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
-                  CheckCorrectAnswer = false,
-                  CheckdAnswer = false,
-                  QuestionId = 104
-              },
-              new Answer
-              {
-                  Id = 312,
-                  QuestionVariantContent = "sxal",
-                  CorrectAnswer = false,
-                  CheckCorrectAnswer = false,
-                  CheckdAnswer = false,
-                  QuestionId = 104
               }
-
+             
                 );
 
 
@@ -3137,7 +3163,6 @@ namespace TestExample.Models
                     Id = 26,
                     QuestionContent = "Եթե հանձնաժողովի անդամը, վստահված անձը կամ դիտորդը գտնում է, որ քվեարկության ընթացքում տեղի է ունեցել ընտրական օրենսգրքով նախատեսված քվեարկության կարգի խախտում, ապա`"
                 },
-
                 new Question
                 {
                     Id = 27,

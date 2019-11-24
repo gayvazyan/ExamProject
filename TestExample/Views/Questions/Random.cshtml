@@ -1,20 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Պատահական_հարցաշար";
+    ViewData["Title"] = "Հարցաշար";
 }
 
-@{
-    Random random = new Random();
-    int randomNumber = random.Next(1, 8);
-    string randomTest = "Test" + randomNumber;
-}
+
 
 <div class="text-center">
 
-    <h3 style="color:forestgreen">Տվյալների բազայում այժմ առկա է 7 հարցաշար, յուրքանչյուրը 30 միավոր </h3>
+    <span>Տվյալների բազայում այժմ առկա է <button class="btn btn-info">103</button> հարց, որնք առանձնացված են մի քանի խմբի, յուրաքանչյուր խմբից</span>
+    <br />
+    <span>յուրաքանչյուր խմբից պատահականության սկզբունքվ ընտրվում են չկրկնվող հարցեր  </span>
+    <span>և ձևավորվում է <button class="btn btn-info">30</button> հարցից բաղկացած հարցաշար </span>
 
     <br />
     <br />
-    <a class="btn btn-outline-success" asp-action="@randomTest" asp-controller="Questions">Ընտրել պատահականության սկզբունքով</a>
+    <a class="btn btn-outline-info" asp-action="Test" asp-controller="Questions">Ձևավորել հարցաշար և սկսել թեստը</a>
     <br />
     <br />
 

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestExample.Models;
 
 namespace TestExample.Migrations
 {
     [DbContext(typeof(ExamDbContect))]
-    partial class ExamDbContectModelSnapshot : ModelSnapshot
+    [Migration("20191124173751_addqaall")]
+    partial class addqaall
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1807,7 +1809,7 @@ namespace TestExample.Migrations
                             Id = 174,
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
-                            CorrectAnswer = true,
+                            CorrectAnswer = false,
                             QuestionId = 58,
                             QuestionVariantContent = "քրեակատարողական հիմնարկում "
                         },
@@ -1852,7 +1854,7 @@ namespace TestExample.Migrations
                             Id = 179,
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
-                            CorrectAnswer = true,
+                            CorrectAnswer = false,
                             QuestionId = 60,
                             QuestionVariantContent = "քվեարկության օրը՝ ժամը 8:00-ից հետո, բայց այն հաշվարկով, որ քվեարկությունն ավարտվի մինչև ժամը 18:00-ն"
                         },
@@ -1888,7 +1890,7 @@ namespace TestExample.Migrations
                             Id = 183,
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
-                            CorrectAnswer = true,
+                            CorrectAnswer = false,
                             QuestionId = 61,
                             QuestionVariantContent = "ստացիոնար բուժման մեջ գտնվող, քվեարկության օրը տեղամասային կենտրոն ինքնուրույն ներկայանալու հնարավորություն չունեցող անձանց համար "
                         },
@@ -1906,7 +1908,7 @@ namespace TestExample.Migrations
                             Id = 185,
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
-                            CorrectAnswer = true,
+                            CorrectAnswer = false,
                             QuestionId = 62,
                             QuestionVariantContent = "ձերբակալված անձանց պահելու վայրում քվեարկության օրը գտնվող ընտրողների համար"
                         },
@@ -2095,7 +2097,7 @@ namespace TestExample.Migrations
                             Id = 206,
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
-                            CorrectAnswer = true,
+                            CorrectAnswer = false,
                             QuestionId = 69,
                             QuestionVariantContent = "տեղամասային ընտրական հանձնաժողովի նախագահի կողմից"
                         },
@@ -2581,7 +2583,7 @@ namespace TestExample.Migrations
                             Id = 260,
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
-                            CorrectAnswer = true,
+                            CorrectAnswer = false,
                             QuestionId = 87,
                             QuestionVariantContent = "մեկից ավելի կուսակցության օգտին նշումներ է ներառում"
                         },
