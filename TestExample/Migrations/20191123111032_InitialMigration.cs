@@ -53,7 +53,7 @@ namespace TestExample.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DbAnswer1",
+                name: "DbAnswer",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -66,7 +66,7 @@ namespace TestExample.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DbAnswer1", x => x.Id);
+                    table.PrimaryKey("PK_DbAnswer", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -81,10 +81,13 @@ namespace TestExample.Migrations
                     Passport = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
                     Result_Test1 = table.Column<double>(nullable: false),
+                    Test1Check = table.Column<bool>(nullable: false),
                     Result_Test2 = table.Column<double>(nullable: false),
+                    Test2Check = table.Column<bool>(nullable: false),
                     NumberTicket = table.Column<int>(nullable: false),
                     Email = table.Column<string>(nullable: true),
-                    TestDataTime = table.Column<DateTime>(nullable: false),
+                    Test1DataTime = table.Column<DateTime>(nullable: false),
+                    Test2DataTime = table.Column<DateTime>(nullable: false),
                     Notification = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -170,7 +173,7 @@ namespace TestExample.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DbQuestion1",
+                name: "DbQuestion",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -179,7 +182,28 @@ namespace TestExample.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DbQuestion1", x => x.Id);
+                    table.PrimaryKey("PK_DbQuestion", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DbTempQuestions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Passport = table.Column<string>(nullable: true),
+                    Id1 = table.Column<int>(nullable: false),
+                    Q1 = table.Column<string>(nullable: true),
+                    Id2 = table.Column<int>(nullable: false),
+                    Q2 = table.Column<string>(nullable: true),
+                    Id3 = table.Column<int>(nullable: false),
+                    Q3 = table.Column<string>(nullable: true),
+                    Id4 = table.Column<int>(nullable: false),
+                    Q4 = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DbTempQuestions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -289,22 +313,25 @@ namespace TestExample.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "DbAnswer1",
+                table: "DbAnswer",
                 columns: new[] { "Id", "CheckCorrectAnswer", "CheckdAnswer", "CorrectAnswer", "QuestionId", "QuestionVariantContent" },
                 values: new object[,]
                 {
-                    { 1, false, false, false, 1, "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի" },
-                    { 12, false, false, false, 5, "5-3" },
-                    { 11, false, false, true, 5, "5-2" },
-                    { 10, false, false, false, 5, "5-1" },
-                    { 8, false, false, true, 4, "4-2" },
-                    { 7, false, false, false, 4, "4-1" },
-                    { 9, false, false, false, 4, "4-3" },
-                    { 5, false, false, true, 2, "քվեարկության օրվանից 2 օր առաջ" },
-                    { 4, false, false, false, 2, "քվեարկության օրվանից 1 օր առաջ" },
-                    { 3, false, false, false, 1, "եթե կողմ են քվեարկել հանձնաժողովի նախագահն ու քարտուղարը, բացառությամբ օրենքով սահմանցած դեպքերի" },
-                    { 2, false, false, true, 1, "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի" },
-                    { 6, false, false, false, 2, "քվեարկության օրը" }
+                    { 1, false, false, false, 1, "harc1-s" },
+                    { 15, false, false, true, 5, "harc5-j" },
+                    { 14, false, false, false, 5, "harc5-s" },
+                    { 13, false, false, false, 5, "harc5-s" },
+                    { 12, false, false, false, 4, "harc4-s" },
+                    { 10, false, false, false, 4, "harc4-j" },
+                    { 9, false, false, false, 3, "harc3-s" },
+                    { 11, false, false, false, 4, "harc4-s" },
+                    { 7, false, false, false, 3, "harc3-s" },
+                    { 6, false, false, true, 2, "harc2-j" },
+                    { 5, false, false, false, 2, "harc2-s" },
+                    { 4, false, false, false, 2, "harc2-s" },
+                    { 3, false, false, false, 1, "harc1-s" },
+                    { 2, false, false, true, 1, "harc1-j" },
+                    { 8, false, false, true, 3, "harc3-j" }
                 });
 
             migrationBuilder.InsertData(
@@ -322,40 +349,40 @@ namespace TestExample.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "DbQuestion1",
+                table: "DbQuestion",
                 columns: new[] { "Id", "QuestionContent" },
                 values: new object[,]
                 {
-                    { 8, "Հարց 8." },
-                    { 1, "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝" },
-                    { 2, "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ " },
-                    { 3, "Հարց 3. " },
-                    { 4, "Հարց 4. " },
-                    { 5, "Հարց 5. " },
-                    { 30, "Հարց 30. " },
-                    { 29, "Հարց 29. " },
-                    { 28, "Հարց 28. " },
-                    { 27, "Հարց 27. " },
-                    { 26, "Հարց 26." },
-                    { 25, "Հարց 25. " },
-                    { 24, "Հարց 24." },
-                    { 23, "Հարց 23. " },
-                    { 22, "Հարց 22. " },
-                    { 21, "Հարց 21. " },
-                    { 20, "Հարց 20. " },
-                    { 19, "Հարց 19. " },
-                    { 18, "Հարց 18. " },
-                    { 17, "Հարց 17. " },
-                    { 16, "Հարց 16. " },
-                    { 15, "Հարց 15. " },
-                    { 14, "Հարց 14. " },
-                    { 6, "Հարց 6. " },
-                    { 12, "Հարց 12. " },
-                    { 11, "Հարց 11. " },
-                    { 10, "Հարց 10. " },
-                    { 9, "Հարց 9. " },
-                    { 7, "Հարց 7." },
-                    { 13, "Հարց 13. " }
+                    { 8, "Հարց 8.---------------------------------------" },
+                    { 1, "Հարց 1. ---------------------------՝" },
+                    { 2, "Հարց 2.-------------------------------՝ " },
+                    { 3, "Հարց 3.----------------------------------- " },
+                    { 4, "Հարց 4.------------------------------------ " },
+                    { 5, "Հարց 5.-------------------------------------- " },
+                    { 30, "Հարց 30.---------------------------------------- " },
+                    { 29, "Հարց 29.---------------------------------------- " },
+                    { 28, "Հարց 28.---------------------------------------- " },
+                    { 27, "Հարց 27.---------------------------------------- " },
+                    { 26, "Հարց 26.----------------------------------------" },
+                    { 25, "Հարց 25.---------------------------------------- " },
+                    { 24, "Հարց 24.----------------------------------------" },
+                    { 23, "Հարց 23.---------------------------------------- " },
+                    { 22, "Հարց 22.---------------------------------------- " },
+                    { 21, "Հարց 21.---------------------------------------- " },
+                    { 20, "Հարց 20.---------------------------------------- " },
+                    { 19, "Հարց 19.---------------------------------------- " },
+                    { 18, "Հարց 18.---------------------------------------- " },
+                    { 17, "Հարց 17.---------------------------------------- " },
+                    { 16, "Հարց 16.---------------------------------------- " },
+                    { 15, "Հարց 15. ----------------------------------------" },
+                    { 14, "Հարց 14.---------------------------------------- " },
+                    { 13, "Հարց 13.---------------------------------------- " },
+                    { 12, "Հարց 12.----------------------------------------- " },
+                    { 6, "Հարց 6.------------------------------------- " },
+                    { 10, "Հարց 10.------------------------------------- " },
+                    { 9, "Հարց 9.--------------------------------------- " },
+                    { 7, "Հարց 7.-------------------------------------" },
+                    { 11, "Հարց 11.-------------------------------------- " }
                 });
 
             migrationBuilder.CreateIndex(
@@ -416,7 +443,7 @@ namespace TestExample.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "DbAnswer1");
+                name: "DbAnswer");
 
             migrationBuilder.DropTable(
                 name: "DbCitizenReport");
@@ -428,7 +455,10 @@ namespace TestExample.Migrations
                 name: "DbEmptyTextViewModel");
 
             migrationBuilder.DropTable(
-                name: "DbQuestion1");
+                name: "DbQuestion");
+
+            migrationBuilder.DropTable(
+                name: "DbTempQuestions");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

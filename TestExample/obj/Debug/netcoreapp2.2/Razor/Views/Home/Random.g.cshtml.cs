@@ -29,22 +29,17 @@ using TestExample.MyModels;
 #line default
 #line hidden
 #line 4 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
-using TestExample.QAmodels;
-
-#line default
-#line hidden
-#line 5 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
 using TestExample.ViewModels;
 
 #line default
 #line hidden
-#line 6 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
+#line 5 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"40c1c6fe11f5665d039b51d64adf45e948a5ecc3", @"/Views/Home/Random.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"377696425e675c2a8630f5500b90f0610bf0632d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3bb5a412e3e2bbe721e48f20a5f04822cfaf45ae", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Random : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-outline-success"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -82,7 +77,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n<div class=\"text-center\">\r\n\r\n    <h3 style=\"color:forestgreen\">Տվյալների բազայում այժմ առկա է 7 խնդիր, յուրքանչյուրը 5 միավոր </h3>\r\n\r\n    <br />\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(216, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40c1c6fe11f5665d039b51d64adf45e948a5ecc35094", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40c1c6fe11f5665d039b51d64adf45e948a5ecc34945", async() => {
                 BeginContext(294, 33, true);
                 WriteLiteral("Ընտրել պատահականության սկզբունքով");
                 EndContext();

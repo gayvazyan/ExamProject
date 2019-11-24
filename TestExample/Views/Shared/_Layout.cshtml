@@ -47,18 +47,22 @@
                             </div>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Հարցաշար
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" asp-controller="Questions"
-                                   asp-action="Index">Ընտրել</a>
-                                <a class="dropdown-item" asp-controller="Questions"
-                                   asp-action="Random">Պատահական</a>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Questions" asp-action="Test">Հարցաշար</a>
                         </li>
+
+                        @*<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Հարցաշար
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" asp-controller="Questions"
+                   asp-action="Index">Ընտրել</a>
+                <a class="dropdown-item" asp-controller="Questions"
+                   asp-action="Random">Պատահական</a>
+            </div>
+        </li>*@
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Result">Իմ տվյալները</a>

@@ -1,20 +1,21 @@
-﻿@model List<Answer5>
+﻿@model List<Answer>
 
 @{
-    ViewData["Title"] = "Հարցաշար 5";
+    ViewData["Title"] = "Հարցաշար";
 
 }
 
 
 <span>Տեստի ավարտին մնաց:</span> <span id="countdown" class="countdown"> </span>
-<h3 style="text-align:center">Հարցաշար 5</h3>
-<form asp-controller="Questions" asp-action="Submit5">
-
+<h3 style="text-align:center">Հարցաշար</h3>
+<form asp-controller="Questions" asp-action="Submit">
+    @{ var i = 0; }
     <ol type="1">
         @foreach (var question in ViewBag.Questions)
         {
+            //i++;
             <li>
-                <strong style="text-align:center"> @question.QuestionContent</strong>
+                <strong style="text-align:center">   @question.QuestionContent</strong>
                 <input type="hidden" name="questionId" value="@question.Id" />
                 <ol type="a">
 
@@ -34,6 +35,11 @@
 
                 </ol>
             </li>
+
+            @if (i>3)
+            {
+                break;
+            }
         }
     </ol>
     <div style="text-align:center">  <button type="submit" class="btn btn-success">Ավարտել</button></div>

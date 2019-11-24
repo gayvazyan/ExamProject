@@ -29,22 +29,17 @@ using TestExample.MyModels;
 #line default
 #line hidden
 #line 4 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
-using TestExample.QAmodels;
-
-#line default
-#line hidden
-#line 5 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
 using TestExample.ViewModels;
 
 #line default
 #line hidden
-#line 6 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
+#line 5 "C:\Users\gareg\source\repos\ExamProject\TestExample\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c", @"/Views/Questions/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"377696425e675c2a8630f5500b90f0610bf0632d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3bb5a412e3e2bbe721e48f20a5f04822cfaf45ae", @"/Views/_ViewImports.cshtml")]
     public class Views_Questions_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-outline-success"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -99,7 +94,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n<div class=\"text-center\">\r\n    ");
             EndContext();
             BeginContext(85, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c9005", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c8856", async() => {
                 BeginContext(185, 11, true);
                 WriteLiteral(" Հարցաշար 1");
                 EndContext();
@@ -130,7 +125,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n    <br />\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(230, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c11221", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c11072", async() => {
                 BeginContext(330, 11, true);
                 WriteLiteral(" Հարցաշար 2");
                 EndContext();
@@ -161,7 +156,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n    <br />\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(375, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c13438", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c13289", async() => {
                 BeginContext(475, 11, true);
                 WriteLiteral(" Հարցաշար 3");
                 EndContext();
@@ -192,7 +187,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n    <br />\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(520, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c15655", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c15506", async() => {
                 BeginContext(620, 11, true);
                 WriteLiteral(" Հարցաշար 4");
                 EndContext();
@@ -223,7 +218,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n    <br />\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(665, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c17872", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c17723", async() => {
                 BeginContext(765, 11, true);
                 WriteLiteral(" Հարցաշար 5");
                 EndContext();
@@ -254,7 +249,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n    <br />\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(810, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c20093", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c19944", async() => {
                 BeginContext(910, 11, true);
                 WriteLiteral(" Հարցաշար 6");
                 EndContext();
@@ -285,7 +280,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n    <br />\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(955, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c22314", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bba7cfa8c9bf8a2f75959758f5a5cd197fe670c22165", async() => {
                 BeginContext(1055, 11, true);
                 WriteLiteral(" Հարցաշար 7");
                 EndContext();

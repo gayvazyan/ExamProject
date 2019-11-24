@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TestExample.MyModels;
-using TestExample.QAmodels;
+
 using TestExample.ViewModels;
 
 namespace TestExample.Models
@@ -23,21 +23,14 @@ namespace TestExample.Models
 
         public DbSet<CitizenReport> DbCitizenReport { get; set; }
 
-        public DbSet<Answer1> DbAnswer1 { get; set; }
-        public DbSet<Answer2> DbAnswer2 { get; set; }
-        public DbSet<Answer3> DbAnswer3 { get; set; }
-        public DbSet<Answer4> DbAnswer4 { get; set; }
-        public DbSet<Answer5> DbAnswer5 { get; set; }
-        public DbSet<Answer6> DbAnswer6 { get; set; }
-        public DbSet<Answer7> DbAnswer7 { get; set; }
+        public DbSet<Answer> DbAnswer { get; set; }
+       
 
-        public DbSet<Question1> DbQuestion1 { get; set; }
-        public DbSet<Question2> DbQuestion2 { get; set; }
-        public DbSet<Question3> DbQuestion3 { get; set; }
-        public DbSet<Question4> DbQuestion4 { get; set; }
-        public DbSet<Question5> DbQuestion5 { get; set; }
-        public DbSet<Question6> DbQuestion6 { get; set; }
-        public DbSet<Question7> DbQuestion7 { get; set; }
+        public DbSet<Question> DbQuestion { get; set; }
+        
+
+
+        public DbSet<TempQuestions> DbTempQuestions { get; set; }
 
 
 
@@ -252,880 +245,300 @@ namespace TestExample.Models
 
                 );
 
-            modelBuilder.Entity<Answer1>().HasData(
-              new Answer1
+            modelBuilder.Entity<Answer>().HasData(
+              new Answer
               {
                   Id = 1,
-                  QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                  QuestionVariantContent = "harc1-s",
                   CorrectAnswer = false,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 1
               },
-              new Answer1
+              new Answer
               {
                   Id = 2,
-                  QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
+                  QuestionVariantContent = "harc1-j",
                   CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 1
               },
-              new Answer1
+              new Answer
               {
                   Id = 3,
-                  QuestionVariantContent = "եթե կողմ են քվեարկել հանձնաժողովի նախագահն ու քարտուղարը, բացառությամբ օրենքով սահմանցած դեպքերի",
+                  QuestionVariantContent = "harc1-s",
                   CorrectAnswer = false,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 1
               },
-              new Answer1
+              new Answer
               {
                   Id = 4,
-                  QuestionVariantContent = "քվեարկության օրվանից 1 օր առաջ",
+                  QuestionVariantContent = "harc2-s",
                   CorrectAnswer = false,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 2
               },
-              new Answer1
+              new Answer
               {
                   Id = 5,
-                  QuestionVariantContent = "քվեարկության օրվանից 2 օր առաջ",
-                  CorrectAnswer = true,
+                  QuestionVariantContent = "harc2-s",
+                  CorrectAnswer = false,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 2
               },
-              new Answer1
+              new Answer
               {
                   Id = 6,
-                  QuestionVariantContent = "քվեարկության օրը",
-                  CorrectAnswer = false,
+                  QuestionVariantContent = "harc2-j",
+                  CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 2
               },
-              new Answer1
+              new Answer
               {
                   Id = 7,
-                  QuestionVariantContent = "4-1",
+                  QuestionVariantContent = "harc3-s",
                   CorrectAnswer = false,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
-                  QuestionId = 4
+                  QuestionId = 3
               },
-              new Answer1
+              new Answer
               {
                   Id = 8,
-                  QuestionVariantContent = "4-2",
+                  QuestionVariantContent = "harc3-j",
                   CorrectAnswer = true,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
-                  QuestionId = 4
+                  QuestionId = 3
               },
-              new Answer1
+              new Answer
               {
                   Id = 9,
-                  QuestionVariantContent = "4-3",
+                  QuestionVariantContent = "harc3-s",
+                  CorrectAnswer = false,
+                  CheckCorrectAnswer = false,
+                  CheckdAnswer = false,
+                  QuestionId = 3
+              },
+              new Answer
+              {
+                  Id = 10,
+                  QuestionVariantContent = "harc4-j",
                   CorrectAnswer = false,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
                   QuestionId = 4
               },
-              new Answer1
-              {
-                  Id = 10,
-                  QuestionVariantContent = "5-1",
-                  CorrectAnswer = false,
-                  CheckCorrectAnswer = false,
-                  CheckdAnswer = false,
-                  QuestionId = 5
-              },
-              new Answer1
+              new Answer
               {
                   Id = 11,
-                  QuestionVariantContent = "5-2",
-                  CorrectAnswer = true,
-                  CheckCorrectAnswer = false,
-                  CheckdAnswer = false,
-                  QuestionId = 5
-              },
-              new Answer1
-              {
-                  Id = 12,
-                  QuestionVariantContent = "5-3",
+                  QuestionVariantContent = "harc4-s",
                   CorrectAnswer = false,
                   CheckCorrectAnswer = false,
                   CheckdAnswer = false,
-                  QuestionId = 5
-              }
-                );
-
-            modelBuilder.Entity<Answer2>().HasData(
-             new Answer2
-             {
-                 Id = 1,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer2
-             {
-                 Id = 2,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer2
-             {
-                 Id = 3,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել հանձնաժողովի նախագահն ու քարտուղարը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer2
-             {
-                 Id = 4,
-                 QuestionVariantContent = "քվեարկության օրվանից 1 օր առաջ",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer2
-             {
-                 Id = 5,
-                 QuestionVariantContent = "քվեարկության օրվանից 2 օր առաջ",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer2
-             {
-                 Id = 6,
-                 QuestionVariantContent = "քվեարկության օրը",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer2
-             {
-                 Id = 7,
-                 QuestionVariantContent = "4-1",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 4
-             },
-             new Answer2
-             {
-                 Id = 8,
-                 QuestionVariantContent = "4-2",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 4
-             },
-             new Answer2
-             {
-                 Id = 9,
-                 QuestionVariantContent = "4-3",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 4
-             },
-             new Answer2
-             {
-                 Id = 10,
-                 QuestionVariantContent = "5-1",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 5
-             },
-             new Answer2
-             {
-                 Id = 11,
-                 QuestionVariantContent = "5-2",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 5
-             },
-             new Answer2
-             {
-                 Id = 12,
-                 QuestionVariantContent = "5-3",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 5
-             }
-               );
-
-            modelBuilder.Entity<Answer3>().HasData(
-             new Answer3
-             {
-                 Id = 1,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer3
-             {
-                 Id = 2,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer3
-             {
-                 Id = 3,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer3
-             {
-                 Id = 4,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer3
-             {
-                 Id = 5,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer3
-             {
-                 Id = 6,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             }
-
-               );
-
-            modelBuilder.Entity<Answer4>().HasData(
-             new Answer4
-             {
-                 Id = 1,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer4
-             {
-                 Id = 2,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer4
-             {
-                 Id = 3,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer4
-             {
-                 Id = 4,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer4
-             {
-                 Id = 5,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer4
-             {
-                 Id = 6,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             }
-               );
-
-            modelBuilder.Entity<Answer5>().HasData(
-             new Answer5
-             {
-                 Id = 1,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer5
-             {
-                 Id = 2,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer5
-             {
-                 Id = 3,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer5
-             {
-                 Id = 4,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer5
-             {
-                 Id = 5,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer5
-             {
-                 Id = 6,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             }
-               );
-
-            modelBuilder.Entity<Answer6>().HasData(
-             new Answer6
-             {
-                 Id = 1,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer6
-             {
-                 Id = 2,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer6
-             {
-                 Id = 3,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer6
-             {
-                 Id = 4,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer6
-             {
-                 Id = 5,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer6
-             {
-                 Id = 6,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             }
-               );
-
-            modelBuilder.Entity<Answer7>().HasData(
-             new Answer7
-             {
-                 Id = 1,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer7
-             {
-                 Id = 2,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer7
-             {
-                 Id = 3,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 1
-             },
-             new Answer7
-             {
-                 Id = 4,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer7
-             {
-                 Id = 5,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = false,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             },
-             new Answer7
-             {
-                 Id = 6,
-                 QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի",
-                 CorrectAnswer = true,
-                 CheckCorrectAnswer = false,
-                 CheckdAnswer = false,
-                 QuestionId = 2
-             }
-               );
-
-            modelBuilder.Entity<Question1>().HasData(
-                new Question1
-                {
-                    Id = 1,
-                    QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
-                },
-                new Question1
-                {
-                    Id = 2,
-                    QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
-                },
-                new Question1
-                {
-                    Id = 3,
-                    QuestionContent = "Հարց 3. "
-                },
-                new Question1
-                {
-                    Id = 4,
-                    QuestionContent = "Հարց 4. "
-                },
-                new Question1
-                {
-                    Id = 5,
-                    QuestionContent = "Հարց 5. "
-                },
-                new Question1
-                {
-                    Id = 6,
-                    QuestionContent = "Հարց 6. "
-                },
-                new Question1
-                {
-                    Id = 7,
-                    QuestionContent = "Հարց 7."
-                },
-                new Question1
-                {
-                    Id = 8,
-                    QuestionContent = "Հարց 8."
-                },
-                new Question1
-                {
-                    Id = 9,
-                    QuestionContent = "Հարց 9. "
-                },
-                new Question1
-                {
-                    Id = 10,
-                    QuestionContent = "Հարց 10. "
-                },
-                new Question1
-                {
-                    Id = 11,
-                    QuestionContent = "Հարց 11. "
-                },
-                new Question1
-                {
-                    Id = 12,
-                    QuestionContent = "Հարց 12. "
-                },
-                new Question1
-                {
-                    Id = 13,
-                    QuestionContent = "Հարց 13. "
-                },
-                new Question1
+                  QuestionId = 4
+              },
+              new Answer
+              {
+                  Id = 12,
+                  QuestionVariantContent = "harc4-s",
+                  CorrectAnswer = false,
+                  CheckCorrectAnswer = false,
+                  CheckdAnswer = false,
+                  QuestionId = 4
+              },
+              new Answer
+               {
+                   Id = 13,
+                   QuestionVariantContent = "harc5-s",
+                   CorrectAnswer = false,
+                   CheckCorrectAnswer = false,
+                   CheckdAnswer = false,
+                   QuestionId = 5
+               },
+              new Answer
                 {
                     Id = 14,
-                    QuestionContent = "Հարց 14. "
+                    QuestionVariantContent = "harc5-s",
+                    CorrectAnswer = false,
+                    CheckCorrectAnswer = false,
+                    CheckdAnswer = false,
+                    QuestionId = 5
                 },
-                new Question1
+              new Answer
+                 {
+                     Id = 15,
+                     QuestionVariantContent = "harc5-j",
+                     CorrectAnswer = true,
+                     CheckCorrectAnswer = false,
+                     CheckdAnswer = false,
+                     QuestionId = 5
+                 }
+                );
+
+          
+
+            modelBuilder.Entity<Question>().HasData(
+                new Question
+                {
+                    Id = 1,
+                    QuestionContent = "Հարց 1. ---------------------------՝"
+                },
+                new Question
+                {
+                    Id = 2,
+                    QuestionContent = "Հարց 2.-------------------------------՝ "
+                },
+                new Question
+                {
+                    Id = 3,
+                    QuestionContent = "Հարց 3.----------------------------------- "
+                },
+                new Question
+                {
+                    Id = 4,
+                    QuestionContent = "Հարց 4.------------------------------------ "
+                },
+                new Question
+                {
+                    Id = 5,
+                    QuestionContent = "Հարց 5.-------------------------------------- "
+                },
+                new Question
+                {
+                    Id = 6,
+                    QuestionContent = "Հարց 6.------------------------------------- "
+                },
+                new Question
+                {
+                    Id = 7,
+                    QuestionContent = "Հարց 7.-------------------------------------"
+                },
+                new Question
+                {
+                    Id = 8,
+                    QuestionContent = "Հարց 8.---------------------------------------"
+                },
+                new Question
+                {
+                    Id = 9,
+                    QuestionContent = "Հարց 9.--------------------------------------- "
+                },
+                new Question
+                {
+                    Id = 10,
+                    QuestionContent = "Հարց 10.------------------------------------- "
+                },
+                new Question
+                {
+                    Id = 11,
+                    QuestionContent = "Հարց 11.-------------------------------------- "
+                },
+                new Question
+                {
+                    Id = 12,
+                    QuestionContent = "Հարց 12.----------------------------------------- "
+                },
+                new Question
+                {
+                    Id = 13,
+                    QuestionContent = "Հարց 13.---------------------------------------- "
+                },
+                new Question
+                {
+                    Id = 14,
+                    QuestionContent = "Հարց 14.---------------------------------------- "
+                },
+                new Question
                 {
                     Id = 15,
-                    QuestionContent = "Հարց 15. "
+                    QuestionContent = "Հարց 15. ----------------------------------------"
                 },
-                new Question1
+                new Question
                 {
                     Id = 16,
-                    QuestionContent = "Հարց 16. "
+                    QuestionContent = "Հարց 16.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 17,
-                    QuestionContent = "Հարց 17. "
+                    QuestionContent = "Հարց 17.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 18,
-                    QuestionContent = "Հարց 18. "
+                    QuestionContent = "Հարց 18.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 19,
-                    QuestionContent = "Հարց 19. "
+                    QuestionContent = "Հարց 19.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 20,
-                    QuestionContent = "Հարց 20. "
+                    QuestionContent = "Հարց 20.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 21,
-                    QuestionContent = "Հարց 21. "
+                    QuestionContent = "Հարց 21.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 22,
-                    QuestionContent = "Հարց 22. "
+                    QuestionContent = "Հարց 22.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 23,
-                    QuestionContent = "Հարց 23. "
+                    QuestionContent = "Հարց 23.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 24,
-                    QuestionContent = "Հարց 24."
+                    QuestionContent = "Հարց 24.----------------------------------------"
                 },
-                new Question1
+                new Question
                 {
                     Id = 25,
-                    QuestionContent = "Հարց 25. "
+                    QuestionContent = "Հարց 25.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 26,
-                    QuestionContent = "Հարց 26."
+                    QuestionContent = "Հարց 26.----------------------------------------"
                 },
-                new Question1
+                new Question
                 {
                     Id = 27,
-                    QuestionContent = "Հարց 27. "
+                    QuestionContent = "Հարց 27.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 28,
-                    QuestionContent = "Հարց 28. "
+                    QuestionContent = "Հարց 28.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 29,
-                    QuestionContent = "Հարց 29. "
+                    QuestionContent = "Հարց 29.---------------------------------------- "
                 },
-                new Question1
+                new Question
                 {
                     Id = 30,
-                    QuestionContent = "Հարց 30. "
+                    QuestionContent = "Հարց 30.---------------------------------------- "
                 }
                 );
 
-            modelBuilder.Entity<Question2>().HasData(
-                new Question2
-                {
-                    Id = 1,
-                    QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
-                },
-                new Question2
-                {
-                    Id = 2,
-                    QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
-                },
-                new Question2
-                {
-                    Id = 3,
-                    QuestionContent = "Հարց 3. "
-                },
-                new Question2
-                {
-                    Id = 4,
-                    QuestionContent = "Հարց 4. "
-                },
-                new Question2
-                {
-                    Id = 5,
-                    QuestionContent = "Հարց 5. "
-                },
-                new Question2
-                {
-                    Id = 6,
-                    QuestionContent = "Հարց 6. "
-                },
-                new Question2
-                {
-                    Id = 7,
-                    QuestionContent = "Հարց 7."
-                },
-                new Question2
-                {
-                    Id = 8,
-                    QuestionContent = "Հարց 8."
-                },
-                new Question2
-                {
-                    Id = 9,
-                    QuestionContent = "Հարց 9. "
-                },
-                new Question2
-                {
-                    Id = 10,
-                    QuestionContent = "Հարց 10. "
-                },
-                new Question2
-                {
-                    Id = 11,
-                    QuestionContent = "Հարց 11. "
-                },
-                new Question2
-                {
-                    Id = 12,
-                    QuestionContent = "Հարց 12. "
-                },
-                new Question2
-                {
-                    Id = 13,
-                    QuestionContent = "Հարց 13. "
-                },
-                new Question2
-                {
-                    Id = 14,
-                    QuestionContent = "Հարց 14. "
-                },
-                new Question2
-                {
-                    Id = 15,
-                    QuestionContent = "Հարց 15. "
-                },
-                new Question2
-                {
-                    Id = 16,
-                    QuestionContent = "Հարց 16. "
-                },
-                new Question2
-                {
-                    Id = 17,
-                    QuestionContent = "Հարց 17. "
-                },
-                new Question2
-                {
-                    Id = 18,
-                    QuestionContent = "Հարց 18. "
-                },
-                new Question2
-                {
-                    Id = 19,
-                    QuestionContent = "Հարց 19. "
-                },
-                new Question2
-                {
-                    Id = 20,
-                    QuestionContent = "Հարց 20. "
-                },
-                new Question2
-                {
-                    Id = 21,
-                    QuestionContent = "Հարց 21. "
-                },
-                new Question2
-                {
-                    Id = 22,
-                    QuestionContent = "Հարց 22. "
-                },
-                new Question2
-                {
-                    Id = 23,
-                    QuestionContent = "Հարց 23. "
-                },
-                new Question2
-                {
-                    Id = 24,
-                    QuestionContent = "Հարց 24."
-                },
-                new Question2
-                {
-                    Id = 25,
-                    QuestionContent = "Հարց 25. "
-                },
-                new Question2
-                {
-                    Id = 26,
-                    QuestionContent = "Հարց 26."
-                },
-                new Question2
-                {
-                    Id = 27,
-                    QuestionContent = "Հարց 27. "
-                },
-                new Question2
-                {
-                    Id = 28,
-                    QuestionContent = "Հարց 28. "
-                },
-                new Question2
-                {
-                    Id = 29,
-                    QuestionContent = "Հարց 29. "
-                },
-                new Question2
-                {
-                    Id = 30,
-                    QuestionContent = "Հարց 30. "
-                }
-                );
-            modelBuilder.Entity<Question3>().HasData(
-                new Question3
-                {
-                    Id = 1,
-                    QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
-                },
-                new Question3
-                {
-                    Id = 2,
-                    QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
-                }
-                );
-            modelBuilder.Entity<Question4>().HasData(
-            new Question4
-            {
-                Id = 1,
-                QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
-            },
-            new Question4
-            {
-                Id = 2,
-                QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
-            }
-             );
-            modelBuilder.Entity<Question5>().HasData(
-                new Question5
-                {
-                    Id = 1,
-                    QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
-                },
-                new Question5
-                {
-                    Id = 2,
-                    QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
-                }
-                 );
-            modelBuilder.Entity<Question6>().HasData(
-                new Question6
-                {
-                    Id = 1,
-                    QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
-                },
-                new Question6
-                {
-                    Id = 2,
-                    QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
-                }
-                 );
-        
-            modelBuilder.Entity<Question7>().HasData(
-            new Question7
-            {
-                Id = 1,
-                QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
-            },
-            new Question7
-            {
-                Id = 2,
-                QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
-            }
-            );
+
 
         }
     }

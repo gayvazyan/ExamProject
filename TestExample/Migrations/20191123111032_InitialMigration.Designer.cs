@@ -10,8 +10,8 @@ using TestExample.Models;
 namespace TestExample.Migrations
 {
     [DbContext(typeof(ExamDbContect))]
-    [Migration("20191122070839_AddingNewMigration")]
-    partial class AddingNewMigration
+    [Migration("20191123111032_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -213,14 +213,20 @@ namespace TestExample.Migrations
 
                     b.Property<string>("SecondName");
 
-                    b.Property<DateTime>("TestDataTime");
+                    b.Property<bool>("Test1Check");
+
+                    b.Property<DateTime>("Test1DataTime");
+
+                    b.Property<bool>("Test2Check");
+
+                    b.Property<DateTime>("Test2DataTime");
 
                     b.HasKey("Id");
 
                     b.ToTable("DbCitizenReport");
                 });
 
-            modelBuilder.Entity("TestExample.MyModels.Answer1", b =>
+            modelBuilder.Entity("TestExample.MyModels.Answer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -238,7 +244,7 @@ namespace TestExample.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DbAnswer1");
+                    b.ToTable("DbAnswer");
 
                     b.HasData(
                         new
@@ -248,7 +254,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 1,
-                            QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի"
+                            QuestionVariantContent = "harc1-s"
                         },
                         new
                         {
@@ -257,7 +263,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = true,
                             QuestionId = 1,
-                            QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
+                            QuestionVariantContent = "harc1-j"
                         },
                         new
                         {
@@ -266,7 +272,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 1,
-                            QuestionVariantContent = "եթե կողմ են քվեարկել հանձնաժողովի նախագահն ու քարտուղարը, բացառությամբ օրենքով սահմանցած դեպքերի"
+                            QuestionVariantContent = "harc1-s"
                         },
                         new
                         {
@@ -275,25 +281,25 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 2,
-                            QuestionVariantContent = "քվեարկության օրվանից 1 օր առաջ"
+                            QuestionVariantContent = "harc2-s"
                         },
                         new
                         {
                             Id = 5,
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
-                            CorrectAnswer = true,
+                            CorrectAnswer = false,
                             QuestionId = 2,
-                            QuestionVariantContent = "քվեարկության օրվանից 2 օր առաջ"
+                            QuestionVariantContent = "harc2-s"
                         },
                         new
                         {
                             Id = 6,
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
-                            CorrectAnswer = false,
+                            CorrectAnswer = true,
                             QuestionId = 2,
-                            QuestionVariantContent = "քվեարկության օրը"
+                            QuestionVariantContent = "harc2-j"
                         },
                         new
                         {
@@ -301,8 +307,8 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = false,
-                            QuestionId = 4,
-                            QuestionVariantContent = "4-1"
+                            QuestionId = 3,
+                            QuestionVariantContent = "harc3-s"
                         },
                         new
                         {
@@ -310,8 +316,8 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = true,
-                            QuestionId = 4,
-                            QuestionVariantContent = "4-2"
+                            QuestionId = 3,
+                            QuestionVariantContent = "harc3-j"
                         },
                         new
                         {
@@ -319,8 +325,8 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = false,
-                            QuestionId = 4,
-                            QuestionVariantContent = "4-3"
+                            QuestionId = 3,
+                            QuestionVariantContent = "harc3-s"
                         },
                         new
                         {
@@ -328,17 +334,17 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = false,
-                            QuestionId = 5,
-                            QuestionVariantContent = "5-1"
+                            QuestionId = 4,
+                            QuestionVariantContent = "harc4-j"
                         },
                         new
                         {
                             Id = 11,
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
-                            CorrectAnswer = true,
-                            QuestionId = 5,
-                            QuestionVariantContent = "5-2"
+                            CorrectAnswer = false,
+                            QuestionId = 4,
+                            QuestionVariantContent = "harc4-s"
                         },
                         new
                         {
@@ -346,8 +352,35 @@ namespace TestExample.Migrations
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
                             CorrectAnswer = false,
+                            QuestionId = 4,
+                            QuestionVariantContent = "harc4-s"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CheckCorrectAnswer = false,
+                            CheckdAnswer = false,
+                            CorrectAnswer = false,
                             QuestionId = 5,
-                            QuestionVariantContent = "5-3"
+                            QuestionVariantContent = "harc5-s"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CheckCorrectAnswer = false,
+                            CheckdAnswer = false,
+                            CorrectAnswer = false,
+                            QuestionId = 5,
+                            QuestionVariantContent = "harc5-s"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CheckCorrectAnswer = false,
+                            CheckdAnswer = false,
+                            CorrectAnswer = true,
+                            QuestionId = 5,
+                            QuestionVariantContent = "harc5-j"
                         });
                 });
 
@@ -421,7 +454,7 @@ namespace TestExample.Migrations
                     b.ToTable("DbCitizenTestResults");
                 });
 
-            modelBuilder.Entity("TestExample.MyModels.Question1", b =>
+            modelBuilder.Entity("TestExample.MyModels.Question", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -431,455 +464,188 @@ namespace TestExample.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DbQuestion1");
+                    b.ToTable("DbQuestion");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
+                            QuestionContent = "Հարց 1. ---------------------------՝"
                         },
                         new
                         {
                             Id = 2,
-                            QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
+                            QuestionContent = "Հարց 2.-------------------------------՝ "
                         },
                         new
                         {
                             Id = 3,
-                            QuestionContent = "Հարց 3. "
+                            QuestionContent = "Հարց 3.----------------------------------- "
                         },
                         new
                         {
                             Id = 4,
-                            QuestionContent = "Հարց 4. "
+                            QuestionContent = "Հարց 4.------------------------------------ "
                         },
                         new
                         {
                             Id = 5,
-                            QuestionContent = "Հարց 5. "
+                            QuestionContent = "Հարց 5.-------------------------------------- "
                         },
                         new
                         {
                             Id = 6,
-                            QuestionContent = "Հարց 6. "
+                            QuestionContent = "Հարց 6.------------------------------------- "
                         },
                         new
                         {
                             Id = 7,
-                            QuestionContent = "Հարց 7."
+                            QuestionContent = "Հարց 7.-------------------------------------"
                         },
                         new
                         {
                             Id = 8,
-                            QuestionContent = "Հարց 8."
+                            QuestionContent = "Հարց 8.---------------------------------------"
                         },
                         new
                         {
                             Id = 9,
-                            QuestionContent = "Հարց 9. "
+                            QuestionContent = "Հարց 9.--------------------------------------- "
                         },
                         new
                         {
                             Id = 10,
-                            QuestionContent = "Հարց 10. "
+                            QuestionContent = "Հարց 10.------------------------------------- "
                         },
                         new
                         {
                             Id = 11,
-                            QuestionContent = "Հարց 11. "
+                            QuestionContent = "Հարց 11.-------------------------------------- "
                         },
                         new
                         {
                             Id = 12,
-                            QuestionContent = "Հարց 12. "
+                            QuestionContent = "Հարց 12.----------------------------------------- "
                         },
                         new
                         {
                             Id = 13,
-                            QuestionContent = "Հարց 13. "
+                            QuestionContent = "Հարց 13.---------------------------------------- "
                         },
                         new
                         {
                             Id = 14,
-                            QuestionContent = "Հարց 14. "
+                            QuestionContent = "Հարց 14.---------------------------------------- "
                         },
                         new
                         {
                             Id = 15,
-                            QuestionContent = "Հարց 15. "
+                            QuestionContent = "Հարց 15. ----------------------------------------"
                         },
                         new
                         {
                             Id = 16,
-                            QuestionContent = "Հարց 16. "
+                            QuestionContent = "Հարց 16.---------------------------------------- "
                         },
                         new
                         {
                             Id = 17,
-                            QuestionContent = "Հարց 17. "
+                            QuestionContent = "Հարց 17.---------------------------------------- "
                         },
                         new
                         {
                             Id = 18,
-                            QuestionContent = "Հարց 18. "
+                            QuestionContent = "Հարց 18.---------------------------------------- "
                         },
                         new
                         {
                             Id = 19,
-                            QuestionContent = "Հարց 19. "
+                            QuestionContent = "Հարց 19.---------------------------------------- "
                         },
                         new
                         {
                             Id = 20,
-                            QuestionContent = "Հարց 20. "
+                            QuestionContent = "Հարց 20.---------------------------------------- "
                         },
                         new
                         {
                             Id = 21,
-                            QuestionContent = "Հարց 21. "
+                            QuestionContent = "Հարց 21.---------------------------------------- "
                         },
                         new
                         {
                             Id = 22,
-                            QuestionContent = "Հարց 22. "
+                            QuestionContent = "Հարց 22.---------------------------------------- "
                         },
                         new
                         {
                             Id = 23,
-                            QuestionContent = "Հարց 23. "
+                            QuestionContent = "Հարց 23.---------------------------------------- "
                         },
                         new
                         {
                             Id = 24,
-                            QuestionContent = "Հարց 24."
+                            QuestionContent = "Հարց 24.----------------------------------------"
                         },
                         new
                         {
                             Id = 25,
-                            QuestionContent = "Հարց 25. "
+                            QuestionContent = "Հարց 25.---------------------------------------- "
                         },
                         new
                         {
                             Id = 26,
-                            QuestionContent = "Հարց 26."
+                            QuestionContent = "Հարց 26.----------------------------------------"
                         },
                         new
                         {
                             Id = 27,
-                            QuestionContent = "Հարց 27. "
+                            QuestionContent = "Հարց 27.---------------------------------------- "
                         },
                         new
                         {
                             Id = 28,
-                            QuestionContent = "Հարց 28. "
+                            QuestionContent = "Հարց 28.---------------------------------------- "
                         },
                         new
                         {
                             Id = 29,
-                            QuestionContent = "Հարց 29. "
+                            QuestionContent = "Հարց 29.---------------------------------------- "
                         },
                         new
                         {
                             Id = 30,
-                            QuestionContent = "Հարց 30. "
+                            QuestionContent = "Հարց 30.---------------------------------------- "
                         });
                 });
 
-            modelBuilder.Entity("TestExample.QAmodels.Answer2", b =>
+            modelBuilder.Entity("TestExample.MyModels.TempQuestions", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("CheckCorrectAnswer");
+                    b.Property<int>("Id1");
 
-                    b.Property<bool>("CheckdAnswer");
+                    b.Property<int>("Id2");
 
-                    b.Property<bool>("CorrectAnswer");
+                    b.Property<int>("Id3");
 
-                    b.Property<int>("QuestionId");
+                    b.Property<int>("Id4");
 
-                    b.Property<string>("QuestionVariantContent");
+                    b.Property<string>("Passport");
 
-                    b.HasKey("Id");
+                    b.Property<string>("Q1");
 
-                    b.ToTable("DbAnswer2");
+                    b.Property<string>("Q2");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = true,
-                            QuestionId = 1,
-                            QuestionVariantContent = "եթե կողմ են քվեարկել քվեարկությանը ներկա հանձնաժողովի անդամների մեկ երրորդը, բացառությամբ օրենքով սահմանցած դեպքերի"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = false,
-                            QuestionId = 1,
-                            QuestionVariantContent = "եթե կողմ են քվեարկել նիստին ներկա հանձնաժողովի անդամների թվի կեսից ավելին, բացառությամբ օրենքով սահմանցած դեպքերի"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = false,
-                            QuestionId = 1,
-                            QuestionVariantContent = "եթե կողմ են քվեարկել հանձնաժողովի նախագահն ու քարտուղարը, բացառությամբ օրենքով սահմանցած դեպքերի"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = true,
-                            QuestionId = 2,
-                            QuestionVariantContent = "քվեարկության օրվանից 1 օր առաջ"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = false,
-                            QuestionId = 2,
-                            QuestionVariantContent = "քվեարկության օրվանից 2 օր առաջ"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = false,
-                            QuestionId = 2,
-                            QuestionVariantContent = "քվեարկության օրը"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = false,
-                            QuestionId = 4,
-                            QuestionVariantContent = "4-1"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = true,
-                            QuestionId = 4,
-                            QuestionVariantContent = "4-2"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = false,
-                            QuestionId = 4,
-                            QuestionVariantContent = "4-3"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = false,
-                            QuestionId = 5,
-                            QuestionVariantContent = "5-1"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = true,
-                            QuestionId = 5,
-                            QuestionVariantContent = "5-2"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            CheckCorrectAnswer = false,
-                            CheckdAnswer = false,
-                            CorrectAnswer = false,
-                            QuestionId = 5,
-                            QuestionVariantContent = "5-3"
-                        });
-                });
+                    b.Property<string>("Q3");
 
-            modelBuilder.Entity("TestExample.QAmodels.Question2", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("QuestionContent");
+                    b.Property<string>("Q4");
 
                     b.HasKey("Id");
 
-                    b.ToTable("DbQuestion2");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            QuestionContent = "Հարց 1. Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունցած՝"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            QuestionContent = "Հարց 2.Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցվում է՝ "
-                        },
-                        new
-                        {
-                            Id = 3,
-                            QuestionContent = "Հարց 3. "
-                        },
-                        new
-                        {
-                            Id = 4,
-                            QuestionContent = "Հարց 4. "
-                        },
-                        new
-                        {
-                            Id = 5,
-                            QuestionContent = "Հարց 5. "
-                        },
-                        new
-                        {
-                            Id = 6,
-                            QuestionContent = "Հարց 6. "
-                        },
-                        new
-                        {
-                            Id = 7,
-                            QuestionContent = "Հարց 7."
-                        },
-                        new
-                        {
-                            Id = 8,
-                            QuestionContent = "Հարց 8."
-                        },
-                        new
-                        {
-                            Id = 9,
-                            QuestionContent = "Հարց 9. "
-                        },
-                        new
-                        {
-                            Id = 10,
-                            QuestionContent = "Հարց 10. "
-                        },
-                        new
-                        {
-                            Id = 11,
-                            QuestionContent = "Հարց 11. "
-                        },
-                        new
-                        {
-                            Id = 12,
-                            QuestionContent = "Հարց 12. "
-                        },
-                        new
-                        {
-                            Id = 13,
-                            QuestionContent = "Հարց 13. "
-                        },
-                        new
-                        {
-                            Id = 14,
-                            QuestionContent = "Հարց 14. "
-                        },
-                        new
-                        {
-                            Id = 15,
-                            QuestionContent = "Հարց 15. "
-                        },
-                        new
-                        {
-                            Id = 16,
-                            QuestionContent = "Հարց 16. "
-                        },
-                        new
-                        {
-                            Id = 17,
-                            QuestionContent = "Հարց 17. "
-                        },
-                        new
-                        {
-                            Id = 18,
-                            QuestionContent = "Հարց 18. "
-                        },
-                        new
-                        {
-                            Id = 19,
-                            QuestionContent = "Հարց 19. "
-                        },
-                        new
-                        {
-                            Id = 20,
-                            QuestionContent = "Հարց 20. "
-                        },
-                        new
-                        {
-                            Id = 21,
-                            QuestionContent = "Հարց 21. "
-                        },
-                        new
-                        {
-                            Id = 22,
-                            QuestionContent = "Հարց 22. "
-                        },
-                        new
-                        {
-                            Id = 23,
-                            QuestionContent = "Հարց 23. "
-                        },
-                        new
-                        {
-                            Id = 24,
-                            QuestionContent = "Հարց 24."
-                        },
-                        new
-                        {
-                            Id = 25,
-                            QuestionContent = "Հարց 25. "
-                        },
-                        new
-                        {
-                            Id = 26,
-                            QuestionContent = "Հարց 26."
-                        },
-                        new
-                        {
-                            Id = 27,
-                            QuestionContent = "Հարց 27. "
-                        },
-                        new
-                        {
-                            Id = 28,
-                            QuestionContent = "Հարց 28. "
-                        },
-                        new
-                        {
-                            Id = 29,
-                            QuestionContent = "Հարց 29. "
-                        },
-                        new
-                        {
-                            Id = 30,
-                            QuestionContent = "Հարց 30. "
-                        });
+                    b.ToTable("DbTempQuestions");
                 });
 
             modelBuilder.Entity("TestExample.ViewModels.EmptyTextViewModel", b =>
