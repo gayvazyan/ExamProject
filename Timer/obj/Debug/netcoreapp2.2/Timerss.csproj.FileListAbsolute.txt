@@ -1,0 +1,10 @@
+C:\Users\gareg\source\repos\ExamProject\Timer\bin\Debug\netcoreapp2.2\Timerss.deps.json
+C:\Users\gareg\source\repos\ExamProject\Timer\bin\Debug\netcoreapp2.2\Timerss.runtimeconfig.json
+C:\Users\gareg\source\repos\ExamProject\Timer\bin\Debug\netcoreapp2.2\Timerss.runtimeconfig.dev.json
+C:\Users\gareg\source\repos\ExamProject\Timer\bin\Debug\netcoreapp2.2\Timerss.dll
+C:\Users\gareg\source\repos\ExamProject\Timer\bin\Debug\netcoreapp2.2\Timerss.pdb
+C:\Users\gareg\source\repos\ExamProject\Timer\obj\Debug\netcoreapp2.2\Timerss.csproj.CoreCompileInputs.cache
+C:\Users\gareg\source\repos\ExamProject\Timer\obj\Debug\netcoreapp2.2\Timerss.AssemblyInfoInputs.cache
+C:\Users\gareg\source\repos\ExamProject\Timer\obj\Debug\netcoreapp2.2\Timerss.AssemblyInfo.cs
+C:\Users\gareg\source\repos\ExamProject\Timer\obj\Debug\netcoreapp2.2\Timerss.dll
+C:\Users\gareg\source\repos\ExamProject\Timer\obj\Debug\netcoreapp2.2\Timerss.pdb

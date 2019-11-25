@@ -48,13 +48,13 @@ namespace TestExample.Controllers
         [HttpPost]
         public IActionResult Test(CitizenTestResults citizenTestResults, int testTicket)
         {
-            if (ModelState.IsValid)
-            {
+          //  if (ModelState.IsValid)
+         //   {
                 citizenTestResults.NumberTicket = testTicket;
                 _examDBContect.Add(citizenTestResults);
                 _examDBContect.SaveChanges();
 
-            }
+         //   }
 
             EmptyTextViewModel emptyTextViewModel = _examDBContect.DbEmptyTextViewModel
                                                         .FirstOrDefault(p => p.Id == testTicket);

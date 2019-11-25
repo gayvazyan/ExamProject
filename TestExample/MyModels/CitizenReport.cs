@@ -35,7 +35,9 @@ namespace TestExample.Models
 
         public DateTime Test2DataTime { get; set; }
 
-        public string Notification { get; set; }
+        public bool Notification { get; set; }
+
+        public DateTime NotificationData { get; set; }
 
     }
 }

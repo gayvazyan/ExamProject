@@ -79,7 +79,8 @@ namespace TestExample.Controllers
                         Result_Test1 = 0,
                         NumberTicket = 0,
                         Passport = user.Passport,
-                        Notification = "Ծանուցված չէ"
+                        Notification = false,
+                        NotificationData = DateTime.MinValue
 
                     };
 

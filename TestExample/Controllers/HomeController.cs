@@ -37,6 +37,7 @@ namespace TestExample.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
@@ -164,7 +165,8 @@ namespace TestExample.Controllers
 
                 MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername, SmtpPassword, citizenReport.Email, subject, text);
 
-                citizenReport.Notification = "Ծանուցվել է";
+                citizenReport.Notification = true;
+                citizenReport.NotificationData = DateTime.Now;
                 _examDBContect.Update(citizenReport);
                 _examDBContect.SaveChanges();
 
@@ -200,7 +202,8 @@ namespace TestExample.Controllers
 
             MailSender.Sender(SmtpServer, SmtpPort, SmtpUsername, SmtpPassword, citizenReport.Email, subject, text);
 
-            citizenReport.Notification = "Ծանուցվել է";
+            citizenReport.Notification = true;
+            citizenReport.NotificationData = DateTime.Now;
             _examDBContect.Update(citizenReport);
             _examDBContect.SaveChanges();
             return View("Result", citizenReport);

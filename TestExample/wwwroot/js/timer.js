@@ -4,7 +4,7 @@ var seconds
     , secondPass
     , countdown;
 
-seconds = 1200;
+seconds = 60;
 countdown = setInterval(function () {
     "use strict";
 
@@ -36,6 +36,11 @@ function secondPass() {
     }
     else {
         clearInterval(countdown)
-        countDiv.innerHTML = "Done";
+        document.getElementById("myform").submit();
     }
 }
+
+
+
+
+

@@ -37,7 +37,7 @@
                 Հարցաշարի լրացման ամսաթիվը
             </th>
             <th>
-
+                Ծանուցված
             </th>
             <th>
 
@@ -47,6 +47,7 @@
     <tbody>
 @foreach (var item in Model) {
 
+    var TimeNotif = (item.NotificationData).ToString("dd/MM/yyyy HH:mm");
     var result = item.Result_Test1 + item.Result_Test2;
         <tr>
             <td>
@@ -77,13 +78,15 @@
                 @Html.DisplayFor(modelItem => item.Test2DataTime)
             </td>
             <td>
-                @if (item.Notification == "Ծանուցվել է")
+               
+                @if (item.Notification == true)
                 {
-                    <button class="btn btn-success">@item.Notification</button>
+                   
+                    <button class="btn btn-success">Ծանուցվել է @TimeNotif  </button>
                 }
                 else
                 {
-                    <button class="btn btn-danger">@item.Notification</button>
+                    <button class="btn btn-danger">Ծանուցված չէ</button>
                 }
 
             </td>

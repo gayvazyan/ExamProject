@@ -37,9 +37,10 @@
 
     @if ((Model.Test2Check == true) && (Model.Test2Check == true))
     {
+        var TimeNotif = (Model.NotificationData).ToString("dd/MM/yyyy HH:mm");
         <h3><strong>Խնդրի և հարցաշարի պատասխանների արդյունքում դուք ստացել եք <span style="color:forestgreen"> @sumResult </span> միավոր </strong> </h3>
 
-        if (Model.Notification != "Ծանուցվել է")
+        if (Model.Notification != true)
         {
             <span>Թեստի արդյունքների մասնին ինֆորմացիան </span>
             <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MyEmail" asp-route-Id="@Model.Id">Ուղարկել</a>
@@ -47,9 +48,11 @@
         }
         else
         {
-            <span>Թեստի արդյունքների մասնին ինֆորմացիան </span>
-            <a class="btn btn-success">Ուղարկվեց</a>
-            <span> @Model.Email էլ հասցեին</span>
+            <span>Թեստի արդյունքների մասնին ինֆորմացիան  Ծանուցվէլ է  @TimeNotif -ին:  </span>
+            <br />
+      
+            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MyEmail" asp-route-Id="@Model.Id">Կրկին ծանուցել</a>
+            
         }
 
     }

@@ -197,7 +197,9 @@ namespace TestExample.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<string>("Notification");
+                    b.Property<bool>("Notification");
+
+                    b.Property<DateTime>("NotificationData");
 
                     b.Property<int>("NumberTicket");
 
@@ -295,7 +297,7 @@ namespace TestExample.Migrations
                             Id = 6,
                             CheckCorrectAnswer = false,
                             CheckdAnswer = false,
-                            CorrectAnswer = true,
+                            CorrectAnswer = false,
                             QuestionId = 2,
                             QuestionVariantContent = "sxal"
                         },
@@ -3034,64 +3036,61 @@ namespace TestExample.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AllAdditionallyDuringElDay");
+                    b.Property<int?>("AllAdditionallyDuringElDay");
 
-                    b.Property<int>("AllMobileVoters");
+                    b.Property<int?>("AllMobileVoters");
 
-                    b.Property<int>("AllSum");
+                    b.Property<int?>("AllSum");
 
-                    b.Property<int>("AllTickets");
+                    b.Property<int?>("AllTickets");
 
-                    b.Property<int>("CEC");
+                    b.Property<int?>("CEC");
 
-                    b.Property<string>("Community")
-                        .IsRequired();
+                    b.Property<string>("Community");
 
-                    b.Property<int>("ForA");
+                    b.Property<int?>("ForA");
 
-                    b.Property<int>("ForAx");
+                    b.Property<int?>("ForAx");
 
-                    b.Property<int>("ForAy");
+                    b.Property<int?>("ForAy");
 
-                    b.Property<int>("ForB");
+                    b.Property<int?>("ForB");
 
-                    b.Property<int>("ForBm");
+                    b.Property<int?>("ForBm");
 
-                    b.Property<int>("ForBn");
+                    b.Property<int?>("ForBn");
 
-                    b.Property<int>("ForC");
+                    b.Property<int?>("ForC");
 
-                    b.Property<int>("ForCk");
+                    b.Property<int?>("ForCk");
 
-                    b.Property<int>("ForCl");
+                    b.Property<int?>("ForCl");
 
-                    b.Property<int>("InvalidTickets");
+                    b.Property<int?>("InvalidTickets");
 
                     b.Property<int>("NumberTicket");
 
-                    b.Property<int>("NumerableTickets");
+                    b.Property<int?>("NumerableTickets");
 
-                    b.Property<int>("PartAdditionallyDuringElDay");
+                    b.Property<int?>("PartAdditionallyDuringElDay");
 
-                    b.Property<int>("PartMobileVoters");
+                    b.Property<int?>("PartMobileVoters");
 
-                    b.Property<int>("PartSum");
+                    b.Property<int?>("PartSum");
 
-                    b.Property<int>("Participants");
+                    b.Property<int?>("Participants");
 
-                    b.Property<string>("Region")
-                        .IsRequired();
+                    b.Property<string>("Region");
 
                     b.Property<double>("Result");
 
-                    b.Property<string>("TEC")
-                        .IsRequired();
+                    b.Property<string>("TEC");
 
-                    b.Property<int>("UnusedGlueTickets");
+                    b.Property<int?>("UnusedGlueTickets");
 
-                    b.Property<int>("UnusedNumerableTickets");
+                    b.Property<int?>("UnusedNumerableTickets");
 
-                    b.Property<int>("VadTickets");
+                    b.Property<int?>("VadTickets");
 
                     b.HasKey("Id");
 

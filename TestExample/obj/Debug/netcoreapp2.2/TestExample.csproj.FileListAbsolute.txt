@@ -73,4 +73,3 @@ C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Test
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.dll
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.pdb
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.csproj.CopyComplete
-C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.csprojAssemblyReference.cache
