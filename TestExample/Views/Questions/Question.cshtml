@@ -13,7 +13,7 @@
 
 <span>Թեստի ավարտին մնաց:</span> <span id="countdown" class="countdown"> </span>
 <h3 style="text-align:center">Հարց @ViewBag.QId</h3>
-<form asp-controller="Questions" asp-action="Q1Submit" id="myform">
+<form asp-controller="Questions" id="myform">
     <ul style="list-style-type:none">
         <li>
             <strong style="text-align:center"> Հարց  @ViewBag.QId.  @ViewBag.Question</strong>
@@ -60,6 +60,7 @@
             if (ViewBag.QId == 30)
             {
                 <button type="submit" class="btn btn-success" asp-route-Idpreview=@previewId>Նախորդ հարցը</button>
+                <button type="submit" class="btn btn-success" asp-route-Idpreview=@previewId>Ավարտել հարցաշարը</button>
             }
             else
             {
@@ -74,17 +75,17 @@
 
         @*<button onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Ավատրել')" type="submit" class="btn btn-success">Ավարտել</button>*@
         @*<span id="confirmSubmitSpan" style="display:none">
-                <span>Դուք համոզված եք որ ցանկանում եք Ավատրել</span>
-                <br />
-                <button type="submit" style="text-align:center" class="btn btn-success">Այո</button>
-                <a href="#" class="btn btn-primary"
-                   onclick="confirmSubmit(false)">Ոչ</a>
-            </span>
+            <span>Դուք համոզված եք որ ցանկանում եք Ավատրել</span>
+            <br />
+            <button type="submit" style="text-align:center" class="btn btn-success">Այո</button>
+            <a href="#" class="btn btn-primary"
+               onclick="confirmSubmit(false)">Ոչ</a>
+        </span>
 
-            <span id="submitSpan">
-                <a href="#" class="btn btn-success"
-                   onclick="confirmSubmit(true)">Ավատրել</a>
-            </span>*@
+        <span id="submitSpan">
+            <a href="#" class="btn btn-success"
+               onclick="confirmSubmit(true)">Ավատրել</a>
+        </span>*@
 
     </div>
 

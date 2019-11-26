@@ -139,6 +139,16 @@ namespace TestExample.Controllers
             _examDBContect.DbTempQuestions.Update(tempQuestions);
             _examDBContect.SaveChanges();
 
+            //skizb_Test2Result-i maqrum
+            CitizenReport citizenReport = _examDBContect.DbCitizenReport
+                                          .FirstOrDefault(p=>p.Passport==citizenUser.Passport);
+            citizenReport.Result_Test2 = 0;
+            citizenReport.Test2Check = false;
+            citizenReport.Test2DataTime = DateTime.MinValue;
+            _examDBContect.DbCitizenReport.Update(citizenReport);
+            _examDBContect.SaveChanges();
+            // verj_Test2Result-i maqrum
+
             List<Answer> answersList = _examDBContect.DbAnswer.ToList();
 
             foreach (var answer in answersList)
@@ -380,9 +390,11 @@ namespace TestExample.Controllers
             }
 
             CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+            TempQuestions tempQuestions = new TempQuestions();
+            tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
 
 
-            double score = citizenReport.Result_Test2;
+          
 
 
             string[] questionIds = ifromCollection["questionId"];
@@ -400,16 +412,215 @@ namespace TestExample.Controllers
 
                     if (answer.CorrectAnswer == true)
                     {
-
-                        score++;
+                       
+                        
                         answer.CheckCorrectAnswer = true;
                         _examDBContect.DbAnswer.Update(answer);
                         _examDBContect.SaveChanges();
-                    }
-//avelacnum enq cheked araci texty
-                    TempQuestions tempQuestions = new TempQuestions();
-                    tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
 
+                        switch (qId)
+                        {
+                            case 1:
+                                tempQuestions.Score1 = 1;
+                                break;
+                            case 2:
+                                tempQuestions.Score2 = 1;
+                                break;
+                            case 3:
+                                tempQuestions.Score3 = 1;
+                                break;
+                            case 4:
+                                tempQuestions.Score4 = 1;
+                                break;
+                            case 5:
+                                tempQuestions.Score5 = 1;
+                                break;
+                            case 6:
+                                tempQuestions.Score6 = 1;
+                                break;
+                            case 7:
+                                tempQuestions.Score7 = 1;
+                                break;
+                            case 8:
+                                tempQuestions.Score8 = 1;
+                                break;
+                            case 9:
+                                tempQuestions.Score9 = 1;
+                                break;
+                            case 10:
+                                tempQuestions.Score10 = 1;
+                                break;
+                            case 11:
+                                tempQuestions.Score11 = 1;
+                                break;
+                            case 12:
+                                tempQuestions.Score12 = 1;
+                                break;
+                            case 13:
+                                tempQuestions.Score13  = 1;
+                                break;
+                            case 14:
+                                tempQuestions.Score14 = 1;
+                                break;
+                            case 15:
+                                tempQuestions.Score15 = 1;
+                                break;
+                            case 16:
+                                tempQuestions.Score16 = 1;
+                                break;
+                            case 17:
+                                tempQuestions.Score17 = 1;
+                                break;
+                            case 18:
+                                tempQuestions.Score18 = 1;
+                                break;
+                            case 19:
+                                tempQuestions.Score19 = 1;
+                                break;
+                            case 20:
+                                tempQuestions.Score20 = 1;
+                                break;
+                            case 21:
+                                tempQuestions.Score21 = 1;
+                                break;
+                            case 22:
+                                tempQuestions.Score22 = 1;
+                                break;
+                            case 23:
+                                tempQuestions.Score23 = 1;
+                                break;
+                            case 24:
+                                tempQuestions.Score24 = 1;
+                                break;
+                            case 25:
+                                tempQuestions.Score25 = 1;
+                                break;
+                            case 26:
+                                tempQuestions.Score26 = 1;
+                                break;
+                            case 27:
+                                tempQuestions.Score27 = 1;
+                                break;
+                            case 28:
+                                tempQuestions.Score28 = 1;
+                                break;
+                            case 29:
+                                tempQuestions.Score29 = 1;
+                                break;
+                            case 30:
+                                tempQuestions.Score30 = 1;
+                                break;
+
+                            default:
+
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (qId)
+                        {
+                            case 1:
+                                tempQuestions.Score1 = 0;
+                                break;
+                            case 2:
+                                tempQuestions.Score2 = 0;
+                                break;
+                            case 3:
+                                tempQuestions.Score3 = 0;
+                                break;
+                            case 4:
+                                tempQuestions.Score4 = 0;
+                                break;
+                            case 5:
+                                tempQuestions.Score5 = 0;
+                                break;
+                            case 6:
+                                tempQuestions.Score6 = 0;
+                                break;
+                            case 7:
+                                tempQuestions.Score7 = 0;
+                                break;
+                            case 8:
+                                tempQuestions.Score8 = 0;
+                                break;
+                            case 9:
+                                tempQuestions.Score9 = 0;
+                                break;
+                            case 10:
+                                tempQuestions.Score10 = 0;
+                                break;
+                            case 11:
+                                tempQuestions.Score11 = 0;
+                                break;
+                            case 12:
+                                tempQuestions.Score12 = 0;
+                                break;
+                            case 13:
+                                tempQuestions.Score13 = 0;
+                                break;
+                            case 14:
+                                tempQuestions.Score14 = 0;
+                                break;
+                            case 15:
+                                tempQuestions.Score15 = 0;
+                                break;
+                            case 16:
+                                tempQuestions.Score16 = 0;
+                                break;
+                            case 17:
+                                tempQuestions.Score17 = 0;
+                                break;
+                            case 18:
+                                tempQuestions.Score18 = 0;
+                                break;
+                            case 19:
+                                tempQuestions.Score19 = 0;
+                                break;
+                            case 20:
+                                tempQuestions.Score20 = 0;
+                                break;
+                            case 21:
+                                tempQuestions.Score21 = 0;
+                                break;
+                            case 22:
+                                tempQuestions.Score22 = 0;
+                                break;
+                            case 23:
+                                tempQuestions.Score23 = 0;
+                                break;
+                            case 24:
+                                tempQuestions.Score24 = 0;
+                                break;
+                            case 25:
+                                tempQuestions.Score25 = 0;
+                                break;
+                            case 26:
+                                tempQuestions.Score26 = 0;
+                                break;
+                            case 27:
+                                tempQuestions.Score27 = 0;
+                                break;
+                            case 28:
+                                tempQuestions.Score28 = 0;
+                                break;
+                            case 29:
+                                tempQuestions.Score29 = 0;
+                                break;
+                            case 30:
+                                tempQuestions.Score30 = 0;
+                                break;
+
+                            default:
+
+                                break;
+                        }
+                    }
+
+                    //avelacnum enq cheked araci texty
+                    //TempQuestions tempQuestions = new TempQuestions();
+                    //tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+                   
                     switch (qId)
                     {
                         case 1:
@@ -538,30 +749,36 @@ namespace TestExample.Controllers
                             break;
                     }
 
-                   
                     _examDBContect.DbTempQuestions.Update(tempQuestions);
                     _examDBContect.SaveChanges();
                 }
 
 
             }
-            citizenReport.Result_Test2 = score;
+
+
+            citizenReport.Result_Test2 = 14;
             _examDBContect.DbCitizenReport.Update(citizenReport);
             _examDBContect.SaveChanges();
 
             //ViewBag.QId = qId;
             //List<Answer> answersList = _examDBContect.DbAnswer.ToList();
-            if (Idnext == null)
+            if (qId!=30)
             {
-                return RedirectToAction("Question", new { id = qId-1 });
+                if (Idnext == null)
+                {
+                    return RedirectToAction("Question", new { id = qId - 1 });
+                }
+                else
+                {
+                    return RedirectToAction("Question", new { id = qId + 1 });
+                }
+
             }
             else
             {
-                return RedirectToAction("Question", new { id = qId+1 });
+                return RedirectToAction("Result");
             }
-
-           
-
          
         }
 
@@ -760,6 +977,168 @@ namespace TestExample.Controllers
 
             
         }
+
+        [HttpGet]
+        public IActionResult Result()
+        {
+            CitizenUser citizenUser = new CitizenUser();
+            if (User.Identity.IsAuthenticated)
+            {
+                var userName = User.Identity.Name;
+                citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
+
+                ViewBag.UserFullName = citizenUser.FirstName + " " +
+                                   citizenUser.SecondName + " " +
+                                    citizenUser.LastName;
+            }
+
+            CitizenReport citizenReport = _examDBContect.DbCitizenReport
+                .FirstOrDefault(p => p.Passport == citizenUser.Passport);
+            ViewBag.Result_Test2 = citizenReport.Result_Test2;
+
+            // ViewBag.Questions = TempData["baza"];
+
+            TempQuestions tempQuestions = new TempQuestions();
+            tempQuestions = _examDBContect.DbTempQuestions
+                      .FirstOrDefault(p => p.Passport == citizenUser.Passport);
+
+            List<Question> questions = new List<Question>();
+            Question question1 = new Question();
+            Question question2 = new Question();
+            Question question3 = new Question();
+            Question question4 = new Question();
+            Question question5 = new Question();
+            Question question6 = new Question();
+            Question question7 = new Question();
+            Question question8 = new Question();
+            Question question9 = new Question();
+            Question question10 = new Question();
+            Question question11 = new Question();
+            Question question12 = new Question();
+            Question question13 = new Question();
+            Question question14 = new Question();
+            Question question15 = new Question();
+            Question question16 = new Question();
+            Question question17 = new Question();
+            Question question18 = new Question();
+            Question question19 = new Question();
+            Question question20 = new Question();
+            Question question21 = new Question();
+            Question question22 = new Question();
+            Question question23 = new Question();
+            Question question24 = new Question();
+            Question question25 = new Question();
+            Question question26 = new Question();
+            Question question27 = new Question();
+            Question question28 = new Question();
+            Question question29 = new Question();
+            Question question30 = new Question();
+
+
+            question1.Id = tempQuestions.Id1;
+            question2.Id = tempQuestions.Id2;
+            question3.Id = tempQuestions.Id3;
+            question4.Id = tempQuestions.Id4;
+            question5.Id = tempQuestions.Id5;
+            question6.Id = tempQuestions.Id6;
+            question7.Id = tempQuestions.Id7;
+            question8.Id = tempQuestions.Id8;
+            question9.Id = tempQuestions.Id9;
+            question10.Id = tempQuestions.Id10;
+            question11.Id = tempQuestions.Id11;
+            question12.Id = tempQuestions.Id12;
+            question13.Id = tempQuestions.Id13;
+            question14.Id = tempQuestions.Id14;
+            question15.Id = tempQuestions.Id15;
+            question16.Id = tempQuestions.Id16;
+            question17.Id = tempQuestions.Id17;
+            question18.Id = tempQuestions.Id18;
+            question19.Id = tempQuestions.Id19;
+            question20.Id = tempQuestions.Id20;
+            question21.Id = tempQuestions.Id21;
+            question22.Id = tempQuestions.Id22;
+            question23.Id = tempQuestions.Id23;
+            question24.Id = tempQuestions.Id24;
+            question25.Id = tempQuestions.Id25;
+            question26.Id = tempQuestions.Id26;
+            question27.Id = tempQuestions.Id27;
+            question28.Id = tempQuestions.Id28;
+            question29.Id = tempQuestions.Id29;
+            question30.Id = tempQuestions.Id30;
+
+            question1.QuestionContent = tempQuestions.Q1;
+            question2.QuestionContent = tempQuestions.Q2;
+            question3.QuestionContent = tempQuestions.Q3;
+            question4.QuestionContent = tempQuestions.Q4;
+            question5.QuestionContent = tempQuestions.Q5;
+            question6.QuestionContent = tempQuestions.Q6;
+            question7.QuestionContent = tempQuestions.Q7;
+            question8.QuestionContent = tempQuestions.Q8;
+            question9.QuestionContent = tempQuestions.Q9;
+            question10.QuestionContent = tempQuestions.Q10;
+            question11.QuestionContent = tempQuestions.Q11;
+            question12.QuestionContent = tempQuestions.Q12;
+            question13.QuestionContent = tempQuestions.Q13;
+            question14.QuestionContent = tempQuestions.Q14;
+            question15.QuestionContent = tempQuestions.Q15;
+            question16.QuestionContent = tempQuestions.Q16;
+            question17.QuestionContent = tempQuestions.Q17;
+            question18.QuestionContent = tempQuestions.Q18;
+            question19.QuestionContent = tempQuestions.Q19;
+            question20.QuestionContent = tempQuestions.Q20;
+            question21.QuestionContent = tempQuestions.Q21;
+            question22.QuestionContent = tempQuestions.Q22;
+            question23.QuestionContent = tempQuestions.Q23;
+            question24.QuestionContent = tempQuestions.Q24;
+            question25.QuestionContent = tempQuestions.Q25;
+            question26.QuestionContent = tempQuestions.Q26;
+            question27.QuestionContent = tempQuestions.Q27;
+            question28.QuestionContent = tempQuestions.Q28;
+            question29.QuestionContent = tempQuestions.Q29;
+            question30.QuestionContent = tempQuestions.Q30;
+
+            questions.Add(question1);
+            questions.Add(question2);
+            questions.Add(question3);
+            questions.Add(question4);
+            questions.Add(question5);
+            questions.Add(question6);
+            questions.Add(question7);
+            questions.Add(question8);
+            questions.Add(question9);
+            questions.Add(question10);
+            questions.Add(question11);
+            questions.Add(question12);
+            questions.Add(question13);
+            questions.Add(question14);
+            questions.Add(question15);
+            questions.Add(question16);
+            questions.Add(question17);
+            questions.Add(question18);
+            questions.Add(question19);
+            questions.Add(question20);
+            questions.Add(question21);
+            questions.Add(question22);
+            questions.Add(question23);
+            questions.Add(question24);
+            questions.Add(question25);
+            questions.Add(question26);
+            questions.Add(question27);
+            questions.Add(question28);
+            questions.Add(question29);
+            questions.Add(question30);
+
+
+
+            ViewBag.Questions = questions;
+            List<Answer> answersList = _examDBContect.DbAnswer.ToList();
+
+            return View(answersList);
+
+
+        }
+
+
 
         [HttpGet]
         public IActionResult AllTest()

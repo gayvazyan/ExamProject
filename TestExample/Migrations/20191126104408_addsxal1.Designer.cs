@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestExample.Models;
 
 namespace TestExample.Migrations
 {
     [DbContext(typeof(ExamDbContect))]
-    partial class ExamDbContectModelSnapshot : ModelSnapshot
+    [Migration("20191126104408_addsxal1")]
+    partial class addsxal1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3874,66 +3876,6 @@ namespace TestExample.Migrations
                     b.Property<string>("Q8");
 
                     b.Property<string>("Q9");
-
-                    b.Property<int>("Score1");
-
-                    b.Property<int>("Score10");
-
-                    b.Property<int>("Score11");
-
-                    b.Property<int>("Score12");
-
-                    b.Property<int>("Score13");
-
-                    b.Property<int>("Score14");
-
-                    b.Property<int>("Score15");
-
-                    b.Property<int>("Score16");
-
-                    b.Property<int>("Score17");
-
-                    b.Property<int>("Score18");
-
-                    b.Property<int>("Score19");
-
-                    b.Property<int>("Score2");
-
-                    b.Property<int>("Score20");
-
-                    b.Property<int>("Score21");
-
-                    b.Property<int>("Score22");
-
-                    b.Property<int>("Score23");
-
-                    b.Property<int>("Score24");
-
-                    b.Property<int>("Score25");
-
-                    b.Property<int>("Score26");
-
-                    b.Property<int>("Score27");
-
-                    b.Property<int>("Score28");
-
-                    b.Property<int>("Score29");
-
-                    b.Property<int>("Score3");
-
-                    b.Property<int>("Score30");
-
-                    b.Property<int>("Score4");
-
-                    b.Property<int>("Score5");
-
-                    b.Property<int>("Score6");
-
-                    b.Property<int>("Score7");
-
-                    b.Property<int>("Score8");
-
-                    b.Property<int>("Score9");
 
                     b.HasKey("Id");
 

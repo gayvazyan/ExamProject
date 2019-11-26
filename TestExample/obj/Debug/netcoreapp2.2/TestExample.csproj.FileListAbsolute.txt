@@ -40,7 +40,6 @@ C:\Users\gareg\source\repos\ExamProject\TestExample\bin\Debug\netcoreapp2.2\Test
 C:\Users\gareg\source\repos\ExamProject\TestExample\bin\Debug\netcoreapp2.2\TestExample.pdb
 C:\Users\gareg\source\repos\ExamProject\TestExample\bin\Debug\netcoreapp2.2\TestExample.Views.dll
 C:\Users\gareg\source\repos\ExamProject\TestExample\bin\Debug\netcoreapp2.2\TestExample.Views.pdb
-C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.csprojAssemblyReference.cache
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.csproj.CoreCompileInputs.cache
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.RazorAssemblyInfo.cache
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.RazorAssemblyInfo.cs
@@ -76,3 +75,4 @@ C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Test
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.dll
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.pdb
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.csproj.CopyComplete
+C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.csprojAssemblyReference.cache
