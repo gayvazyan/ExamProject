@@ -2,7 +2,7 @@
 
 
 @{
-    ViewData["Title"] = "Հարցաթերթիկ_"+ ViewBag.NumberTicket;
+    ViewData["Title"] = "Հարցաթերթիկ_" + ViewBag.NumberTicket;
 }
 <form asp-controller="Results" asp-action="Test" asp-route-testTicket=@ViewBag.NumberTicket method="post">
     <div class="text-center">
@@ -413,20 +413,20 @@
             </tbody>
         </table>
         <br />
-        @*<button onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Ավատրել')" style="text-align:center" type="submit" class="btn btn-success">Ավարտել</button>*@
+        <button onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Ավատրել')" style="text-align:center" type="submit" class="btn btn-success">Ավարտել</button>
 
-        <span id="confirmSubmitSpan" style="display:none">
-            <span>Դուք համոզված եք որ ցանկանում եք Ավատրել</span>
-            <br />
-            <button type="submit" style="text-align:center"  class="btn btn-success">Այո</button>
-            <a href="#" class="btn btn-primary"
-               onclick="confirmSubmit(false)">Ոչ</a>
-        </span>
+        @*<span id="confirmSubmitSpan" style="display:none">
+                <span>Դուք համոզված եք որ ցանկանում եք Ավատրել</span>
+                <br />
+                <button type="submit" style="text-align:center"  class="btn btn-success">Այո</button>
+                <a href="#" class="btn btn-primary"
+                   onclick="confirmSubmit(false)">Ոչ</a>
+            </span>
 
-        <span id="submitSpan">
-            <a href="#" class="btn btn-success"
-               onclick="confirmSubmit(true)">Ավատրել</a>
-        </span>
+            <span id="submitSpan">
+                <a href="#" class="btn btn-success"
+                   onclick="confirmSubmit(true)">Ավատրել</a>
+            </span>*@
 
         <p style="text-align: center;">Արձանագրությունում տվյալները լրացվում են թվերով և տառերով</p>
 
@@ -434,6 +434,7 @@
     <div asp-validation-summary="All" class="text-danger" style="text-align:left"></div>
 </form>
 
-@section Scripts{ 
-<script src="~/js/submit.js"></script>
+@section Scripts{
+    <script src="~/js/submit.js"></script>
+    <script src="~/js/disEnter.js"></script>
 }

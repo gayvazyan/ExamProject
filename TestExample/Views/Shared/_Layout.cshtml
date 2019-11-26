@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="icon" href="~/images/logoIcon.ico">
 </head>
-<body>
+<body onclick="javascript:disEnter();">
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-success border-bottom box-shadow mb-3">
             <div class="container">
@@ -157,7 +158,7 @@
         <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script src="~/js/disEnter.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

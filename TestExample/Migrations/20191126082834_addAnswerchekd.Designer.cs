@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestExample.Models;
 
 namespace TestExample.Migrations
 {
     [DbContext(typeof(ExamDbContect))]
-    partial class ExamDbContectModelSnapshot : ModelSnapshot
+    [Migration("20191126082834_addAnswerchekd")]
+    partial class addAnswerchekd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3635,123 +3637,11 @@ namespace TestExample.Migrations
 
                     b.Property<string>("Answer1");
 
-                    b.Property<string>("Answer10");
-
-                    b.Property<string>("Answer11");
-
-                    b.Property<string>("Answer12");
-
-                    b.Property<string>("Answer13");
-
-                    b.Property<string>("Answer14");
-
-                    b.Property<string>("Answer15");
-
-                    b.Property<string>("Answer16");
-
-                    b.Property<string>("Answer17");
-
-                    b.Property<string>("Answer18");
-
-                    b.Property<string>("Answer19");
-
                     b.Property<string>("Answer2");
-
-                    b.Property<string>("Answer20");
-
-                    b.Property<string>("Answer21");
-
-                    b.Property<string>("Answer22");
-
-                    b.Property<string>("Answer23");
-
-                    b.Property<string>("Answer24");
-
-                    b.Property<string>("Answer25");
-
-                    b.Property<string>("Answer26");
-
-                    b.Property<string>("Answer27");
-
-                    b.Property<string>("Answer28");
-
-                    b.Property<string>("Answer29");
-
-                    b.Property<string>("Answer3");
-
-                    b.Property<string>("Answer30");
-
-                    b.Property<string>("Answer4");
-
-                    b.Property<string>("Answer5");
-
-                    b.Property<string>("Answer6");
-
-                    b.Property<string>("Answer7");
-
-                    b.Property<string>("Answer8");
-
-                    b.Property<string>("Answer9");
 
                     b.Property<bool>("Cheked1");
 
-                    b.Property<bool>("Cheked10");
-
-                    b.Property<bool>("Cheked11");
-
-                    b.Property<bool>("Cheked12");
-
-                    b.Property<bool>("Cheked13");
-
-                    b.Property<bool>("Cheked14");
-
-                    b.Property<bool>("Cheked15");
-
-                    b.Property<bool>("Cheked16");
-
-                    b.Property<bool>("Cheked17");
-
-                    b.Property<bool>("Cheked18");
-
-                    b.Property<bool>("Cheked19");
-
                     b.Property<bool>("Cheked2");
-
-                    b.Property<bool>("Cheked20");
-
-                    b.Property<bool>("Cheked21");
-
-                    b.Property<bool>("Cheked22");
-
-                    b.Property<bool>("Cheked23");
-
-                    b.Property<bool>("Cheked24");
-
-                    b.Property<bool>("Cheked25");
-
-                    b.Property<bool>("Cheked26");
-
-                    b.Property<bool>("Cheked27");
-
-                    b.Property<bool>("Cheked28");
-
-                    b.Property<bool>("Cheked29");
-
-                    b.Property<bool>("Cheked3");
-
-                    b.Property<bool>("Cheked30");
-
-                    b.Property<bool>("Cheked4");
-
-                    b.Property<bool>("Cheked5");
-
-                    b.Property<bool>("Cheked6");
-
-                    b.Property<bool>("Cheked7");
-
-                    b.Property<bool>("Cheked8");
-
-                    b.Property<bool>("Cheked9");
 
                     b.Property<int>("Id1");
 
