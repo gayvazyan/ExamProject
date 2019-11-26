@@ -371,16 +371,7 @@ namespace TestExample.Controllers
         [HttpPost]
         public IActionResult Question(IFormCollection ifromCollection,string Idnext, string Idpreview)
         {
-            int qId = 0;
-            if (Idnext==null)
-            {
-                qId = Convert.ToInt32(Idpreview)+1;
-            }
-            else
-            {
-                qId = Convert.ToInt32(Idnext)-1;
-            }
-           
+            int qId = (Idnext == null)? (Convert.ToInt32(Idpreview) + 1): (qId = Convert.ToInt32(Idnext) - 1);
 
             CitizenUser citizenUser = new CitizenUser();
             if (User.Identity.IsAuthenticated)
@@ -394,26 +385,50 @@ namespace TestExample.Controllers
             tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
 
 
-          
-
-
             string[] questionIds = ifromCollection["questionId"];
             foreach (var questionId in questionIds)
             {
-
                 // null-i problemy
                 string checkedValueString = ifromCollection["question_" + questionId];
 
+
                 int checkedValueInt = Convert.ToInt32(checkedValueString);
+
                 if (checkedValueInt != 0)
                 {
+                    Answer answer1 = _examDBContect.DbAnswer.FirstOrDefault(p => p.Id == checkedValueInt);
+                    var QestionID = answer1.QuestionId;
+                    Answer answer2 = _examDBContect.DbAnswer.FirstOrDefault(p => p.QuestionId == QestionID);
+
+
+                    var idFirst = answer2.Id;
+                    Answer answerFirst = _examDBContect.DbAnswer.FirstOrDefault(p => p.Id == idFirst);
+                    answerFirst.CheckdAnswer = false;
+                    answerFirst.CheckCorrectAnswer = false;
+                    _examDBContect.DbAnswer.Update(answerFirst);
+                    _examDBContect.SaveChanges();
+
+
+                    var idSecond = answer2.Id + 1;
+                    Answer answerSecond = _examDBContect.DbAnswer.FirstOrDefault(p => p.Id == idSecond);
+                    answerSecond.CheckdAnswer = false;
+                    answerSecond.CheckCorrectAnswer = false;
+                    _examDBContect.DbAnswer.Update(answerSecond);
+                    _examDBContect.SaveChanges();
+
+
+
+                    var idThird = answer2.Id + 2;
+                    Answer answerThird = _examDBContect.DbAnswer.FirstOrDefault(p => p.Id == idSecond);
+                    answerThird.CheckdAnswer = false;
+                    answerThird.CheckCorrectAnswer = false;
+                    _examDBContect.DbAnswer.Update(answerThird);
+                    _examDBContect.SaveChanges();
+
                     Answer answer = _examDBContect.DbAnswer.FirstOrDefault(p => p.Id == checkedValueInt);
                     answer.CheckdAnswer = true;
-
                     if (answer.CorrectAnswer == true)
                     {
-                       
-                        
                         answer.CheckCorrectAnswer = true;
                         _examDBContect.DbAnswer.Update(answer);
                         _examDBContect.SaveChanges();
@@ -518,6 +533,7 @@ namespace TestExample.Controllers
                     }
                     else
                     {
+                      
                         switch (qId)
                         {
                             case 1:
@@ -618,8 +634,6 @@ namespace TestExample.Controllers
                     }
 
                     //avelacnum enq cheked araci texty
-                    //TempQuestions tempQuestions = new TempQuestions();
-                    //tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
                    
                     switch (qId)
                     {
@@ -753,11 +767,44 @@ namespace TestExample.Controllers
                     _examDBContect.SaveChanges();
                 }
 
-
+               
             }
 
+            #region ScoreCount
+            var score = 0;
+            if (tempQuestions.Score1 == 1) { score++; }
+            if (tempQuestions.Score2 == 1) { score++; }
+            if (tempQuestions.Score3 == 1) { score++; }
+            if (tempQuestions.Score4 == 1) { score++; }
+            if (tempQuestions.Score5 == 1) { score++; }
+            if (tempQuestions.Score6 == 1) { score++; }
+            if (tempQuestions.Score7 == 1) { score++; }
+            if (tempQuestions.Score8 == 1) { score++; }
+            if (tempQuestions.Score9 == 1) { score++; }
+            if (tempQuestions.Score10 == 1) { score++; }
+            if (tempQuestions.Score11 == 1) { score++; }
+            if (tempQuestions.Score12 == 1) { score++; }
+            if (tempQuestions.Score13 == 1) { score++; }
+            if (tempQuestions.Score14 == 1) { score++; }
+            if (tempQuestions.Score15 == 1) { score++; }
+            if (tempQuestions.Score16 == 1) { score++; }
+            if (tempQuestions.Score17 == 1) { score++; }
+            if (tempQuestions.Score18 == 1) { score++; }
+            if (tempQuestions.Score19 == 1) { score++; }
+            if (tempQuestions.Score20 == 1) { score++; }
+            if (tempQuestions.Score21 == 1) { score++; }
+            if (tempQuestions.Score22 == 1) { score++; }
+            if (tempQuestions.Score23 == 1) { score++; }
+            if (tempQuestions.Score24 == 1) { score++; }
+            if (tempQuestions.Score25 == 1) { score++; }
+            if (tempQuestions.Score26 == 1) { score++; }
+            if (tempQuestions.Score27 == 1) { score++; }
+            if (tempQuestions.Score28 == 1) { score++; }
+            if (tempQuestions.Score29 == 1) { score++; }
+            if (tempQuestions.Score30 == 1) { score++; }
+            #endregion
 
-            citizenReport.Result_Test2 = 14;
+            citizenReport.Result_Test2 = score;
             _examDBContect.DbCitizenReport.Update(citizenReport);
             _examDBContect.SaveChanges();
 
@@ -773,17 +820,12 @@ namespace TestExample.Controllers
                 {
                     return RedirectToAction("Question", new { id = qId + 1 });
                 }
-
             }
             else
             {
                 return RedirectToAction("Result");
             }
-         
         }
-
-       
-
 
         [HttpPost]
         public IActionResult Submit(IFormCollection ifromCollection)
@@ -810,11 +852,7 @@ namespace TestExample.Controllers
                         _examDBContect.SaveChanges();
                     }
                 }
-               
-                
             }
-           
-
             CitizenUser citizenUser = new CitizenUser();
             if (User.Identity.IsAuthenticated)
             {
@@ -824,8 +862,8 @@ namespace TestExample.Controllers
                 ViewBag.UserFullName = citizenUser.FirstName + " " +
                                    citizenUser.SecondName + " " +
                                     citizenUser.LastName;
-
             }
+
             CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
             citizenReport.Result_Test2 = score;
             citizenReport.Test2DataTime = DateTime.Now;
@@ -834,14 +872,13 @@ namespace TestExample.Controllers
             _examDBContect.SaveChanges();
             ViewBag.Result_Test2 = score;
 
-
-
             // ViewBag.Questions = TempData["baza"];
 
             TempQuestions tempQuestions = new TempQuestions();
             tempQuestions = _examDBContect.DbTempQuestions
                       .FirstOrDefault(p => p.Passport == citizenUser.Passport);
 
+            #region  List<Question>
             List<Question> questions = new List<Question>();
             Question question1 = new Question();
             Question question2 = new Question();
@@ -967,8 +1004,8 @@ namespace TestExample.Controllers
             questions.Add(question28);
             questions.Add(question29);
             questions.Add(question30);
-            
-            
+            #endregion
+
 
             ViewBag.Questions = questions;
             List<Answer> answersList = _examDBContect.DbAnswer.ToList();
@@ -996,12 +1033,16 @@ namespace TestExample.Controllers
                 .FirstOrDefault(p => p.Passport == citizenUser.Passport);
             ViewBag.Result_Test2 = citizenReport.Result_Test2;
 
-            // ViewBag.Questions = TempData["baza"];
+
+
+            
 
             TempQuestions tempQuestions = new TempQuestions();
             tempQuestions = _examDBContect.DbTempQuestions
                       .FirstOrDefault(p => p.Passport == citizenUser.Passport);
 
+
+            #region AddAllQuestionsInViewBag
             List<Question> questions = new List<Question>();
             Question question1 = new Question();
             Question question2 = new Question();
@@ -1128,16 +1169,16 @@ namespace TestExample.Controllers
             questions.Add(question29);
             questions.Add(question30);
 
-
+            #endregion
 
             ViewBag.Questions = questions;
+
             List<Answer> answersList = _examDBContect.DbAnswer.ToList();
 
             return View(answersList);
 
 
         }
-
 
 
         [HttpGet]
