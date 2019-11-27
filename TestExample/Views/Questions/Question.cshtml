@@ -11,87 +11,496 @@
 }
 
 
-<span>Թեստի ավարտին մնաց:</span> <span id="countdown" class="countdown"> </span>
-<h3 style="text-align:center">Հարց @ViewBag.QId</h3>
-<form asp-controller="Questions" id="myform">
-    <ul style="list-style-type:none">
-        <li>
-            <strong style="text-align:center"> Հարց  @ViewBag.QId.  @ViewBag.Question</strong>
-            <input type="hidden" name="questionId" value="@ViewBag.QuestionId" />
-            <ol type="A">
 
-                @foreach (var answer in Model)
-                {
-                    if (answer.QuestionId == @ViewBag.QuestionId)
+
+<div class="container">
+    <div class="row">
+
+        <div style="text-align:right" class="col-md-2 portfolio-item">
+
+
+            <div style="text-align:left">
+                <button style="text-align:center" class="btn btn-info"><h2>Հարց @ViewBag.QId </h2>  </button>
+
+                <h4> <span > Հարցի արժեքը 1 (մեկ) միավոր </span></h4>
+            </div>
+
+        </div>
+
+
+        <div style="text-align:left" class="col-md-7 portfolio-item">
+
+            
+            <form asp-controller="Questions" id="myform">
+                <ul style="list-style-type:none">
+                    <li>
+                        <strong style="text-align:center"> Հարց  @ViewBag.QId.  @ViewBag.Question</strong>
+                        <input type="hidden" name="questionId" value="@ViewBag.QuestionId" />
+                        <ol type="A">
+
+                            @foreach (var answer in Model)
+                            {
+                                if (answer.QuestionId == @ViewBag.QuestionId)
+                                {
+                                    <li>
+
+                                        @if ((ViewBag.Cheked == true) && (ViewBag.Answer == answer.QuestionVariantContent))
+                                        {
+                                            <input type="radio" checked="checked" name="question_@ViewBag.QuestionId"
+                                                   value="@answer.Id" />
+                                            @answer.QuestionVariantContent
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" name="question_@ViewBag.QuestionId"
+                                                   value="@answer.Id" />
+                                            @answer.QuestionVariantContent
+                                        }
+                                    </li>
+
+                                }
+
+                            }
+
+                        </ol>
+                    </li>
+                </ul>
+                <div style="text-align:center">
+
+
+                    @if (ViewBag.QId == 1)
                     {
-                        <li>
 
-                            @if ((ViewBag.Cheked == true) && (ViewBag.Answer == answer.QuestionVariantContent))
-                            {
-                                <input type="radio" checked="checked" name="question_@ViewBag.QuestionId"
-                                       value="@answer.Id" />
-                                @answer.QuestionVariantContent
-                            }
-                            else
-                            {
-                                <input type="radio" name="question_@ViewBag.QuestionId"
-                                       value="@answer.Id" />
-                                @answer.QuestionVariantContent
-                            }
-                        </li>
+                        <button type="submit" class="btn btn-success" asp-route-Idnext=@nextId>Հաջորդ հարցը</button>
+                    }
+                    else
+                    {
+                        if (ViewBag.QId == 30)
+                        {
+                            <button type="submit" class="btn btn-success" asp-route-Idpreview=@previewId>Նախորդ հարցը</button>
+                            <button onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Ավատրել')" type="submit" class="btn btn-success" asp-route-Idnext=@nextId>Ավարտել հարցաշարը</button>
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn btn-success" asp-route-Idpreview=@previewId>Նախորդ հարցը</button>
+                            <button type="submit" class="btn btn-success" asp-route-Idnext=@nextId>Հաջորդ հարցը</button>
+                        }
 
                     }
 
-                }
+                </div>
 
-            </ol>
-        </li>
-    </ul>
-    <div style="text-align:center">
+                <div asp-validation-summary="All" class="text-danger" style="text-align:left"></div>
+            </form>
 
-
-        @if (ViewBag.QId == 1)
-        {
-
-            <button type="submit" class="btn btn-success" asp-route-Idnext=@nextId>Հաջորդ հարցը</button>
-        }
-        else
-        {
-            if (ViewBag.QId == 30)
-            {
-                <button type="submit" class="btn btn-success" asp-route-Idpreview=@previewId>Նախորդ հարցը</button>
-                <button type="submit" class="btn btn-success" asp-route-Idpreview=@previewId>Ավարտել հարցաշարը</button>
-            }
-            else
-            {
-                <button type="submit" class="btn btn-success" asp-route-Idpreview=@previewId>Նախորդ հարցը</button>
-                <button type="submit" class="btn btn-success" asp-route-Idnext=@nextId>Հաջորդ հարցը</button>
-            }
-
-        }
+        </div>
 
 
+        <div class="col-md-3 portfolio-item">
+            
+            <table  border="0">
+                <tbody>
+                    <tr style="text-align:center">
+                        <td colspan="5">  <button style="text-align:center" class="btn btn-info"><h5>Հարցաշարի  ուղեցույց </h5>  </button></td>
+                    </tr>
+                    <tr style="text-align:center">
+                        @if (ViewBag.Cheked1 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=1 style="text-align:center" class="btn btn-dark"><h5>1&nbsp;</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=1 style="text-align:center" class="btn btn-outline-dark"><h5>1&nbsp;</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked2 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=2 style="text-align:center" class="btn btn-dark"><h5>2&nbsp;</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=2 style="text-align:center" class="btn btn-outline-dark"><h5>2&nbsp;</h5>  </a></td>
+                        }
+                        @if (ViewBag.Cheked3 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=3 style="text-align:center" class="btn btn-dark"><h5>3&nbsp;</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=3 style="text-align:center" class="btn btn-outline-dark"><h5>3&nbsp;</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked4 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=4 style="text-align:center" class="btn btn-dark"><h5>4&nbsp;</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=4 style="text-align:center" class="btn btn-outline-dark"><h5>4&nbsp;</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked5 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=5 style="text-align:center" class="btn btn-dark"><h5>5&nbsp;</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=5 style="text-align:center" class="btn btn-outline-dark"><h5>5&nbsp;</h5>  </a></td>
+                        }
+                    </tr>
+                    <tr style="text-align:center">
+
+                        @if (ViewBag.Cheked6 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=6 style="text-align:center" class="btn btn-dark"><h5>6&nbsp;</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=6 style="text-align:center" class="btn btn-outline-dark"><h5>6&nbsp;</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked7 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=7 style="text-align:center" class="btn btn-dark"><h5>7&nbsp;</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=7 style="text-align:center" class="btn btn-outline-dark"><h5>7&nbsp;</h5>  </a></td>
+                        }
+                        @if (ViewBag.Cheked8 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=8 style="text-align:center" class="btn btn-dark"><h5>8&nbsp;</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=8 style="text-align:center" class="btn btn-outline-dark"><h5>8&nbsp;</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked9 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=9 style="text-align:center" class="btn btn-dark"><h5>9&nbsp;</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=9 style="text-align:center" class="btn btn-outline-dark"><h5>9&nbsp;</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked10 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=10 style="text-align:center" class="btn btn-dark"><h5>10</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=10 style="text-align:center" class="btn btn-outline-dark"><h5>10</h5>  </a></td>
+                        }
+
+                    </tr>
+                    <tr style="text-align:center">
+
+                        @if (ViewBag.Cheked11 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=11 style="text-align:center" class="btn btn-dark"><h5>11</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=11 style="text-align:center" class="btn btn-outline-dark"><h5>11</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked12 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=12 style="text-align:center" class="btn btn-dark"><h5>12</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=12 style="text-align:center" class="btn btn-outline-dark"><h5>12</h5>  </a></td>
+                        }
+                        @if (ViewBag.Cheked13 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=13 style="text-align:center" class="btn btn-dark"><h5>13</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=13 style="text-align:center" class="btn btn-outline-dark"><h5>13</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked14 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=14 style="text-align:center" class="btn btn-dark"><h5>14</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=14 style="text-align:center" class="btn btn-outline-dark"><h5>14</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked15 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=15 style="text-align:center" class="btn btn-dark"><h5>15</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=15 style="text-align:center" class="btn btn-outline-dark"><h5>15</h5>  </a></td>
+                        }
+
+                    </tr>
+                    <tr style="text-align:center">
+
+                        @if (ViewBag.Cheked16 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=16 style="text-align:center" class="btn btn-dark"><h5>16</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=16 style="text-align:center" class="btn btn-outline-dark"><h5>16</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked17 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=17 style="text-align:center" class="btn btn-dark"><h5>17</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=17 style="text-align:center" class="btn btn-outline-dark"><h5>17</h5>  </a></td>
+                        }
+                        @if (ViewBag.Cheked18 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=18 style="text-align:center" class="btn btn-dark"><h5>18</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=18 style="text-align:center" class="btn btn-outline-dark"><h5>18</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked19 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=19 style="text-align:center" class="btn btn-dark"><h5>19</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=19 style="text-align:center" class="btn btn-outline-dark"><h5>19</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked20 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=20 style="text-align:center" class="btn btn-dark"><h5>20</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=20 style="text-align:center" class="btn btn-outline-dark"><h5>20</h5>  </a></td>
+                        }
+                    </tr>
+                    <tr style="text-align:center">
+
+                        @if (ViewBag.Cheked21 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=21 style="text-align:center" class="btn btn-dark"><h5>21</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=21 style="text-align:center" class="btn btn-outline-dark"><h5>21</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked22 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=22 style="text-align:center" class="btn btn-dark"><h5>22</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=22 style="text-align:center" class="btn btn-outline-dark"><h5>22</h5>  </a></td>
+                        }
+                        @if (ViewBag.Cheked23 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=23 style="text-align:center" class="btn btn-dark"><h5>23</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=23 style="text-align:center" class="btn btn-outline-dark"><h5>23</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked24 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=24 style="text-align:center" class="btn btn-dark"><h5>24</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=24 style="text-align:center" class="btn btn-outline-dark"><h5>24</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked25 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=25 style="text-align:center" class="btn btn-dark"><h5>25</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=25 style="text-align:center" class="btn btn-outline-dark"><h5>25</h5>  </a></td>
+                        }
+
+                    </tr>
+                    <tr style="text-align:center">
+
+                        @if (ViewBag.Cheked26 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=26 style="text-align:center" class="btn btn-dark"><h5>26</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=26 style="text-align:center" class="btn btn-outline-dark"><h5>26</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked27 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=27 style="text-align:center" class="btn btn-dark"><h5>27</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=27 style="text-align:center" class="btn btn-outline-dark"><h5>27</h5>  </a></td>
+                        }
+                        @if (ViewBag.Cheked28 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=28 style="text-align:center" class="btn btn-dark"><h5>28</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=28 style="text-align:center" class="btn btn-outline-dark"><h5>28</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked29 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=29 style="text-align:center" class="btn btn-dark"><h5>29</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=29 style="text-align:center" class="btn btn-outline-dark"><h5>29</h5>  </a></td>
+                        }
+
+                        @if (ViewBag.Cheked30 == true)
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=30 style="text-align:center" class="btn btn-dark"><h5>30</h5>  </a></td>
+                        }
+                        else
+                        {
+                            <td>  <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=30 style="text-align:center" class="btn btn-outline-dark"><h5>30</h5>  </a></td>
+                        }
 
 
-        @*<button onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Ավատրել')" type="submit" class="btn btn-success">Ավարտել</button>*@
-        @*<span id="confirmSubmitSpan" style="display:none">
-            <span>Դուք համոզված եք որ ցանկանում եք Ավատրել</span>
-            <br />
-            <button type="submit" style="text-align:center" class="btn btn-success">Այո</button>
-            <a href="#" class="btn btn-primary"
-               onclick="confirmSubmit(false)">Ոչ</a>
-        </span>
+                    </tr>
+                    <tr style="text-align:center">
+                        @*<td colspan="5">  <button style="text-align:center" class="btn btn-outline-success"><h5>Ավարտել հարցաշարը </h5>  </button></td>*@
+                        <td colspan="5">   <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=31 onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Ավատրել')" class="btn btn-outline-success" >Ավարտել հարցաշարը</a></td>
+                    </tr>
+                </tbody>
+                </table>
 
-        <span id="submitSpan">
-            <a href="#" class="btn btn-success"
-               onclick="confirmSubmit(true)">Ավատրել</a>
-        </span>*@
+
+
+        </div>
 
     </div>
+</div>
 
-    <div asp-validation-summary="All" class="text-danger" style="text-align:left"></div>
-</form>
+
+
+
 
 @section Scripts{
     <script src="~/js/submit.js"></script>
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@*<span>Թեստի ավարտին մնաց:</span> <span id="countdown" class="countdown"> </span>
+    <h3 style="text-align:center">Հարց @ViewBag.QId</h3>
+    <form asp-controller="Questions" id="myform">
+        <ul style="list-style-type:none">
+            <li>
+                <strong style="text-align:center"> Հարց  @ViewBag.QId.  @ViewBag.Question</strong>
+                <input type="hidden" name="questionId" value="@ViewBag.QuestionId" />
+                <ol type="A">
+
+                    @foreach (var answer in Model)
+                    {
+                        if (answer.QuestionId == @ViewBag.QuestionId)
+                        {
+                            <li>
+
+                                @if ((ViewBag.Cheked == true) && (ViewBag.Answer == answer.QuestionVariantContent))
+                                {
+                                    <input type="radio" checked="checked" name="question_@ViewBag.QuestionId"
+                                           value="@answer.Id" />
+                                    @answer.QuestionVariantContent
+                                }
+                                else
+                                {
+                                    <input type="radio" name="question_@ViewBag.QuestionId"
+                                           value="@answer.Id" />
+                                    @answer.QuestionVariantContent
+                                }
+                            </li>
+
+                        }
+
+                    }
+
+                </ol>
+            </li>
+        </ul>
+        <div style="text-align:center">
+
+
+            @if (ViewBag.QId == 1)
+            {
+
+                <button type="submit" class="btn btn-success" asp-route-Idnext=@nextId>Հաջորդ հարցը</button>
+            }
+            else
+            {
+                if (ViewBag.QId == 30)
+                {
+                    <button type="submit" class="btn btn-success" asp-route-Idpreview=@previewId>Նախորդ հարցը</button>
+                    <button onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Ավատրել')" type="submit" class="btn btn-success" asp-route-Idpreview=@previewId>Ավարտել հարցաշարը</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-success" asp-route-Idpreview=@previewId>Նախորդ հարցը</button>
+                    <button type="submit" class="btn btn-success" asp-route-Idnext=@nextId>Հաջորդ հարցը</button>
+                }
+
+            }*@
+
+
+
+
+@*<button onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Ավատրել')" type="submit" class="btn btn-success">Ավարտել</button>*@
+@*<span id="confirmSubmitSpan" style="display:none">
+        <span>Դուք համոզված եք որ ցանկանում եք Ավատրել</span>
+        <br />
+        <button type="submit" style="text-align:center" class="btn btn-success">Այո</button>
+        <a href="#" class="btn btn-primary"
+           onclick="confirmSubmit(false)">Ոչ</a>
+    </span>
+
+    <span id="submitSpan">
+        <a href="#" class="btn btn-success"
+           onclick="confirmSubmit(true)">Ավատրել</a>
+    </span>*@
+
+
+
+
+
+@*</div>
+
+        <div asp-validation-summary="All" class="text-danger" style="text-align:left"></div>
+    </form>
+
+    @section Scripts{
+        <script src="~/js/submit.js"></script>
+    }*@

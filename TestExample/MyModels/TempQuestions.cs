@@ -311,6 +311,8 @@ namespace TestExample.MyModels
 
         public int Score30 { get; set; }
 
+        public int CurrentAttempt { get; set; }
 
+      
     }
 }

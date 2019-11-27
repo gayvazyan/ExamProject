@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="icon" href="~/images/logoIcon.ico">
 </head>
-<body onclick="javascript:disEnter();">
+<body onclick="javascript:disEnter();noBack()">
 
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-success border-bottom box-shadow mb-3">
@@ -159,6 +159,7 @@
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/disEnter.js"></script>
+    <script src="~/js/noBack.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

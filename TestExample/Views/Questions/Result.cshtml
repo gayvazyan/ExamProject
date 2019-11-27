@@ -7,9 +7,10 @@
 
 <div style="text-align:center">
     <h3> <strong>Հարգելի <span style="color:forestgreen">  @ViewBag.UserFullName </span> </strong> </h3>
-    <h3><strong>Դուք հավաքեցիք <span style="color:forestgreen"> @ViewBag.Result_Test2 </span> միավոր </strong> </h3>
-    <h3><strong>Ճիշտ պատասխանները նշված են <span style="color:forestgreen">կանաչ </span>  գույնով </strong></h3>
-    <h3> <strong>Սխալ պատասխանները նշված են<span style="color:red"> կարմիր</span> գույնով </strong></h3>
+    <h5>Դուք հավաքեցիք <span style="color:forestgreen"> @ViewBag.Result_Test2 </span> միավոր  </h5>
+    <h5>Ձեր ճիշտ  պատասխանները նշված են <strong><span style="color:green">կանաչ </span></strong>  գույնով </h5>
+    <h5>Ձեր սխալ պատասխանները նշված են <strong><span style="color:red"> կարմիր</span></strong> գույնով</h5>
+    <h5>Ձեր սխալ պատասխանի դեպքում ճիշտ պատասխանները նշված են <strong><span style="color:green">  (*ճիշտ պատասխան) </span></strong> նշումով</h5>
 </div>
 
 
@@ -30,31 +31,49 @@
                         if (answer.QuestionId == question.Id)
                         {
                             <li>
+                                @if ((answer.CheckdAnswer == true) && (answer.CorrectAnswer == true) && (answer.CheckCorrectAnswer == true))
+                                {
+                                    <button class="btn btn-success" style="text-align:left"> @answer.QuestionVariantContent </button>
 
-                                @if (answer.CheckdAnswer == true)
-                                {
-                                    @if (answer.CorrectAnswer == true)
-                                    {
-                                        <strong>
-                                            <span style="color:green">  @answer.QuestionVariantContent </span>
-                                        </strong>
-                                    }
-                                    else
-                                    {
-                                        <strong>
-                                            <span style="color:red">  @answer.QuestionVariantContent </span>
-                                        </strong>
-                                    }
                                 }
-                                else
+
+                                @if ((answer.CheckdAnswer == true) && (answer.CorrectAnswer == false) && (answer.CheckCorrectAnswer == false))
                                 {
-                                    @answer.QuestionVariantContent
+
+                                    <button class="btn btn-danger"> @answer.QuestionVariantContent </button>
+
+
+                                }
+                                @if ((answer.CheckdAnswer == false) && (answer.CorrectAnswer == true) && (answer.CheckCorrectAnswer == false))
+                                {
+                                    @*<strong>
+                                          <span style="color:blue">  @answer.QuestionVariantContent </span> <span style="color:green"> (*ճիշտ պատասխան)  </span>
+                                        </strong>*@
+
+
+                                    <button class="btn btn-info">  @answer.QuestionVariantContent  </button>
+                                    <span style="color:green"> (*ճիշտ պատասխան)  </span>
+
+                                }
+
+                                @if ((answer.CheckdAnswer == false) && (answer.CorrectAnswer == false) && (answer.CheckCorrectAnswer == false))
+                                {
+
+                                    <span>  @answer.QuestionVariantContent </span>
+
                                 }
                             </li>
+
                         }
                     }
                 </ol>
             </li>
+            
         }
-        </ol>
+        </ul>
+      
 </form>
+
+
+
+
