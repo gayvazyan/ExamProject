@@ -1,0 +1,11 @@
+C:\Users\gareg\source\repos\ExamProject\Tim\bin\Debug\netcoreapp2.2\Tim.deps.json
+C:\Users\gareg\source\repos\ExamProject\Tim\bin\Debug\netcoreapp2.2\Tim.runtimeconfig.json
+C:\Users\gareg\source\repos\ExamProject\Tim\bin\Debug\netcoreapp2.2\Tim.runtimeconfig.dev.json
+C:\Users\gareg\source\repos\ExamProject\Tim\bin\Debug\netcoreapp2.2\Tim.dll
+C:\Users\gareg\source\repos\ExamProject\Tim\bin\Debug\netcoreapp2.2\Tim.pdb
+C:\Users\gareg\source\repos\ExamProject\Tim\obj\Debug\netcoreapp2.2\Tim.csprojAssemblyReference.cache
+C:\Users\gareg\source\repos\ExamProject\Tim\obj\Debug\netcoreapp2.2\Tim.csproj.CoreCompileInputs.cache
+C:\Users\gareg\source\repos\ExamProject\Tim\obj\Debug\netcoreapp2.2\Tim.AssemblyInfoInputs.cache
+C:\Users\gareg\source\repos\ExamProject\Tim\obj\Debug\netcoreapp2.2\Tim.AssemblyInfo.cs
+C:\Users\gareg\source\repos\ExamProject\Tim\obj\Debug\netcoreapp2.2\Tim.dll
+C:\Users\gareg\source\repos\ExamProject\Tim\obj\Debug\netcoreapp2.2\Tim.pdb

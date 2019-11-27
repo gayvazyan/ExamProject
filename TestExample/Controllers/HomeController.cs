@@ -44,11 +44,20 @@ namespace TestExample.Controllers
         }
 
 
+        //[HttpPost]
+        //[AllowAnonymous]
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+
         [HttpGet]
         public IActionResult TestQ()
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult Test(int testId)
         {

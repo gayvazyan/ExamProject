@@ -46,7 +46,7 @@ namespace TestExample.Controllers
             tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
             int currentID = tempQuestions.CurrentAttempt;
 
-            return RedirectToAction("Question", new { id = currentID+1 });
+            return RedirectToAction("Question", new { id = currentID + 1 });
         }
 
         [HttpGet]
@@ -58,19 +58,19 @@ namespace TestExample.Controllers
                 var userName = User.Identity.Name;
                 citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
             }
-          
+
 
             //  ViewBag.Questions = _examDBContect.DbQuestion1.ToList();
             int countQuestion = _examDBContect.DbQuestion.Count();
-             List<Question> questions = new List<Question>();
+            List<Question> questions = new List<Question>();
 
 
             List<int> randomPart1 = RandomNumber.GetRandomNumbers(10, 1, 36);
-            List<int> randomPart2 = RandomNumber.GetRandomNumbers(10, 36,71);
+            List<int> randomPart2 = RandomNumber.GetRandomNumbers(10, 36, 71);
             List<int> randomPart3 = RandomNumber.GetRandomNumbers(10, 71, 104);
 
 
-            List<int>  joinPart1andPart2 = (randomPart1.Concat(randomPart2)).ToList();
+            List<int> joinPart1andPart2 = (randomPart1.Concat(randomPart2)).ToList();
 
             List<int> joinAllParts = (joinPart1andPart2.Concat(randomPart3)).ToList();
 
@@ -80,7 +80,7 @@ namespace TestExample.Controllers
                 questions.Add(questionsRandom);
             }
 
-            
+
             ViewBag.Questions = questions;
             TempQuestions tempQuestionsRemove = new TempQuestions();
             tempQuestionsRemove = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
@@ -91,74 +91,74 @@ namespace TestExample.Controllers
             }
             TempQuestions tempQuestions = new TempQuestions();
             tempQuestions.Passport = citizenUser.Passport;
-            
-                tempQuestions.Id1 = questions[0].Id;
-                tempQuestions.Id2 = questions[1].Id;
-                tempQuestions.Id3 = questions[2].Id;
-                tempQuestions.Id4 = questions[3].Id;
-                tempQuestions.Id5 = questions[4].Id;
-                tempQuestions.Id6 = questions[5].Id;
-                tempQuestions.Id7 = questions[6].Id;
-                tempQuestions.Id8 = questions[7].Id;
-                tempQuestions.Id9 = questions[8].Id;
-                tempQuestions.Id10 = questions[9].Id;
-                tempQuestions.Id11 = questions[10].Id;
-                tempQuestions.Id12 = questions[11].Id;
-                tempQuestions.Id13 = questions[12].Id;
-                tempQuestions.Id14 = questions[13].Id;
-                tempQuestions.Id15 = questions[14].Id;
-                tempQuestions.Id16 = questions[15].Id;
-                tempQuestions.Id17 = questions[16].Id;
-                tempQuestions.Id18 = questions[17].Id;
-                tempQuestions.Id19 = questions[18].Id;
-                tempQuestions.Id20 = questions[19].Id;
-                tempQuestions.Id21 = questions[20].Id;
-                tempQuestions.Id22 = questions[21].Id;
-                tempQuestions.Id23 = questions[22].Id;
-                tempQuestions.Id24 = questions[23].Id;
-                tempQuestions.Id25 = questions[24].Id;
-                tempQuestions.Id26 = questions[25].Id;
-                tempQuestions.Id27 = questions[26].Id;
-                tempQuestions.Id28 = questions[27].Id;
-                tempQuestions.Id29 = questions[28].Id;
-                tempQuestions.Id30 = questions[29].Id;
-            tempQuestions.Q1= questions[0].QuestionContent;
-            tempQuestions.Q2= questions[1].QuestionContent;
-            tempQuestions.Q3= questions[2].QuestionContent;
-            tempQuestions.Q4= questions[3].QuestionContent;
-            tempQuestions.Q5= questions[4].QuestionContent;
-            tempQuestions.Q6= questions[5].QuestionContent;
-            tempQuestions.Q7= questions[6].QuestionContent;
-            tempQuestions.Q8= questions[7].QuestionContent;
-            tempQuestions.Q9= questions[8].QuestionContent;
-            tempQuestions.Q10= questions[9].QuestionContent;
-            tempQuestions.Q11= questions[10].QuestionContent;
-            tempQuestions.Q12= questions[11].QuestionContent;
-            tempQuestions.Q13= questions[12].QuestionContent;
-            tempQuestions.Q14= questions[13].QuestionContent;
-            tempQuestions.Q15= questions[14].QuestionContent;
-            tempQuestions.Q16= questions[15].QuestionContent;
-            tempQuestions.Q17= questions[16].QuestionContent;
-            tempQuestions.Q18= questions[17].QuestionContent;
-            tempQuestions.Q19= questions[18].QuestionContent;
-            tempQuestions.Q20= questions[19].QuestionContent;
-            tempQuestions.Q21= questions[20].QuestionContent;
-            tempQuestions.Q22= questions[21].QuestionContent;
-            tempQuestions.Q23= questions[22].QuestionContent;
-            tempQuestions.Q24= questions[23].QuestionContent;
-            tempQuestions.Q25= questions[24].QuestionContent;
-            tempQuestions.Q26= questions[25].QuestionContent;
-            tempQuestions.Q27= questions[26].QuestionContent;
-            tempQuestions.Q28= questions[27].QuestionContent;
-            tempQuestions.Q29= questions[28].QuestionContent;
-            tempQuestions.Q30= questions[29].QuestionContent;
+
+            tempQuestions.Id1 = questions[0].Id;
+            tempQuestions.Id2 = questions[1].Id;
+            tempQuestions.Id3 = questions[2].Id;
+            tempQuestions.Id4 = questions[3].Id;
+            tempQuestions.Id5 = questions[4].Id;
+            tempQuestions.Id6 = questions[5].Id;
+            tempQuestions.Id7 = questions[6].Id;
+            tempQuestions.Id8 = questions[7].Id;
+            tempQuestions.Id9 = questions[8].Id;
+            tempQuestions.Id10 = questions[9].Id;
+            tempQuestions.Id11 = questions[10].Id;
+            tempQuestions.Id12 = questions[11].Id;
+            tempQuestions.Id13 = questions[12].Id;
+            tempQuestions.Id14 = questions[13].Id;
+            tempQuestions.Id15 = questions[14].Id;
+            tempQuestions.Id16 = questions[15].Id;
+            tempQuestions.Id17 = questions[16].Id;
+            tempQuestions.Id18 = questions[17].Id;
+            tempQuestions.Id19 = questions[18].Id;
+            tempQuestions.Id20 = questions[19].Id;
+            tempQuestions.Id21 = questions[20].Id;
+            tempQuestions.Id22 = questions[21].Id;
+            tempQuestions.Id23 = questions[22].Id;
+            tempQuestions.Id24 = questions[23].Id;
+            tempQuestions.Id25 = questions[24].Id;
+            tempQuestions.Id26 = questions[25].Id;
+            tempQuestions.Id27 = questions[26].Id;
+            tempQuestions.Id28 = questions[27].Id;
+            tempQuestions.Id29 = questions[28].Id;
+            tempQuestions.Id30 = questions[29].Id;
+            tempQuestions.Q1 = questions[0].QuestionContent;
+            tempQuestions.Q2 = questions[1].QuestionContent;
+            tempQuestions.Q3 = questions[2].QuestionContent;
+            tempQuestions.Q4 = questions[3].QuestionContent;
+            tempQuestions.Q5 = questions[4].QuestionContent;
+            tempQuestions.Q6 = questions[5].QuestionContent;
+            tempQuestions.Q7 = questions[6].QuestionContent;
+            tempQuestions.Q8 = questions[7].QuestionContent;
+            tempQuestions.Q9 = questions[8].QuestionContent;
+            tempQuestions.Q10 = questions[9].QuestionContent;
+            tempQuestions.Q11 = questions[10].QuestionContent;
+            tempQuestions.Q12 = questions[11].QuestionContent;
+            tempQuestions.Q13 = questions[12].QuestionContent;
+            tempQuestions.Q14 = questions[13].QuestionContent;
+            tempQuestions.Q15 = questions[14].QuestionContent;
+            tempQuestions.Q16 = questions[15].QuestionContent;
+            tempQuestions.Q17 = questions[16].QuestionContent;
+            tempQuestions.Q18 = questions[17].QuestionContent;
+            tempQuestions.Q19 = questions[18].QuestionContent;
+            tempQuestions.Q20 = questions[19].QuestionContent;
+            tempQuestions.Q21 = questions[20].QuestionContent;
+            tempQuestions.Q22 = questions[21].QuestionContent;
+            tempQuestions.Q23 = questions[22].QuestionContent;
+            tempQuestions.Q24 = questions[23].QuestionContent;
+            tempQuestions.Q25 = questions[24].QuestionContent;
+            tempQuestions.Q26 = questions[25].QuestionContent;
+            tempQuestions.Q27 = questions[26].QuestionContent;
+            tempQuestions.Q28 = questions[27].QuestionContent;
+            tempQuestions.Q29 = questions[28].QuestionContent;
+            tempQuestions.Q30 = questions[29].QuestionContent;
 
             _examDBContect.DbTempQuestions.Update(tempQuestions);
             _examDBContect.SaveChanges();
 
             //skizb_Test2Result-i maqrum
             CitizenReport citizenReport = _examDBContect.DbCitizenReport
-                                          .FirstOrDefault(p=>p.Passport==citizenUser.Passport);
+                                          .FirstOrDefault(p => p.Passport == citizenUser.Passport);
             citizenReport.Result_Test2 = 0;
             citizenReport.Test2Check = false;
             citizenReport.Test2DataTime = DateTime.MinValue;
@@ -190,7 +190,7 @@ namespace TestExample.Controllers
                 citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
             }
 
-            
+
             TempQuestions tempQuestions = new TempQuestions();
             tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
 
@@ -373,7 +373,7 @@ namespace TestExample.Controllers
                     ViewBag.Cheked = tempQuestions.Cheked29;
                     ViewBag.Answer = tempQuestions.Answer29;
                     break;
-               
+
                 default:
                     ViewBag.Question = tempQuestions.Q30;
                     ViewBag.QuestionId = tempQuestions.Id30;
@@ -902,8 +902,8 @@ namespace TestExample.Controllers
             foreach (var questionId in questionIds)
             {
 
-         // null-i problemy
-                string  checkedValueString = ifromCollection["question_" + questionId];
+                // null-i problemy
+                string checkedValueString = ifromCollection["question_" + questionId];
 
                 int checkedValueInt = Convert.ToInt32(checkedValueString);
                 if (checkedValueInt != 0)
@@ -1077,9 +1077,9 @@ namespace TestExample.Controllers
             ViewBag.Questions = questions;
             List<Answer> answersList = _examDBContect.DbAnswer.ToList();
 
-            return View("Result",answersList);
+            return View("Result", answersList);
 
-            
+
         }
 
         [HttpGet]
@@ -1102,7 +1102,7 @@ namespace TestExample.Controllers
 
 
 
-            
+
 
             TempQuestions tempQuestions = new TempQuestions();
             tempQuestions = _examDBContect.DbTempQuestions
@@ -1272,39 +1272,41 @@ namespace TestExample.Controllers
             TempQuestions tempQuestions = new TempQuestions();
             tempQuestions = _examDBContect.DbTempQuestions
                       .FirstOrDefault(p => p.Passport == citizenUser.Passport);
-
+            tempQuestions.CurrentAttempt = 30;
+            _examDBContect.DbTempQuestions.Update(tempQuestions);
+            _examDBContect.SaveChanges();
 
             #region ViewBag.Score
             ViewBag.Score1 = tempQuestions.Score1;
-            ViewBag.Cheked2 = tempQuestions.Cheked2;
-            ViewBag.Cheked3 = tempQuestions.Cheked3;
-            ViewBag.Cheked4 = tempQuestions.Cheked4;
-            ViewBag.Cheked5 = tempQuestions.Cheked5;
-            ViewBag.Cheked6 = tempQuestions.Cheked6;
-            ViewBag.Cheked7 = tempQuestions.Cheked7;
-            ViewBag.Cheked8 = tempQuestions.Cheked8;
-            ViewBag.Cheked9 = tempQuestions.Cheked9;
-            ViewBag.Cheked10 = tempQuestions.Cheked10;
-            ViewBag.Cheked11 = tempQuestions.Cheked11;
-            ViewBag.Cheked12 = tempQuestions.Cheked12;
-            ViewBag.Cheked13 = tempQuestions.Cheked13;
-            ViewBag.Cheked14 = tempQuestions.Cheked14;
-            ViewBag.Cheked15 = tempQuestions.Cheked15;
-            ViewBag.Cheked16 = tempQuestions.Cheked16;
-            ViewBag.Cheked17 = tempQuestions.Cheked17;
-            ViewBag.Cheked18 = tempQuestions.Cheked18;
-            ViewBag.Cheked19 = tempQuestions.Cheked19;
-            ViewBag.Cheked20 = tempQuestions.Cheked20;
-            ViewBag.Cheked21 = tempQuestions.Cheked21;
-            ViewBag.Cheked22 = tempQuestions.Cheked22;
-            ViewBag.Cheked23 = tempQuestions.Cheked23;
-            ViewBag.Cheked24 = tempQuestions.Cheked24;
-            ViewBag.Cheked25 = tempQuestions.Cheked25;
-            ViewBag.Cheked26 = tempQuestions.Cheked26;
-            ViewBag.Cheked27 = tempQuestions.Cheked27;
-            ViewBag.Cheked28 = tempQuestions.Cheked28;
-            ViewBag.Cheked29 = tempQuestions.Cheked29;
-            ViewBag.Cheked30 = tempQuestions.Cheked30;
+            ViewBag.Score2 = tempQuestions.Score2;
+            ViewBag.Score3 = tempQuestions.Score3;
+            ViewBag.Score4 = tempQuestions.Score4;
+            ViewBag.Score5 = tempQuestions.Score5;
+            ViewBag.Score6 = tempQuestions.Score6;
+            ViewBag.Score7 = tempQuestions.Score7;
+            ViewBag.Score8 = tempQuestions.Score8;
+            ViewBag.Score9 = tempQuestions.Score9;
+            ViewBag.Score10 = tempQuestions.Score10;
+            ViewBag.Score11 = tempQuestions.Score11;
+            ViewBag.Score12 = tempQuestions.Score12;
+            ViewBag.Score13 = tempQuestions.Score13;
+            ViewBag.Score14 = tempQuestions.Score14;
+            ViewBag.Score15 = tempQuestions.Score15;
+            ViewBag.Score16 = tempQuestions.Score16;
+            ViewBag.Score17 = tempQuestions.Score17;
+            ViewBag.Score18 = tempQuestions.Score18;
+            ViewBag.Score19 = tempQuestions.Score19;
+            ViewBag.Score20 = tempQuestions.Score20;
+            ViewBag.Score21 = tempQuestions.Score21;
+            ViewBag.Score22 = tempQuestions.Score22;
+            ViewBag.Score23 = tempQuestions.Score23;
+            ViewBag.Score24 = tempQuestions.Score24;
+            ViewBag.Score25 = tempQuestions.Score25;
+            ViewBag.Score26 = tempQuestions.Score26;
+            ViewBag.Score27 = tempQuestions.Score27;
+            ViewBag.Score28 = tempQuestions.Score28;
+            ViewBag.Score29 = tempQuestions.Score29;
+            ViewBag.Score30 = tempQuestions.Score30;
             #endregion
 
 
@@ -1631,7 +1633,7 @@ namespace TestExample.Controllers
         public IActionResult Table(int idCurrent)
         {
 
-            if (idCurrent==31)
+            if (idCurrent == 31)
             {
                 return RedirectToAction("FullResult");
             }
