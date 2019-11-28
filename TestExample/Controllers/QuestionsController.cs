@@ -153,6 +153,14 @@ namespace TestExample.Controllers
             tempQuestions.Q29 = questions[28].QuestionContent;
             tempQuestions.Q30 = questions[29].QuestionContent;
 
+            //fiksum enq qnnutyan skizby ev talis jamanaky
+
+            
+            tempQuestions.QusetionsSartTime = DateTime.UtcNow.AddSeconds(65);
+          //  tempQuestions.QusetionsSartTime = DateTime.UtcNow.AddSeconds(2400);
+
+
+
             _examDBContect.DbTempQuestions.Update(tempQuestions);
             _examDBContect.SaveChanges();
 
@@ -421,6 +429,9 @@ namespace TestExample.Controllers
             #endregion
 
 
+            var startTiem = tempQuestions.QusetionsSartTime;
+            ViewBag.TiemExasise = startTiem;
+
             List<Answer> answersList = _examDBContect.DbAnswer.ToList();
             return View(answersList);
 
@@ -431,6 +442,9 @@ namespace TestExample.Controllers
         public IActionResult Question(IFormCollection ifromCollection, string Idnext, string Idpreview)
         {
             int qId = (Idnext == null) ? (Convert.ToInt32(Idpreview) + 1) : (qId = Convert.ToInt32(Idnext) - 1);
+
+            if ((Idnext == null) && (Idpreview == null)) qId = 100;
+            
 
             CitizenUser citizenUser = new CitizenUser();
             if (User.Identity.IsAuthenticated)
@@ -870,12 +884,15 @@ namespace TestExample.Controllers
             _examDBContect.DbCitizenReport.Update(citizenReport);
             _examDBContect.SaveChanges();
 
+            if (qId == 100)
+            {
+                return RedirectToAction("FullResult");
+            }
+
             if ((qId == 30) && (Idnext == null))
             {
                 return RedirectToAction("Question", new { id = qId - 1 });
             }
-
-
 
             if (qId != 30)
             {
@@ -1624,8 +1641,13 @@ namespace TestExample.Controllers
             CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
             TempQuestions tempQuestions = new TempQuestions();
             tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
-            int currentID = tempQuestions.CurrentAttempt;
-            ViewBag.CurrentID = currentID;
+            if (tempQuestions!=null)
+            {
+                int currentID = tempQuestions.CurrentAttempt;
+                ViewBag.CurrentID = currentID;
+            }
+            
+        
             return View();
         }
 
@@ -1639,5 +1661,7 @@ namespace TestExample.Controllers
             }
             return RedirectToAction("Question", new { id = idCurrent });
         }
+
+
     }
 }

@@ -11,13 +11,20 @@
     <span>յուրաքանչյուր խմբից պատահականության սկզբունքվ ընտրվում են չկրկնվող հարցեր  </span>
     <span>և ձևավորվում է <button class="btn btn-info">30</button> հարցից բաղկացած հարցաշար </span>
 
-    @if ((ViewBag.CurrentID == 0) || (ViewBag.CurrentID == 30))
+    @if ((ViewBag.CurrentID > 0) && (ViewBag.CurrentID < 30))
     {
+
         <br />
         <br />
         <a class="btn btn-outline-info" asp-action="Test" asp-controller="Questions">Ձևավորել հարցաշար և սկսել թեստը</a>
         <br />
         <br />
+        <br />
+        <a class="btn btn-outline-info" asp-action="CurrentAttempt" asp-controller="Questions">Շարունակել վերջին փորձը</a>
+        <br />
+
+
+
     }
     else
     {
@@ -25,9 +32,6 @@
         <br />
         <a class="btn btn-outline-info" asp-action="Test" asp-controller="Questions">Ձևավորել հարցաշար և սկսել թեստը</a>
         <br />
-        <br />
-        <br />
-        <a class="btn btn-outline-info" asp-action="CurrentAttempt" asp-controller="Questions">Շարունակել վերջին փորցը</a>
         <br />
 
     }

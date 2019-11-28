@@ -43,15 +43,6 @@ namespace TestExample.Controllers
             return View();
         }
 
-
-        //[HttpPost]
-        //[AllowAnonymous]
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
-
         [HttpGet]
         public IActionResult TestQ()
         {

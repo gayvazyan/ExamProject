@@ -10,7 +10,10 @@
     var previewId = ViewBag.QId - 1;
 }
 
-
+@{
+    var endTime = ViewBag.TiemExasise;
+    var timeRemaining = TimeSpan.FromTicks(endTime.Ticks - DateTime.UtcNow.Ticks).TotalSeconds.ToString("#");
+}
 
 
 <div class="container">
@@ -22,7 +25,7 @@
             <div style="text-align:left">
                 <button style="text-align:center" class="btn btn-info"><h2>Հարց @ViewBag.QId </h2>  </button>
 
-                <h4> <span > Հարցի արժեքը 1 (մեկ) միավոր </span></h4>
+                <h4> <span> Հարցի արժեքը 1 (մեկ) միավոր </span></h4>
             </div>
 
         </div>
@@ -30,7 +33,7 @@
 
         <div style="text-align:left" class="col-md-7 portfolio-item">
 
-            
+
             <form asp-controller="Questions" id="myform">
                 <ul style="list-style-type:none">
                     <li>
@@ -97,8 +100,8 @@
 
 
         <div class="col-md-3 portfolio-item">
-            
-            <table  border="0">
+
+            <table border="0">
                 <tbody>
                     <tr style="text-align:center">
                         <td colspan="5">  <button style="text-align:center" class="btn btn-info"><h5>Հարցաշարի  ուղեցույց </h5>  </button></td>
@@ -385,10 +388,14 @@
                     </tr>
                     <tr style="text-align:center">
                         @*<td colspan="5">  <button style="text-align:center" class="btn btn-outline-success"><h5>Ավարտել հարցաշարը </h5>  </button></td>*@
-                        <td colspan="5">   <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=31 onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Ավատրել')" class="btn btn-outline-success" >Ավարտել հարցաշարը</a></td>
+                        <td colspan="5">   <a asp-action="Table" asp-controller="Questions" asp-route-idCurrent=31 onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Ավատրել')" class="btn btn-outline-success">Ավարտել հարցաշարը</a></td>
+                    </tr>
+                    <tr style="text-align:center">
+
+                        <td colspan="5"> Թեստի ավարտին մնաց : <span id="minRemaining"></span>:<span id="secRemaining"></span></td>
                     </tr>
                 </tbody>
-                </table>
+            </table>
 
 
 
@@ -398,10 +405,56 @@
 </div>
 
 
+<script>
+
+    var remSeconds =@timeRemaining;
+    var secondsCounter = remSeconds % 60;
+
+    function formatNumber(number) {
+        if (number < 10)
+            return '0' + number;
+        else return '' + number;
+    }
+
+    function startTick() {
+
+        document.getElementById('secRemaining').innerText = formatNumber(parseInt(secondsCounter));
+        document.getElementById('minRemaining').innerText = formatNumber(parseInt(remSeconds / 60));
 
 
+        var _tick = setInterval(function()
+        {
+
+            if (remSeconds > 0) {
+
+
+
+                remSeconds = remSeconds - 1;
+                secondsCounter = secondsCounter - 1;
+                document.getElementById('secRemaining').innerText = formatNumber(parseInt(secondsCounter));
+                document.getElementById('minRemaining').innerText = formatNumber(parseInt(remSeconds / 60));
+
+                if (secondsCounter == 0)
+                    secondsCounter = 60;
+            }
+            else
+            {
+                //alert('Youooo');
+                clearInterval(_tick);
+                document.getElementById("myform").submit();
+
+            }
+
+        }, 1000);
+
+    }
+    startTick();
+
+
+</script>
 
 @section Scripts{
+   
     <script src="~/js/submit.js"></script>
 }
 
