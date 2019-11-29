@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TestExample.Models;
 using TestExample.MyModels;
-
+using TestExample.ViewModels;
 
 namespace TestExample.Controllers
 {
@@ -873,14 +873,24 @@ namespace TestExample.Controllers
             if (tempQuestions.Score30 == 1) { score++; }
             #endregion
 
+
+
+
             citizenReport.Result_Test2 = score;
             citizenReport.Test2Check = true;
             citizenReport.Test2DataTime = DateTime.Now;
             _examDBContect.DbCitizenReport.Update(citizenReport);
             _examDBContect.SaveChanges();
 
+
+
             if (qId == 100)
             {
+               
+                tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+                tempQuestions.TestStart = true;
+                _examDBContect.DbTempQuestions.Update(tempQuestions);
+                _examDBContect.SaveChanges();
                 return RedirectToAction("FullResult");
             }
 
@@ -902,6 +912,10 @@ namespace TestExample.Controllers
             }
             else
             {
+                tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+                tempQuestions.TestStart = true;
+                _examDBContect.DbTempQuestions.Update(tempQuestions);
+                _examDBContect.SaveChanges();
                 return RedirectToAction("FullResult");
             }
         }
@@ -1277,10 +1291,6 @@ namespace TestExample.Controllers
                 .FirstOrDefault(p => p.Passport == citizenUser.Passport);
             ViewBag.Result_Test2 = citizenReport.Result_Test2;
 
-
-
-
-
             TempQuestions tempQuestions = new TempQuestions();
             tempQuestions = _examDBContect.DbTempQuestions
                       .FirstOrDefault(p => p.Passport == citizenUser.Passport);
@@ -1320,8 +1330,6 @@ namespace TestExample.Controllers
             ViewBag.Score29 = tempQuestions.Score29;
             ViewBag.Score30 = tempQuestions.Score30;
             #endregion
-
-
 
             #region AddAllQuestionsInViewBag
             List<Question> questions = new List<Question>();
@@ -1419,6 +1427,7 @@ namespace TestExample.Controllers
             question29.QuestionContent = tempQuestions.Q29;
             question30.QuestionContent = tempQuestions.Q30;
 
+
             questions.Add(question1);
             questions.Add(question2);
             questions.Add(question3);
@@ -1453,6 +1462,232 @@ namespace TestExample.Controllers
             #endregion
 
             ViewBag.Questions = questions;
+
+
+            #region AddViewQuestionAnswer
+            List<ViewQuestionAnswer> viewQuestionAnswer = new List<ViewQuestionAnswer>();
+            ViewQuestionAnswer viewQuestionAnswer1 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer2 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer3 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer4 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer5 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer6 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer7 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer8 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer9 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer10 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer11 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer12= new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer13 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer14 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer15 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer16 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer17 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer18 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer19 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer20 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer21 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer22 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer23 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer24 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer25 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer26 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer27 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer28 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer29 = new ViewQuestionAnswer();
+            ViewQuestionAnswer viewQuestionAnswer30 = new ViewQuestionAnswer();
+
+
+            viewQuestionAnswer1.Id = tempQuestions.Id1;
+            viewQuestionAnswer2.Id = tempQuestions.Id2;
+            viewQuestionAnswer3.Id = tempQuestions.Id3;
+            viewQuestionAnswer4.Id = tempQuestions.Id4;
+            viewQuestionAnswer5.Id = tempQuestions.Id5;
+            viewQuestionAnswer6.Id = tempQuestions.Id6;
+            viewQuestionAnswer7.Id = tempQuestions.Id7;
+            viewQuestionAnswer8.Id = tempQuestions.Id8;
+            viewQuestionAnswer9.Id = tempQuestions.Id9;
+            viewQuestionAnswer10.Id = tempQuestions.Id10;
+            viewQuestionAnswer11.Id = tempQuestions.Id11;
+            viewQuestionAnswer12.Id = tempQuestions.Id12;
+            viewQuestionAnswer13.Id = tempQuestions.Id13;
+            viewQuestionAnswer14.Id = tempQuestions.Id14;
+            viewQuestionAnswer15.Id = tempQuestions.Id15;
+            viewQuestionAnswer16.Id = tempQuestions.Id16;
+            viewQuestionAnswer17.Id = tempQuestions.Id17;
+            viewQuestionAnswer18.Id = tempQuestions.Id18;
+            viewQuestionAnswer19.Id = tempQuestions.Id19;
+            viewQuestionAnswer20.Id = tempQuestions.Id20;
+            viewQuestionAnswer21.Id = tempQuestions.Id21;
+            viewQuestionAnswer22.Id = tempQuestions.Id22;
+            viewQuestionAnswer23.Id = tempQuestions.Id23;
+            viewQuestionAnswer24.Id = tempQuestions.Id24;
+            viewQuestionAnswer25.Id = tempQuestions.Id25;
+            viewQuestionAnswer26.Id = tempQuestions.Id26;
+            viewQuestionAnswer27.Id = tempQuestions.Id27;
+            viewQuestionAnswer28.Id = tempQuestions.Id28;
+            viewQuestionAnswer29.Id = tempQuestions.Id29;
+            viewQuestionAnswer30.Id = tempQuestions.Id30;
+
+            viewQuestionAnswer1.QuestionContent = tempQuestions.Q1;
+            viewQuestionAnswer2.QuestionContent = tempQuestions.Q2;
+            viewQuestionAnswer3.QuestionContent = tempQuestions.Q3;
+            viewQuestionAnswer4.QuestionContent = tempQuestions.Q4;
+            viewQuestionAnswer5.QuestionContent = tempQuestions.Q5;
+            viewQuestionAnswer6.QuestionContent = tempQuestions.Q6;
+            viewQuestionAnswer7.QuestionContent = tempQuestions.Q7;
+            viewQuestionAnswer8.QuestionContent = tempQuestions.Q8;
+            viewQuestionAnswer9.QuestionContent = tempQuestions.Q9;
+            viewQuestionAnswer10.QuestionContent = tempQuestions.Q10;
+            viewQuestionAnswer11.QuestionContent = tempQuestions.Q11;
+            viewQuestionAnswer12.QuestionContent = tempQuestions.Q12;
+            viewQuestionAnswer13.QuestionContent = tempQuestions.Q13;
+            viewQuestionAnswer14.QuestionContent = tempQuestions.Q14;
+            viewQuestionAnswer15.QuestionContent = tempQuestions.Q15;
+            viewQuestionAnswer16.QuestionContent = tempQuestions.Q16;
+            viewQuestionAnswer17.QuestionContent = tempQuestions.Q17;
+            viewQuestionAnswer18.QuestionContent = tempQuestions.Q18;
+            viewQuestionAnswer19.QuestionContent = tempQuestions.Q19;
+            viewQuestionAnswer20.QuestionContent = tempQuestions.Q20;
+            viewQuestionAnswer21.QuestionContent = tempQuestions.Q21;
+            viewQuestionAnswer22.QuestionContent = tempQuestions.Q22;
+            viewQuestionAnswer23.QuestionContent = tempQuestions.Q23;
+            viewQuestionAnswer24.QuestionContent = tempQuestions.Q24;
+            viewQuestionAnswer25.QuestionContent = tempQuestions.Q25;
+            viewQuestionAnswer26.QuestionContent = tempQuestions.Q26;
+            viewQuestionAnswer27.QuestionContent = tempQuestions.Q27;
+            viewQuestionAnswer28.QuestionContent = tempQuestions.Q28;
+            viewQuestionAnswer29.QuestionContent = tempQuestions.Q29;
+            viewQuestionAnswer30.QuestionContent = tempQuestions.Q30;
+
+            viewQuestionAnswer1.RAnswerContent = tempQuestions.Answer1;
+            viewQuestionAnswer2.RAnswerContent = tempQuestions.Answer2;
+            viewQuestionAnswer3.RAnswerContent = tempQuestions.Answer3;
+            viewQuestionAnswer4.RAnswerContent = tempQuestions.Answer4;
+            viewQuestionAnswer5.RAnswerContent = tempQuestions.Answer5;
+            viewQuestionAnswer6.RAnswerContent = tempQuestions.Answer6;
+            viewQuestionAnswer7.RAnswerContent = tempQuestions.Answer7;
+            viewQuestionAnswer8.RAnswerContent = tempQuestions.Answer8;
+            viewQuestionAnswer9.RAnswerContent = tempQuestions.Answer9;
+            viewQuestionAnswer10.RAnswerContent = tempQuestions.Answer10;
+            viewQuestionAnswer11.RAnswerContent = tempQuestions.Answer11;
+            viewQuestionAnswer12.RAnswerContent = tempQuestions.Answer12;
+            viewQuestionAnswer13.RAnswerContent = tempQuestions.Answer13;
+            viewQuestionAnswer14.RAnswerContent = tempQuestions.Answer14;
+            viewQuestionAnswer15.RAnswerContent = tempQuestions.Answer15;
+            viewQuestionAnswer16.RAnswerContent = tempQuestions.Answer16;
+            viewQuestionAnswer17.RAnswerContent = tempQuestions.Answer17;
+            viewQuestionAnswer18.RAnswerContent = tempQuestions.Answer18;
+            viewQuestionAnswer19.RAnswerContent = tempQuestions.Answer19;
+            viewQuestionAnswer20.RAnswerContent = tempQuestions.Answer20;
+            viewQuestionAnswer21.RAnswerContent = tempQuestions.Answer21;
+            viewQuestionAnswer22.RAnswerContent = tempQuestions.Answer22;
+            viewQuestionAnswer23.RAnswerContent = tempQuestions.Answer23;
+            viewQuestionAnswer24.RAnswerContent = tempQuestions.Answer24;
+            viewQuestionAnswer25.RAnswerContent = tempQuestions.Answer25;
+            viewQuestionAnswer26.RAnswerContent = tempQuestions.Answer26;
+            viewQuestionAnswer27.RAnswerContent = tempQuestions.Answer27;
+            viewQuestionAnswer28.RAnswerContent = tempQuestions.Answer28;
+            viewQuestionAnswer29.RAnswerContent = tempQuestions.Answer29;
+            viewQuestionAnswer30.RAnswerContent = tempQuestions.Answer30;
+
+            viewQuestionAnswer1.Cheked = tempQuestions.Cheked1;
+            viewQuestionAnswer2.Cheked = tempQuestions.Cheked2;
+            viewQuestionAnswer3.Cheked = tempQuestions.Cheked3;
+            viewQuestionAnswer4.Cheked = tempQuestions.Cheked4;
+            viewQuestionAnswer5.Cheked = tempQuestions.Cheked5;
+            viewQuestionAnswer6.Cheked = tempQuestions.Cheked6;
+            viewQuestionAnswer7.Cheked = tempQuestions.Cheked7;
+            viewQuestionAnswer8.Cheked = tempQuestions.Cheked8;
+            viewQuestionAnswer9.Cheked = tempQuestions.Cheked9;
+            viewQuestionAnswer10.Cheked = tempQuestions.Cheked10;
+            viewQuestionAnswer11.Cheked = tempQuestions.Cheked11;
+            viewQuestionAnswer12.Cheked = tempQuestions.Cheked12;
+            viewQuestionAnswer13.Cheked = tempQuestions.Cheked13;
+            viewQuestionAnswer14.Cheked = tempQuestions.Cheked14;
+            viewQuestionAnswer15.Cheked = tempQuestions.Cheked15;
+            viewQuestionAnswer16.Cheked = tempQuestions.Cheked16;
+            viewQuestionAnswer17.Cheked = tempQuestions.Cheked17;
+            viewQuestionAnswer18.Cheked = tempQuestions.Cheked18;
+            viewQuestionAnswer19.Cheked = tempQuestions.Cheked19;
+            viewQuestionAnswer20.Cheked = tempQuestions.Cheked20;
+            viewQuestionAnswer21.Cheked = tempQuestions.Cheked21;
+            viewQuestionAnswer22.Cheked = tempQuestions.Cheked22;
+            viewQuestionAnswer23.Cheked = tempQuestions.Cheked23;
+            viewQuestionAnswer24.Cheked = tempQuestions.Cheked24;
+            viewQuestionAnswer25.Cheked = tempQuestions.Cheked25;
+            viewQuestionAnswer26.Cheked = tempQuestions.Cheked26;
+            viewQuestionAnswer27.Cheked = tempQuestions.Cheked27;
+            viewQuestionAnswer28.Cheked = tempQuestions.Cheked28;
+            viewQuestionAnswer29.Cheked = tempQuestions.Cheked29;
+            viewQuestionAnswer30.Cheked = tempQuestions.Cheked30;
+
+
+            viewQuestionAnswer1.Score = tempQuestions.Score1;
+            viewQuestionAnswer2.Score = tempQuestions.Score2;
+            viewQuestionAnswer3.Score = tempQuestions.Score3;
+            viewQuestionAnswer4.Score = tempQuestions.Score4;
+            viewQuestionAnswer5.Score = tempQuestions.Score5;
+            viewQuestionAnswer6.Score = tempQuestions.Score6;
+            viewQuestionAnswer7.Score = tempQuestions.Score7;
+            viewQuestionAnswer8.Score = tempQuestions.Score8;
+            viewQuestionAnswer9.Score = tempQuestions.Score9;
+            viewQuestionAnswer10.Score = tempQuestions.Score10;
+            viewQuestionAnswer11.Score = tempQuestions.Score11;
+            viewQuestionAnswer12.Score = tempQuestions.Score12;
+            viewQuestionAnswer13.Score = tempQuestions.Score13;
+            viewQuestionAnswer14.Score = tempQuestions.Score14;
+            viewQuestionAnswer15.Score = tempQuestions.Score15;
+            viewQuestionAnswer16.Score = tempQuestions.Score16;
+            viewQuestionAnswer17.Score = tempQuestions.Score17;
+            viewQuestionAnswer18.Score = tempQuestions.Score18;
+            viewQuestionAnswer19.Score = tempQuestions.Score19;
+            viewQuestionAnswer20.Score = tempQuestions.Score20;
+            viewQuestionAnswer21.Score = tempQuestions.Score21;
+            viewQuestionAnswer22.Score = tempQuestions.Score22;
+            viewQuestionAnswer23.Score = tempQuestions.Score23;
+            viewQuestionAnswer24.Score = tempQuestions.Score24;
+            viewQuestionAnswer25.Score = tempQuestions.Score25;
+            viewQuestionAnswer26.Score = tempQuestions.Score26;
+            viewQuestionAnswer27.Score = tempQuestions.Score27;
+            viewQuestionAnswer28.Score = tempQuestions.Score28;
+            viewQuestionAnswer29.Score = tempQuestions.Score29;
+            viewQuestionAnswer30.Score = tempQuestions.Score30;
+
+            viewQuestionAnswer.Add(viewQuestionAnswer1);
+            viewQuestionAnswer.Add(viewQuestionAnswer2);
+            viewQuestionAnswer.Add(viewQuestionAnswer3);
+            viewQuestionAnswer.Add(viewQuestionAnswer4);
+            viewQuestionAnswer.Add(viewQuestionAnswer5);
+            viewQuestionAnswer.Add(viewQuestionAnswer6);
+            viewQuestionAnswer.Add(viewQuestionAnswer7);
+            viewQuestionAnswer.Add(viewQuestionAnswer8);
+            viewQuestionAnswer.Add(viewQuestionAnswer9);
+            viewQuestionAnswer.Add(viewQuestionAnswer10);
+            viewQuestionAnswer.Add(viewQuestionAnswer11);
+            viewQuestionAnswer.Add(viewQuestionAnswer12);
+            viewQuestionAnswer.Add(viewQuestionAnswer13);
+            viewQuestionAnswer.Add(viewQuestionAnswer14);
+            viewQuestionAnswer.Add(viewQuestionAnswer15);
+            viewQuestionAnswer.Add(viewQuestionAnswer16);
+            viewQuestionAnswer.Add(viewQuestionAnswer17);
+            viewQuestionAnswer.Add(viewQuestionAnswer18);
+            viewQuestionAnswer.Add(viewQuestionAnswer19);
+            viewQuestionAnswer.Add(viewQuestionAnswer20);
+            viewQuestionAnswer.Add(viewQuestionAnswer21);
+            viewQuestionAnswer.Add(viewQuestionAnswer22);
+            viewQuestionAnswer.Add(viewQuestionAnswer23);
+            viewQuestionAnswer.Add(viewQuestionAnswer24);
+            viewQuestionAnswer.Add(viewQuestionAnswer25);
+            viewQuestionAnswer.Add(viewQuestionAnswer26);
+            viewQuestionAnswer.Add(viewQuestionAnswer27);
+            viewQuestionAnswer.Add(viewQuestionAnswer28);
+            viewQuestionAnswer.Add(viewQuestionAnswer29);
+            viewQuestionAnswer.Add(viewQuestionAnswer30);
+
+            #endregion
+
+            ViewBag.ViewQuestionAnswer = viewQuestionAnswer;
 
             List<Answer> answersList = _examDBContect.DbAnswer.ToList();
 
@@ -1644,6 +1879,7 @@ namespace TestExample.Controllers
             {
                 int currentID = tempQuestions.CurrentAttempt;
                 ViewBag.CurrentID = currentID;
+                ViewBag.TestStart = tempQuestions.TestStart;
             }
             
         
@@ -1656,6 +1892,20 @@ namespace TestExample.Controllers
 
             if (idCurrent == 31)
             {
+                CitizenUser citizenUser = new CitizenUser();
+                if (User.Identity.IsAuthenticated)
+                {
+                    var userName = User.Identity.Name;
+                    citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
+                }
+                CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+
+                TempQuestions tempQuestions = new TempQuestions();
+                tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+                tempQuestions.TestStart = true;
+                _examDBContect.DbTempQuestions.Update(tempQuestions);
+                _examDBContect.SaveChanges();
+
                 return RedirectToAction("FullResult");
             }
             return RedirectToAction("Question", new { id = idCurrent });

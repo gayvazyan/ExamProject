@@ -313,7 +313,7 @@ namespace TestExample.MyModels
 
         public int CurrentAttempt { get; set; }
 
-        public DateTime QusetionsSartTime { get; set; }
+        public bool TestStart { get; set; }
 
 
     }

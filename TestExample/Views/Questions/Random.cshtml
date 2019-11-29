@@ -8,9 +8,12 @@
 }
 
 <div class="text-center">
+    @if (ViewBag.TestStart == false)
+    {
+        <button class="btn btn-primary"> Թեստի ավարտին մնաց :  <span id="minRemaining"></span>:<span id="secRemaining"></span> </button>
+        <br />
+    }
 
-    <button class="btn btn-primary"> Թեստի ավարտին մնաց :  <span id="minRemaining"></span>:<span id="secRemaining"></span> </button>
-    <br />
     <br />
     <span>Տվյալների բազայում այժմ առկա է <button class="btn btn-info">103</button> հարց, որնք առանձնացված են մի քանի խմբի, յուրաքանչյուր խմբից</span>
     <br />
@@ -40,11 +43,7 @@
         <br />
         <a class="btn btn-outline-info" asp-action="Test" asp-controller="Questions">Հարցաշար</a>
         <br />
-
-
     }
-
-
 
     <br />
     <a class="btn btn-outline-info" asp-action="RandomT" asp-controller="Home">Խնդիր</a>

@@ -40,23 +40,7 @@ namespace TestExample.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-            CitizenUser citizenUser = new CitizenUser();
-            if (User.Identity.IsAuthenticated)
-            {
-                var userName = User.Identity.Name;
-                citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
-            }
-
-            CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
-            TempQuestions tempQuestions = new TempQuestions();
-            tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
-            if (tempQuestions != null)
-            {
-                tempQuestions.CurrentAttempt = 31;
-                _examDBContect.DbTempQuestions.Update(tempQuestions);
-                _examDBContect.SaveChanges();
-            }
-
+           
             return View();
         }
 
@@ -275,6 +259,17 @@ namespace TestExample.Controllers
             citizenReport.StartDate= DateTime.UtcNow.AddSeconds(95);
             _examDBContect.DbCitizenReport.Update(citizenReport);
             _examDBContect.SaveChanges();
+
+            TempQuestions tempQuestions = new TempQuestions();
+            tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+            if (tempQuestions != null)
+            {
+                tempQuestions.CurrentAttempt = 31;
+                tempQuestions.TestStart = false;
+                _examDBContect.DbTempQuestions.Update(tempQuestions);
+                _examDBContect.SaveChanges();
+            }
+
 
             return RedirectToAction("Random", "Questions");
         }
