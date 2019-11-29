@@ -52,7 +52,6 @@ C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Razo
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Razor\Views\Home\Email.g.cshtml.cs
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Razor\Views\Home\Random.g.cshtml.cs
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Razor\Views\Home\Result.g.cshtml.cs
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Razor\Views\Home\TestInput.g.cshtml.cs
 C:\Users\gareg\source\repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Razor\Views\Home\TestQ.g.cshtml.cs

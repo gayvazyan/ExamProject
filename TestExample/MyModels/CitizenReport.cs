@@ -39,5 +39,7 @@ namespace TestExample.Models
 
         public DateTime NotificationData { get; set; }
 
+        public DateTime StartDate { get; set; }
+
     }
 }

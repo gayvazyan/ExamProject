@@ -153,14 +153,6 @@ namespace TestExample.Controllers
             tempQuestions.Q29 = questions[28].QuestionContent;
             tempQuestions.Q30 = questions[29].QuestionContent;
 
-            //fiksum enq qnnutyan skizby ev talis jamanaky
-
-            
-            tempQuestions.QusetionsSartTime = DateTime.UtcNow.AddSeconds(65);
-          //  tempQuestions.QusetionsSartTime = DateTime.UtcNow.AddSeconds(2400);
-
-
-
             _examDBContect.DbTempQuestions.Update(tempQuestions);
             _examDBContect.SaveChanges();
 
@@ -197,6 +189,10 @@ namespace TestExample.Controllers
                 var userName = User.Identity.Name;
                 citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
             }
+            CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+
+            var startDate = citizenReport.StartDate;
+            ViewBag.TiemExasise = startDate;
 
 
             TempQuestions tempQuestions = new TempQuestions();
@@ -429,8 +425,7 @@ namespace TestExample.Controllers
             #endregion
 
 
-            var startTiem = tempQuestions.QusetionsSartTime;
-            ViewBag.TiemExasise = startTiem;
+           
 
             List<Answer> answersList = _examDBContect.DbAnswer.ToList();
             return View(answersList);
@@ -1639,6 +1634,10 @@ namespace TestExample.Controllers
             }
 
             CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+
+            var startDate = citizenReport.StartDate;
+            ViewBag.TiemExasise = startDate;
+
             TempQuestions tempQuestions = new TempQuestions();
             tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
             if (tempQuestions!=null)

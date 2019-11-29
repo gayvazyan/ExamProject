@@ -4,7 +4,19 @@
 @{
     ViewData["Title"] = "Հարցաթերթիկ_" + ViewBag.NumberTicket;
 }
-<form asp-controller="Results" asp-action="Test" asp-route-testTicket=@ViewBag.NumberTicket method="post">
+
+@{
+    var endTime = ViewBag.TiemExasise;
+    var timeRemaining = TimeSpan.FromTicks(endTime.Ticks - DateTime.UtcNow.Ticks).TotalSeconds.ToString("#");
+}
+
+<div style="text-align:right">
+    <button class="btn btn-primary"> Թեստի ավարտին մնաց :  <span id="minRemaining"></span>:<span id="secRemaining"></span> </button>
+    <br />
+</div>
+
+
+<form id="test2form" asp-controller="Results" asp-action="Test" asp-route-testTicket=@ViewBag.NumberTicket method="post">
     <div class="text-center">
         <h2> <p style="text-align: center;"><strong>Հարցաթերթիկ @ViewBag.NumberTicket</strong></p> </h2>
         <p style="text-align: left;"><strong>Խնդիր</strong><strong>.</strong>&nbsp;Ազգային ժողովի 2027 թվականի հունիսի 10-ի ընտրություններին @ViewBag.Region մարզի @ViewBag.Community համայնքում (@ViewBag.CEC-րդ ընտրական տարածքի թիվ @ViewBag.TEC ընտրական տեղամասում) շրջիկ արկղով քվեարկողների թիվը`&nbsp;<strong>@ViewBag.AllMobileVoters&nbsp;</strong>է, ընտրողներից ստացված տեխնիկական սարքավորմամբ տպված կտրոնների թիվը`&nbsp;<strong>@ViewBag.VadTickets</strong>, ընտրողներից ստացված համարակալված կտրոնների թիվը`&nbsp;<strong>@ViewBag.NumerableTickets</strong>, չօգտագործված համարակալված կտրոնների թիվը`&nbsp;<strong>@ViewBag.UnusedNumerableTickets</strong>, չօգտագործված ինքնասոսնձվող դրոշմանիշերի թիվը`&nbsp;<strong>@ViewBag.UnusedGlueTickets</strong>:</p>
@@ -433,6 +445,59 @@
     </div>
     <div asp-validation-summary="All" class="text-danger" style="text-align:left"></div>
 </form>
+
+
+
+<script>
+
+    var remSeconds =@timeRemaining;
+    var secondsCounter = remSeconds % 60;
+
+    function formatNumber(number) {
+        if (number < 10)
+            return '0' + number;
+        else return '' + number;
+    }
+
+    function startTick() {
+
+        document.getElementById('secRemaining').innerText = formatNumber(parseInt(secondsCounter));
+        document.getElementById('minRemaining').innerText = formatNumber(parseInt(remSeconds / 60));
+
+
+        var _tick = setInterval(function()
+        {
+
+            if (remSeconds > 0) {
+
+
+
+                remSeconds = remSeconds - 1;
+                secondsCounter = secondsCounter - 1;
+                document.getElementById('secRemaining').innerText = formatNumber(parseInt(secondsCounter));
+                document.getElementById('minRemaining').innerText = formatNumber(parseInt(remSeconds / 60));
+
+                if (secondsCounter == 0)
+                    secondsCounter = 60;
+            }
+            else
+            {
+               // alert('Թեստին հատկացված ժամանակը ավարտվել է!!!' + '\n' +'Նոր թեստ սկսելու համար վերադարձեք Սկիզբ');
+                clearInterval(_tick);
+                document.getElementById("test2form").submit();
+
+            }
+
+        }, 1000);
+
+    }
+    startTick();
+
+
+</script>
+
+
+
 
 @section Scripts{
     <script src="~/js/submit.js"></script>

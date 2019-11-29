@@ -2,40 +2,103 @@
     ViewData["Title"] = "Հարցաշար";
 }
 
-
+@{
+    var endTime = ViewBag.TiemExasise;
+    var timeRemaining = TimeSpan.FromTicks(endTime.Ticks - DateTime.UtcNow.Ticks).TotalSeconds.ToString("#");
+}
 
 <div class="text-center">
 
+    <button class="btn btn-primary"> Թեստի ավարտին մնաց :  <span id="minRemaining"></span>:<span id="secRemaining"></span> </button>
+    <br />
+    <br />
     <span>Տվյալների բազայում այժմ առկա է <button class="btn btn-info">103</button> հարց, որնք առանձնացված են մի քանի խմբի, յուրաքանչյուր խմբից</span>
     <br />
     <span>յուրաքանչյուր խմբից պատահականության սկզբունքվ ընտրվում են չկրկնվող հարցեր  </span>
     <span>և ձևավորվում է <button class="btn btn-info">30</button> հարցից բաղկացած հարցաշար </span>
+    <br />
+    <span>Տվյալների բազայում  առկա է <button class="btn btn-info">7</button> խնդիր, յուրքանչյուրը <button class="btn btn-info">5</button> միավոր </span>
+    <br />
+    <span>Խնդրհի լուծման  և հարցաշարին պատասխանելու արդյունքում դուք կարող եք վաստակել առավելագույնը  <button class="btn btn-success">35</button>  միավոր </span>
 
     @if ((ViewBag.CurrentID > 0) && (ViewBag.CurrentID < 30))
     {
 
         <br />
         <br />
-        <a class="btn btn-outline-info" asp-action="Test" asp-controller="Questions">Ձևավորել հարցաշար և սկսել թեստը</a>
+        <a class="btn btn-outline-info" asp-action="Index" asp-controller="Home"> Սկսել նոր թեստ</a>
         <br />
         <br />
         <br />
-        <a class="btn btn-outline-info" asp-action="CurrentAttempt" asp-controller="Questions">Շարունակել վերջին փորձը</a>
+        <a class="btn btn-outline-info" asp-action="CurrentAttempt" asp-controller="Questions">Շարունակել հարցաշարը</a>
         <br />
-
-
 
     }
     else
     {
         <br />
         <br />
-        <a class="btn btn-outline-info" asp-action="Test" asp-controller="Questions">Ձևավորել հարցաշար և սկսել թեստը</a>
+        <a class="btn btn-outline-info" asp-action="Test" asp-controller="Questions">Հարցաշար</a>
         <br />
-        <br />
+
 
     }
 
 
 
+    <br />
+    <a class="btn btn-outline-info" asp-action="RandomT" asp-controller="Home">Խնդիր</a>
+    <br />
+    <br />
+
+
 </div>
+
+
+<script>
+
+    var remSeconds =@timeRemaining;
+    var secondsCounter = remSeconds % 60;
+
+    function formatNumber(number) {
+        if (number < 10)
+            return '0' + number;
+        else return '' + number;
+    }
+
+    function startTick() {
+
+        document.getElementById('secRemaining').innerText = formatNumber(parseInt(secondsCounter));
+        document.getElementById('minRemaining').innerText = formatNumber(parseInt(remSeconds / 60));
+
+
+        var _tick = setInterval(function()
+        {
+
+            if (remSeconds > 0) {
+
+
+
+                remSeconds = remSeconds - 1;
+                secondsCounter = secondsCounter - 1;
+                document.getElementById('secRemaining').innerText = formatNumber(parseInt(secondsCounter));
+                document.getElementById('minRemaining').innerText = formatNumber(parseInt(remSeconds / 60));
+
+                if (secondsCounter == 0)
+                    secondsCounter = 60;
+            }
+            else
+            {
+                alert('Թեստին հատկացված ժամանակը ավարտվել է!!!' + '\n' +'Նոր թեստ սկսելու համար վերադարձեք Սկիզբ');
+                clearInterval(_tick);
+              //  document.getElementById("myform").submit();
+
+            }
+
+        }, 1000);
+
+    }
+    startTick();
+
+
+</script>

@@ -40,6 +40,23 @@ namespace TestExample.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
+            CitizenUser citizenUser = new CitizenUser();
+            if (User.Identity.IsAuthenticated)
+            {
+                var userName = User.Identity.Name;
+                citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
+            }
+
+            CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+            TempQuestions tempQuestions = new TempQuestions();
+            tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+            if (tempQuestions != null)
+            {
+                tempQuestions.CurrentAttempt = 31;
+                _examDBContect.DbTempQuestions.Update(tempQuestions);
+                _examDBContect.SaveChanges();
+            }
+
             return View();
         }
 
@@ -91,17 +108,33 @@ namespace TestExample.Controllers
         [HttpGet]
         public IActionResult Random()
         {
+            
+
             return View();
         }
 
         public IActionResult RandomT()
         {
+            CitizenUser citizenUser = new CitizenUser();
+            if (User.Identity.IsAuthenticated)
+            {
+                var userName = User.Identity.Name;
+                citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
+            }
+
+            CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+
+            var startDate = citizenReport.StartDate;
+            ViewBag.TiemExasise = startDate;
+
+
             Random random = new Random();
             int rundomNumber = random.Next(1, 8);
             EmptyTextViewModel emptyTextViewModel = _examDBContect.DbEmptyTextViewModel
                  .FirstOrDefault(p => p.Id == rundomNumber);
+           
             //ViewBags Start
-
+            #region ViewBags Start
             ViewBag.NumberTicket = emptyTextViewModel.Id;
             ViewBag.Region = emptyTextViewModel.Region;
             ViewBag.Community = emptyTextViewModel.Community;
@@ -128,7 +161,7 @@ namespace TestExample.Controllers
             ViewBag.ListAll = emptyTextViewModel.ListAll;
             ViewBag.TecGlueTickets = emptyTextViewModel.TecGlueTickets;
             ViewBag.TecNumerableTickets = emptyTextViewModel.TecNumerableTickets;
-
+            #endregion
             //ViewBags end
 
             return View("TestInput");
@@ -226,10 +259,32 @@ namespace TestExample.Controllers
             return View(citizenReport);
         }
 
+        [HttpGet]
+        public IActionResult StartDate()
+        {
+            CitizenUser citizenUser = new CitizenUser();
+            if (User.Identity.IsAuthenticated)
+            {
+                var userName = User.Identity.Name;
+                citizenUser = _userManager.Users.FirstOrDefault(p => p.Email == userName);
+
+            }
+            CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+
+           // citizenReport.StartDate= DateTime.UtcNow.AddSeconds(2400);
+            citizenReport.StartDate= DateTime.UtcNow.AddSeconds(95);
+            _examDBContect.DbCitizenReport.Update(citizenReport);
+            _examDBContect.SaveChanges();
+
+            return RedirectToAction("Random", "Questions");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        
     }
 }
