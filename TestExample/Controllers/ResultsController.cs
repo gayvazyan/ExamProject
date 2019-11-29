@@ -119,6 +119,11 @@ namespace TestExample.Controllers
             _examDBContect.Update(citizenReport);
             _examDBContect.SaveChanges();
 
+            TempQuestions tempQuestions = new TempQuestions();
+            tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+            tempQuestions.TestEnd = true;
+            _examDBContect.DbTempQuestions.Update(tempQuestions);
+            _examDBContect.SaveChanges();
 
             return View(citizenTestViewModel);
         }

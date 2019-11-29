@@ -315,6 +315,10 @@ namespace TestExample.MyModels
 
         public bool TestStart { get; set; }
 
+        public bool QestEnd { get; set; }
+
+        public bool TestEnd { get; set; }
+
 
     }
 }

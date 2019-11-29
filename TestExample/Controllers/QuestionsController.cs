@@ -84,13 +84,20 @@ namespace TestExample.Controllers
             ViewBag.Questions = questions;
             TempQuestions tempQuestionsRemove = new TempQuestions();
             tempQuestionsRemove = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
+            bool testEnd;
+            testEnd = (tempQuestionsRemove.TestEnd == true) ? true : false;
+            //heracnum enq naxord tvyalnery
+
             if (tempQuestionsRemove != null)
             {
                 _examDBContect.DbTempQuestions.Remove(tempQuestionsRemove);
                 _examDBContect.SaveChanges();
             }
+
             TempQuestions tempQuestions = new TempQuestions();
             tempQuestions.Passport = citizenUser.Passport;
+
+            tempQuestions.TestEnd = testEnd;
 
             tempQuestions.Id1 = questions[0].Id;
             tempQuestions.Id2 = questions[1].Id;
@@ -888,7 +895,8 @@ namespace TestExample.Controllers
             {
                
                 tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
-                tempQuestions.TestStart = true;
+              //  tempQuestions.TestStart = true;
+                tempQuestions.QestEnd = true;
                 _examDBContect.DbTempQuestions.Update(tempQuestions);
                 _examDBContect.SaveChanges();
                 return RedirectToAction("FullResult");
@@ -913,7 +921,8 @@ namespace TestExample.Controllers
             else
             {
                 tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
-                tempQuestions.TestStart = true;
+                //tempQuestions.TestStart = true;
+                tempQuestions.QestEnd = true;
                 _examDBContect.DbTempQuestions.Update(tempQuestions);
                 _examDBContect.SaveChanges();
                 return RedirectToAction("FullResult");
@@ -1880,6 +1889,9 @@ namespace TestExample.Controllers
                 int currentID = tempQuestions.CurrentAttempt;
                 ViewBag.CurrentID = currentID;
                 ViewBag.TestStart = tempQuestions.TestStart;
+                ViewBag.QestEnd = tempQuestions.QestEnd;
+                ViewBag.TestEnd = tempQuestions.TestEnd;
+
             }
             
         
@@ -1903,6 +1915,7 @@ namespace TestExample.Controllers
                 TempQuestions tempQuestions = new TempQuestions();
                 tempQuestions = _examDBContect.DbTempQuestions.FirstOrDefault(p => p.Passport == citizenUser.Passport);
                 tempQuestions.TestStart = true;
+                tempQuestions.QestEnd = true;
                 _examDBContect.DbTempQuestions.Update(tempQuestions);
                 _examDBContect.SaveChanges();
 

@@ -8,7 +8,7 @@
 }
 
 <div class="text-center">
-    @if (ViewBag.TestStart == false)
+    @if ((ViewBag.QestEnd != true) || (ViewBag.TestEnd != true))
     {
         <button class="btn btn-primary"> Թեստի ավարտին մնաց :  <span id="minRemaining"></span>:<span id="secRemaining"></span> </button>
         <br />
@@ -27,10 +27,10 @@
     @if ((ViewBag.CurrentID > 0) && (ViewBag.CurrentID < 30))
     {
 
-        <br />
+        @*<br />
         <br />
         <a class="btn btn-outline-info" asp-action="Index" asp-controller="Home"> Սկսել նոր թեստ</a>
-        <br />
+        <br />*@
         <br />
         <br />
         <a class="btn btn-outline-info" asp-action="CurrentAttempt" asp-controller="Questions">Շարունակել հարցաշարը</a>
@@ -39,16 +39,47 @@
     }
     else
     {
+        @if (ViewBag.QestEnd == true)
+        {
+            <br />
+            <br />
+            <a style="color:white" class="btn btn-info">Հարցաշարը ավարտված է</a>
+            <br />
+        }
+        else
+        {
+            <br />
+            <br />
+            <a class="btn btn-outline-info" asp-action="Test" asp-controller="Questions">Հարցաշար</a>
+            <br />
+        }
+    }
+
+
+    @if (ViewBag.TestEnd == true)
+    {
         <br />
         <br />
-        <a class="btn btn-outline-info" asp-action="Test" asp-controller="Questions">Հարցաշար</a>
+        <a style="color:white" class="btn btn-info">Խնդիր ավարտված է</a>
+        <br />
+    }
+    else
+    {
+        <br />
+        <a class="btn btn-outline-info" asp-action="RandomT" asp-controller="Home">Խնդիր</a>
+        <br />
         <br />
     }
 
-    <br />
-    <a class="btn btn-outline-info" asp-action="RandomT" asp-controller="Home">Խնդիր</a>
-    <br />
-    <br />
+    @if ((ViewBag.QestEnd == true) && (ViewBag.TestEnd == true))
+    {
+        <br />
+        <span>Մուտք գործեք <a class="btn btn-outline-success" asp-controller="Home" asp-action="Result">Իմ տվյալները</a> բաժին թեստի արդյունքներին ծանոթանալու համար</span>
+        
+        <br />
+        <br />
+    }
+
 
 
 </div>
@@ -88,7 +119,8 @@
             }
             else
             {
-                alert('Թեստին հատկացված ժամանակը ավարտվել է!!!' + '\n' +'Նոր թեստ սկսելու համար վերադարձեք Սկիզբ');
+                alert('Թեստին հատկացված ժամանակը ավարտվել է!!!' + '\n' + 'Նոր թեստ սկսելու համար վերադարձեք Սկիզբ');
+                window.location.href = "../Home/Index";
                 clearInterval(_tick);
               //  document.getElementById("myform").submit();
 

@@ -265,7 +265,9 @@ namespace TestExample.Controllers
             if (tempQuestions != null)
             {
                 tempQuestions.CurrentAttempt = 31;
-                tempQuestions.TestStart = false;
+             //   tempQuestions.TestStart = false;
+                tempQuestions.TestEnd = false;
+                tempQuestions.QestEnd = false;
                 _examDBContect.DbTempQuestions.Update(tempQuestions);
                 _examDBContect.SaveChanges();
             }
