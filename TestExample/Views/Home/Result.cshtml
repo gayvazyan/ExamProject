@@ -15,31 +15,45 @@
     @if (Model.Test1Check == true)
     {
         var Time1 = (Model.Test1DataTime).ToString("dd/MM/yyyy HH:mm");
-        <h3><strong>Խնդրը լրացնելու վերջին փորձը կատարել եք  <span style="color:forestgreen"> @Time1</span>-ին, որի արդյունքում ստացել եք <span style="color:forestgreen"> @Model.Result_Test1</span> միավոր </strong> </h3>
+        <span>Խնդրը լրացնելու վերջին փորձը կատարել եք  <button class="btn btn-outline-success"><strong>@Time1</strong></button>-ին, որի արդյունքում ստացել եք <button class="btn btn-outline-success"><strong>@Model.Result_Test1</strong></button> միավոր: </span>
 
     }
     else
     {
-        <h3><strong>Խնդրը դեռ չէք լրացրել</strong> </h3>
+        <span>Խնդրը դեռ չէք լրացրել</span>
     }
-
+    <br />
+    <br />
     @if (Model.Test2Check == true)
     {
         var Time2 = (Model.Test2DataTime).ToString("dd/MM/yyyy HH:mm");
-        <h3><strong>Հարցաշարիը լրացնելու վերջին փորձը կատարել եք <span style="color:forestgreen"> @Time2</span>-ին, որի արդյունքում ստացել եք <span style="color:forestgreen"> @Model.Result_Test2</span> միավոր </strong> </h3>
+        <span>Հարցաշարիը լրացնելու վերջին փորձը կատարել եք <button class="btn btn-outline-success"><strong> @Time2</strong></button>-ին, որի արդյունքում ստացել եք <button class="btn btn-outline-success"><strong> @Model.Result_Test2</strong></button> միավոր: </span>
+
 
     }
     else
     {
-        <h3><strong>Հարցաշարը դեռ չէք լրացրել</strong> </h3>
+        <span>Հարցաշարը դեռ չէք լրացրել</span>
     }
-
+    <br />
+    <br />
 
     @if ((Model.Test2Check == true) && (Model.Test2Check == true))
     {
         var TimeNotif = (Model.NotificationData).ToString("dd/MM/yyyy HH:mm");
-        <h3><strong>Խնդրի և հարցաշարի պատասխանների արդյունքում դուք ստացել եք <span style="color:forestgreen"> @sumResult </span> միավոր </strong> </h3>
+        <span>Խնդրի և հարցաշարի պատասխանների արդյունքում դուք ստացել եք <button class="btn btn-success"> @sumResult </button> միավոր: </span>
+       
+        if (sumResult < 30)
+        {
+            <button class="btn btn-danger"> Դուք ստացել եք անբավարար </button>
+        }
+        else
+        {
+            <button class="btn btn-success"> Շնորհավորում եմ Դուք եք հաջղությամբ հանձնեցիք թեստը </button>
+        }
 
+
+        <br />
         if (Model.Notification != true)
         {
             <span>Թեստի արդյունքների մասնին ինֆորմացիան </span>
@@ -48,11 +62,12 @@
         }
         else
         {
-            <span>Թեստի արդյունքների մասնին ինֆորմացիան  Ծանուցվէլ է  @TimeNotif -ին:  </span>
+            <span>Թեստի արդյունքների մասնին ինֆորմացիան  ծանուցվէլ է  @TimeNotif -ին:  </span>
             <br />
-      
+            <br />
+
             <a class="btn btn-outline-primary" asp-controller="Home" asp-action="MyEmail" asp-route-Id="@Model.Id">Կրկին ծանուցել</a>
-            
+
         }
 
     }
