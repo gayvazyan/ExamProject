@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Answer>
+
+@{
+    ViewBag.Title = "Բոլոր պատասխանները";
+}
+
+<h1>Բոլոր պատասխանները</h1>
+
+@if (Model.Any())
+{
+    <a class="btn btn-primary mb-3" style="width:auto" asp-action="CreateAnswer"
+       asp-controller="administration">Ավելացնել  պատասխան</a>
+
+    foreach (var answer in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                Հարց: @answer.QuestionId-ի պատասխան 
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@answer.QuestionVariantContent</h5>
+                @if (answer.CorrectAnswer == true)
+                {
+                    <button class="btn btn-success"> ճիշտ տարբերակ</button>
+                }
+                else
+                {
+                    <button class="btn btn-danger"> սխալ տարբերակ</button>
+                }
+
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">Փոփոխել</a>
+                <a asp-controller="Administration" asp-action="DeleteAnswer" asp-route-AId=" @answer.Id" class="btn btn-danger">Հեռացնել</a>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            Դեռ պատասխան չկա բազայում
+        </div>
+        <div class="card-body">
+
+            <a class="btn btn-primary" style="width:auto"
+               asp-controller="administration" asp-action="CreateRole">
+                Ավելացնել նոր հարցի պատասխանները 
+            </a>
+        </div>
+    </div>
+}

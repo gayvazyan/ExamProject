@@ -17,15 +17,15 @@
             i++;
             <li>
                 <strong style="text-align:center"> Հարց @i   @question.QuestionContent</strong>
-                <input type="hidden" name="questionId" value="@question.Id" />
+                <input type="hidden" name="questionId" value="@question.QId" />
                 <ol type="A">
 
                     @foreach (var answer in Model)
                     {
-                        if (answer.QuestionId == question.Id)
+                        if (answer.QuestionId == question.QId)
                         {
                             <li>
-                                <input type="radio" name="question_@question.Id"
+                                <input type="radio" name="question_@question.QId"
                                        value="@answer.Id" />
                                 @answer.QuestionVariantContent
                             </li>

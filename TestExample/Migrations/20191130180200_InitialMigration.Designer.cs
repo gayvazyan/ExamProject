@@ -10,8 +10,8 @@ using TestExample.Models;
 namespace TestExample.Migrations
 {
     [DbContext(typeof(ExamDbContect))]
-    [Migration("20191126101930_addAnswerchekdall")]
-    partial class addAnswerchekdall
+    [Migration("20191130180200_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -215,6 +215,8 @@ namespace TestExample.Migrations
 
                     b.Property<string>("SecondName");
 
+                    b.Property<DateTime>("StartDate");
+
                     b.Property<bool>("Test1Check");
 
                     b.Property<DateTime>("Test1DataTime");
@@ -274,7 +276,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 1,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -283,7 +285,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 2,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -310,7 +312,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 3,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -337,7 +339,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 4,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -373,7 +375,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 5,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -391,7 +393,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 6,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -427,7 +429,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 7,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -463,7 +465,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 8,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -490,7 +492,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 9,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -508,7 +510,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 10,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -535,7 +537,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 11,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -562,7 +564,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 12,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -589,7 +591,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 13,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -616,7 +618,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 14,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -634,7 +636,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 15,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -670,7 +672,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 16,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -688,7 +690,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 17,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -715,7 +717,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 18,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -742,7 +744,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 19,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -769,7 +771,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 20,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -805,7 +807,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 21,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -832,7 +834,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 22,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -850,7 +852,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 23,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -886,7 +888,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 24,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -913,7 +915,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 25,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -940,7 +942,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 26,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -958,7 +960,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 27,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -985,7 +987,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 28,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1012,7 +1014,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 29,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1048,7 +1050,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 30,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1066,7 +1068,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 31,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1102,7 +1104,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 32,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1120,7 +1122,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 33,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1147,7 +1149,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 34,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1174,7 +1176,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 35,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1201,7 +1203,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 36,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1228,7 +1230,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 37,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1264,7 +1266,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 38,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1300,7 +1302,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 39,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1327,7 +1329,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 40,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1345,7 +1347,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 41,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1372,7 +1374,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 42,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1408,7 +1410,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 43,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1435,7 +1437,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 44,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1462,7 +1464,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 45,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1480,7 +1482,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 46,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1516,7 +1518,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 47,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1534,7 +1536,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 48,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1561,7 +1563,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 49,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1579,7 +1581,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 50,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1615,7 +1617,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 51,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1633,7 +1635,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 52,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1660,7 +1662,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 53,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1696,7 +1698,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 54,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1723,7 +1725,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 55,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1741,7 +1743,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 56,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1768,7 +1770,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 57,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1795,7 +1797,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 58,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1831,7 +1833,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 59,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1867,7 +1869,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 60,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1885,7 +1887,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 61,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1903,7 +1905,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 62,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1930,7 +1932,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 63,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1966,7 +1968,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 64,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -1984,7 +1986,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 65,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2011,7 +2013,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 66,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2047,7 +2049,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 67,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2074,7 +2076,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 68,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2092,7 +2094,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 69,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2119,7 +2121,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 70,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2155,7 +2157,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 71,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2182,7 +2184,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 72,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2218,7 +2220,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 73,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2236,7 +2238,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 74,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2263,7 +2265,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 75,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2299,7 +2301,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 76,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2326,7 +2328,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 77,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2344,7 +2346,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 78,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2371,7 +2373,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 79,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2398,7 +2400,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 80,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2416,7 +2418,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 81,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2452,7 +2454,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 82,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2488,7 +2490,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 83,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2506,7 +2508,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 84,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2533,7 +2535,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 85,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2551,7 +2553,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 86,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2578,7 +2580,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 87,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2605,7 +2607,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 88,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2632,7 +2634,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 89,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2668,7 +2670,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 90,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2695,7 +2697,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 91,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2731,7 +2733,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 92,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2740,7 +2742,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 93,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2776,7 +2778,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 94,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2803,7 +2805,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 95,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2830,7 +2832,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 96,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2848,7 +2850,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 97,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2875,7 +2877,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 98,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2911,7 +2913,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 99,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2929,7 +2931,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 100,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2965,7 +2967,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 101,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -2992,7 +2994,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 102,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -3010,7 +3012,7 @@ namespace TestExample.Migrations
                             CheckdAnswer = false,
                             CorrectAnswer = false,
                             QuestionId = 103,
-                            QuestionVariantContent = "sxal"
+                            QuestionVariantContent = "sxal1"
                         },
                         new
                         {
@@ -3105,6 +3107,8 @@ namespace TestExample.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("QId");
+
                     b.Property<string>("QuestionContent");
 
                     b.HasKey("Id");
@@ -3115,516 +3119,619 @@ namespace TestExample.Migrations
                         new
                         {
                             Id = 1,
+                            QId = 1,
                             QuestionContent = "Ընտրական հանձնաժողովի որոշումը ե՞րբ է համարվում ընդունված`"
                         },
                         new
                         {
                             Id = 2,
+                            QId = 2,
                             QuestionContent = "Տեղամասային ընտրական հանձնաժողովի նախագահը ընտրողների ցուցակի օրինակը տեղամասային կենտրոնում՝ բոլորի համար տեսանելի տեղում փակցնում է`"
                         },
                         new
                         {
                             Id = 3,
+                            QId = 3,
                             QuestionContent = "Հերթական ընտրությունների դեպքում ե՞րբ է կազմավորվում տեղամասային ընտրական հանձնաժողովը`"
                         },
                         new
                         {
                             Id = 4,
+                            QId = 4,
                             QuestionContent = "Ե՞րբ է իրականացվում տեղամասային ընտրական հանձնաժողովի անդամների միջև գործառույթների բաշխումը և ի՞նչպես`"
                         },
                         new
                         {
                             Id = 5,
+                            QId = 5,
                             QuestionContent = "Քանի՞ անդամ ունի տեղամասային ընտրական հանձնաժողովը`"
                         },
                         new
                         {
                             Id = 6,
+                            QId = 6,
                             QuestionContent = "Ե՞րբ է հրավիրվում տեղամասային ընտրական հանձնաժողովի առաջին նիստը`"
                         },
                         new
                         {
                             Id = 7,
+                            QId = 7,
                             QuestionContent = "Ընտրական հանձնաժողովի նիստը ե՞րբ է համարվում իրավազոր`"
                         },
                         new
                         {
                             Id = 8,
+                            QId = 8,
                             QuestionContent = "Տեղամասային ընտրական հանձնաժողովների անդամները կարող են ընդգրկվել իրենց ընտրական տեղամասի` ըստ գտնվելու վայրի ընտրական տեղամասի ընտրողների ցուցակում՝"
                         },
                         new
                         {
                             Id = 9,
+                            QId = 9,
                             QuestionContent = "Ազգային ժողովի ընտրությունների ժամանակ տեղամասային ընտրական հանձնաժողովների անդամներին ըստ գտնվելու վայրի ընտրական տեղամասի ընտրողների ցուցակներում ընդգրկելու մասին դիմումը լիազոր մարմին կարող է ներկայացվել՝"
                         },
                         new
                         {
                             Id = 10,
+                            QId = 10,
                             QuestionContent = "Ազգային ժողովի ընտրությունների ժամանակ տեղամասային ընտրական հանձնաժողովների անդամները կարող են ընդգրկվել իրենց ընտրական տեղամասի` ըստ գտնվելու վայրի ընտրողների ցուցակում՝"
                         },
                         new
                         {
                             Id = 11,
+                            QId = 11,
                             QuestionContent = "Նշվածներից ո՞րն է տեղամասային ընտրական հանձնաժողովի լիազորություն`"
                         },
                         new
                         {
                             Id = 12,
+                            QId = 12,
                             QuestionContent = "Ովքե՞ր են նշանակում տեղամասային ընտրական հանձնաժողովի անդամներին`"
                         },
                         new
                         {
                             Id = 13,
+                            QId = 13,
                             QuestionContent = "Տեղամասային ընտրական հանձնաժողովի նախագահը և քարտուղարը նշվածներից ո՞ր վիճակահանությանը չեն մասնակցում`"
                         },
                         new
                         {
                             Id = 14,
+                            QId = 14,
                             QuestionContent = "Հանձնաժողովի անդամը պարտավոր է  ստորագրել`"
                         },
                         new
                         {
                             Id = 15,
+                            QId = 15,
                             QuestionContent = "Իրավունք ունի արդյո՞ք տեղամասային ընտրական հանձնաժողովի նախագահը սահմանափակելու քվեարկության սենյակում միաժամանակ գտնվող ընտրողների թիվը`"
                         },
                         new
                         {
                             Id = 16,
+                            QId = 16,
                             QuestionContent = "Տեղամասային ընտրական հանձնաժողովում անցկացվող վիճակահանությունների արդյունքները`"
                         },
                         new
                         {
                             Id = 17,
+                            QId = 17,
                             QuestionContent = "Ո՞րտեղ են փակցվում ընտրություններին մասնակցող կուսակցությունների ընտրական ցուցակները՝"
                         },
                         new
                         {
                             Id = 18,
+                            QId = 18,
                             QuestionContent = "Տեղամասային կենտրոնում ինչպե՞ս են տեղադրվում քվեարկության խցիկները`"
                         },
                         new
                         {
                             Id = 19,
+                            QId = 19,
                             QuestionContent = "Արտահերթ ընտրությունների դեպքում ե՞րբ է կազմավորվում տեղամասային ընտրական հանձնաժողովը`"
                         },
                         new
                         {
                             Id = 20,
+                            QId = 20,
                             QuestionContent = "Ընտրական հանձնաժողովի նիստերին, իսկ քվեարկության ընթացքում նաև քվեարկության սենյակում կարող են ներկա գտնվել`"
                         },
                         new
                         {
                             Id = 21,
+                            QId = 21,
                             QuestionContent = "Ընտրական հանձնաժողովի նիստերին, իսկ քվեարկության ընթացքում նաև քվեարկության սենյակում կարող են ներկա գտնվել`"
                         },
                         new
                         {
                             Id = 22,
+                            QId = 22,
                             QuestionContent = "Ընտրական հանձնաժողովի անդամներից և քվեարկողներից բացի, ովքե՞ր կարող են ներկա գտնվել քվեարկության սենյակում`"
                         },
                         new
                         {
                             Id = 23,
+                            QId = 23,
                             QuestionContent = "Վստահված անձինք, դիտորդները, այցելուները, զանգվածային լրատվության միջոցների ներկայացուցիչները`"
                         },
                         new
                         {
                             Id = 24,
+                            QId = 24,
                             QuestionContent = "Համայնքի ղեկավարի և ավագանու անդամի ընտրությունների ժամանակ ընտրական հանձնաժողովի նիստին և քվեարկության ընթացքում քվեարկության սենյակում կարող են ներկա գտնվել`"
                         },
                         new
                         {
                             Id = 25,
+                            QId = 25,
                             QuestionContent = "Ազգային ժողովի ընտրությունների ժամանակ ընտրական հանձնաժողովի նիստին և քվեարկության ընթացքում քվեարկության սենյակում կարող է ներկա գտնվել ընտրություններին մասնակցող յուրաքանչյուր կուսակցության, կուսակցությունների դաշինքի`"
                         },
                         new
                         {
                             Id = 26,
+                            QId = 26,
                             QuestionContent = "Եթե հանձնաժողովի անդամը, վստահված անձը կամ դիտորդը գտնում է, որ քվեարկության ընթացքում տեղի է ունեցել ընտրական օրենսգրքով նախատեսված քվեարկության կարգի խախտում, ապա`"
                         },
                         new
                         {
                             Id = 27,
+                            QId = 27,
                             QuestionContent = "Ազգային ժողովի, Երևանի, Գյումրու, Վանաձորի ավագանիների ընտրություններին մասնակցող կուսակցությունների ընտրական ցուցակում ընդգրկված թեկնածուները`"
                         },
                         new
                         {
                             Id = 28,
+                            QId = 28,
                             QuestionContent = "Ազգային ժողովի ընտրությունների ժամանակ քվեարկության արդյունքների արձանագրությունը ովքե՞ր կարող են լուսանկարել կամ տեսանկարահանել`"
                         },
                         new
                         {
                             Id = 29,
+                            QId = 29,
                             QuestionContent = "Դիտորդը, զանգվածային լրատվության միջոցի ներկայացուցիչը, այցելուն իրավունք ունի`"
                         },
                         new
                         {
                             Id = 30,
+                            QId = 30,
                             QuestionContent = "Դիտորդը, զանգվածային լրատվության միջոցի ներկայացուցիչը, այցելուն իրավունք չունի`"
                         },
                         new
                         {
                             Id = 31,
+                            QId = 31,
                             QuestionContent = "Վստահված անձն իրավունք ունի`"
                         },
                         new
                         {
                             Id = 32,
+                            QId = 32,
                             QuestionContent = "Վստահված անձն իրավունք ունի`"
                         },
                         new
                         {
                             Id = 33,
+                            QId = 33,
                             QuestionContent = "Ընտրողը քվեարկությանը մասնակցում է`"
                         },
                         new
                         {
                             Id = 34,
+                            QId = 34,
                             QuestionContent = "Ընտրողների գրանցումն իրականացնող հանձնաժողովի անդամը վերցնում է քվեարկության կտրոնը և կատարում հետևյալ բոլոր գործողությունները՝"
                         },
                         new
                         {
                             Id = 35,
+                            QId = 35,
                             QuestionContent = "Քվեարկության օրը տեղամասային ընտրական հանձնաժողովը  տարածքային ընտրական հանձնաժողովին հաղորդում է`"
                         },
                         new
                         {
                             Id = 36,
+                            QId = 36,
                             QuestionContent = "Ընտրողի անձը հաստատող փաստաթղթի վավերականության ժամկետի ավարտը`"
                         },
                         new
                         {
                             Id = 37,
+                            QId = 37,
                             QuestionContent = "Եթե հանձնաժողովի պատասխանատու անդամին հատկացված ինքնասոսնձվող դրոշմանիշերը սպառվել են,ապա՝"
                         },
                         new
                         {
                             Id = 38,
+                            QId = 38,
                             QuestionContent = "Մինչև ինքնասոսնձվող դրոշմանիշը քվեաթերթիկին փակցնելը, հանձնաժողովի անդամը ընտրողից պետք է ստանա՝"
                         },
                         new
                         {
                             Id = 39,
+                            QId = 39,
                             QuestionContent = "Ի՞նչ կարգով է փակցվում ինքնասոսնձվող դրոշմանիշը`"
                         },
                         new
                         {
                             Id = 40,
+                            QId = 40,
                             QuestionContent = "Ընտրողի համար անձը հաստատող փաստաթուղթ է համարվում`"
                         },
                         new
                         {
                             Id = 41,
+                            QId = 41,
                             QuestionContent = "Ընտրողի համար անձը հաստատող փաստաթուղթ է համարվում`"
                         },
                         new
                         {
                             Id = 42,
+                            QId = 42,
                             QuestionContent = "Ընտրողի համար անձը հաստատող փաստաթուղթ է համարվում`"
                         },
                         new
                         {
                             Id = 43,
+                            QId = 43,
                             QuestionContent = "Մինչև քվեարկության սկսվելը տեխնիկական սարքավորման միջոցով տպված տեղեկանքը`"
                         },
                         new
                         {
                             Id = 44,
+                            QId = 44,
                             QuestionContent = "Ո՞ր դեպքում է էկրանին հայտնվում կարմիր նշան`"
                         },
                         new
                         {
                             Id = 45,
+                            QId = 45,
                             QuestionContent = "Ո՞ր դեպքում է էկրանին հայտնվում դեղին նշան`"
                         },
                         new
                         {
                             Id = 46,
+                            QId = 46,
                             QuestionContent = ". Ընտրողի գրանցումն իրականացնող հանձնաժողովի անդամն ընտրողների ցուցակի համապատասխան սյունակում և քվեարկության կտրոնի վրա դնում է`"
                         },
                         new
                         {
                             Id = 47,
+                            QId = 47,
                             QuestionContent = "Ընտրողը քվեաթերթիկը լրացնում է կամ քվեաթերթիկներից մեկն ընտրում է`"
                         },
                         new
                         {
                             Id = 48,
+                            QId = 48,
                             QuestionContent = ". Քվեարկությունը սկսվելուց առաջ մասնագետը տեխնիկական սարքավորման միջոցով տպում է`"
                         },
                         new
                         {
                             Id = 49,
+                            QId = 49,
                             QuestionContent = "Ընտրողի կողմից կատարած քվեարկության մասին որևէ ձևով տեղեկանալը`"
                         },
                         new
                         {
                             Id = 50,
+                            QId = 50,
                             QuestionContent = "Ինքնասոսնձվող դրոշմանիշ փակցնող և քվեատուփի համար պատասխանատու անդամը քվեարկության ծրարը քվեատուփի մեջ գցելու հնարավորություն է ընձեռում միայն` "
                         },
                         new
                         {
                             Id = 51,
+                            QId = 51,
                             QuestionContent = "Եթե քվեարկության սենյակում գտնվող դիտորդների, զանգվածային լրատվության միջոցների ներկայացուցիչների թիվն այնքան է, որ ակնհայտորեն խաթարում է քվեարկության բնականոն ընթացքը, ապա տեղամասային ընտրական հանձնաժողովը`"
                         },
                         new
                         {
                             Id = 52,
+                            QId = 52,
                             QuestionContent = "Քվեաթերթիկն ինքնուրույն լրացնելու հնարավորություն չունեցող ընտրողին օգնող անձի տվյալները`"
                         },
                         new
                         {
                             Id = 53,
+                            QId = 53,
                             QuestionContent = "Քվեաթերթիկն ինքնուրույն լրացնելու հնարավորություն չունեցող ընտրողն իրավունք ունի հանձնաժողովի նախագահին տեղեկացնելուց հետո քվեարկության խցիկ հրավիրելու այլ անձի, որը չպետք է լինի`"
                         },
                         new
                         {
                             Id = 54,
+                            QId = 54,
                             QuestionContent = "Եթե ընտրողը չի ներկայացնում քվեարկության կտրոն, ապա`"
                         },
                         new
                         {
                             Id = 55,
+                            QId = 55,
                             QuestionContent = "Տեղամասային ընտրական հանձնաժողովի նախագահը կամ վերջինիս հանձնարարությամբ հանձնաժողովի քարտուղարը ե՞րբ են բացում շրջիկ արկղը`"
                         },
                         new
                         {
                             Id = 56,
+                            QId = 56,
                             QuestionContent = "Ե՞րբ է ընտրողների գրանցումն իրականացվում առանց տեխնիկական սարքավորման կիրառման`"
                         },
                         new
                         {
                             Id = 57,
+                            QId = 57,
                             QuestionContent = "Ե՞րբ է ընտրողների գրանցումն իրականացվում առանց տեխնիկական սարքավորման կիրառման`"
                         },
                         new
                         {
                             Id = 58,
+                            QId = 58,
                             QuestionContent = "Ե՞րբ է ընտրողների գրանցումն իրականացվում առանց տեխնիկական սարքավորման կիրառման`"
                         },
                         new
                         {
                             Id = 59,
+                            QId = 59,
                             QuestionContent = "Միևնույն անձը քվեաթերթիկն ինքնուրույն լրացնելու հնարավորություն չունեցող քանի՞ ընտրողի կարող է օգնել`"
                         },
                         new
                         {
                             Id = 60,
+                            QId = 60,
                             QuestionContent = "Ե՞րբ է անցկացվում շրջիկ արկղով քվեարկությունը`"
                         },
                         new
                         {
                             Id = 61,
+                            QId = 61,
                             QuestionContent = "Շրջիկ արկղով քվեարկությունը կազմակերպվում է՝ "
                         },
                         new
                         {
                             Id = 62,
+                            QId = 62,
                             QuestionContent = "Շրջիկ արկղով քեարկությունը կազմակերպվում է՝ "
                         },
                         new
                         {
                             Id = 63,
+                            QId = 63,
                             QuestionContent = "Ընտրողին ընտրողների լրացուցիչ ցուցակում ընդգրկելու համար հիմք համարվող փաստաթղթերը`"
                         },
                         new
                         {
                             Id = 64,
+                            QId = 64,
                             QuestionContent = "Ո՞ր դեպքում է հանձնաժողովի անդամը լրացնում համարակալված կտրոնը`"
                         },
                         new
                         {
                             Id = 65,
+                            QId = 65,
                             QuestionContent = "Ո՞ր դեպքում է հանձնաժողովի անդամը լրացնում համարակալված կտրոնը`"
                         },
                         new
                         {
                             Id = 66,
+                            QId = 66,
                             QuestionContent = "Ո՞ր դեպքում է հանձնաժողովի անդամը լրացնում համարակալված կտրոնը`"
                         },
                         new
                         {
                             Id = 67,
+                            QId = 67,
                             QuestionContent = "Մասնագետի ժամանակավոր բացակայության դեպքում, ո՞վ կարող է նրան փոխարինել`"
                         },
                         new
                         {
                             Id = 68,
+                            QId = 68,
                             QuestionContent = "Եթե ընտրողը ներկայացրել է այլ անձի անձը հաստատող փաստաթուղթ, ապա`"
                         },
                         new
                         {
                             Id = 69,
+                            QId = 69,
                             QuestionContent = "Տեղամասային ընտրական հանձնաժողովի կազմած ընտրողների լրացուցիչ ցուցակի յուրաքանչյուր էջ ստորագրվում և կնքվում է`"
                         },
                         new
                         {
                             Id = 70,
+                            QId = 70,
                             QuestionContent = "Ընտրողի գործողությունները քվեաթերթիկը սխալ լրացնելու կամ վնասելու դեպքում`"
                         },
                         new
                         {
                             Id = 71,
+                            QId = 71,
                             QuestionContent = "Ընտրական հանձնաժողովի անդամի գործողություններն ընտրողի կողմից քվեաթերթիկը սխալ լրացնելու կամ վնասելու դեպքում`"
                         },
                         new
                         {
                             Id = 72,
+                            QId = 72,
                             QuestionContent = "Տեխնիկական սարքավորման մեջ չեն ներբեռնվում՝"
                         },
                         new
                         {
                             Id = 73,
+                            QId = 73,
                             QuestionContent = "Զորամասում հաշվառված ընտրողների ցուցակները տեղամասային ընտրական հանձնաժողովի կողմից բացվում են միայն`"
                         },
                         new
                         {
                             Id = 74,
+                            QId = 74,
                             QuestionContent = "Զինծառայողները քվեարկում են`"
                         },
                         new
                         {
                             Id = 75,
+                            QId = 75,
                             QuestionContent = "Քվեաթերթիկի վավեր (անվավեր) լինելու վերաբերյալ առարկության դեպքում քվեարկության է դրվում`"
                         },
                         new
                         {
                             Id = 76,
+                            QId = 76,
                             QuestionContent = "Քվեարկության արդյունքներն ամփոփելիս չսահմանված նմուշի քվեաթերթիկները`"
                         },
                         new
                         {
                             Id = 77,
+                            QId = 77,
                             QuestionContent = "Միաժամանակ համայնքի ղեկավարի և ավագանու ընտրությունների դեպքում տեղամասային ընտրական հանձնաժողովն առաջին հերթին ամփոփում է`"
                         },
                         new
                         {
                             Id = 78,
+                            QId = 78,
                             QuestionContent = "Ի՞նչ հաջորդականությամբ է հաշվարկվում կուսակցության տարածքային ցուցակում ընդգրկված թեկնածուին կողմ քվեարկված քվեաթերթիկների թիվը(Ազգային ժողովի ընտրությունների ժամանակ)`"
                         },
                         new
                         {
                             Id = 79,
+                            QId = 79,
                             QuestionContent = "Քվեարկության արդյունքներն ամփոփելիս ի՞նչ գործողություն է կատարում տեղամասային ընտրական հանձնաժողովը քվեարկության ծրարի վրա ավելորդ գրառում լինելու դեպքում`"
                         },
                         new
                         {
                             Id = 80,
+                            QId = 80,
                             QuestionContent = "Նշվածներից ի՞նչն է դրվում մեկանգամյա օգտագործման պարկի մեջ`"
                         },
                         new
                         {
                             Id = 81,
+                            QId = 81,
                             QuestionContent = "Նշվածներից ի՞նչն է դրվում մեկանգամյա օգտագործման պարկի մեջ`"
                         },
                         new
                         {
                             Id = 82,
+                            QId = 82,
                             QuestionContent = "Նշվածներից ի՞նչն է դրվում մեկանգամյա օգտագործման պարկի մեջ`"
                         },
                         new
                         {
                             Id = 83,
+                            QId = 83,
                             QuestionContent = "Ընտրական հանձնաժողովի գործողությունները քվեարկության ծրարի մեջ մեկից ավելի քվեաթերթիկներ հայտնաբերելու դեպքում`"
                         },
                         new
                         {
                             Id = 84,
+                            QId = 84,
                             QuestionContent = "Ընտրական տեղամասում ընտրողների ընդհանուր թիվը հավասար է`"
                         },
                         new
                         {
                             Id = 85,
+                            QId = 85,
                             QuestionContent = "Տեղամասային ընտրական հանձնաժողովում մեկանգամյա օգտագործման պարկը սահմանված կարգով փակելու համար պատասխանատու է` "
                         },
                         new
                         {
                             Id = 86,
+                            QId = 86,
                             QuestionContent = "Ազգային Ժողովի ընտրությունների դեպքում ո՞ր քվեաթերթիկն է անվավեր`"
                         },
                         new
                         {
                             Id = 87,
+                            QId = 87,
                             QuestionContent = "Երևանի, Գյումրու, Վանաձորի ավագանիների ընտրությունների դեպքում սահմանված նմուշի քվեաթերթիկն անվավեր է, եթե`"
                         },
                         new
                         {
                             Id = 88,
+                            QId = 88,
                             QuestionContent = "Երևանի, Գյումրու, Վանաձորի ավագանիների ընտրությունների դեպքում սահմանված նմուշի քվեաթերթիկն անվավեր է`"
                         },
                         new
                         {
                             Id = 89,
+                            QId = 89,
                             QuestionContent = "Համայնքի ղեկավարի և ավագանու անդամի ընտրությունների դեպքում սահմանված նմուշի քվեաթերթիկն անվավեր է, եթե`"
                         },
                         new
                         {
                             Id = 90,
+                            QId = 90,
                             QuestionContent = "Համայնքի ղեկավարի և ավագանու անդամի ընտրությունների դեպքում սահմանված նմուշի քվեաթերթիկն անվավեր է, եթե`"
                         },
                         new
                         {
                             Id = 91,
+                            QId = 91,
                             QuestionContent = "Ո՞ր քվեաթերթիկն է համարվում սահմանված նմուշի՝"
                         },
                         new
                         {
                             Id = 92,
+                            QId = 92,
                             QuestionContent = "Տեղամասային ընտրական հանձնաժողովը նշվածներից ո՞ր գործողությունն է կատարում քվեարկության արդյունքների ամփոփման նիստում` ժամը 20:00-ից մինչև քվեատուփը բացելը`"
                         },
                         new
                         {
                             Id = 93,
+                            QId = 93,
                             QuestionContent = "Նշվածներից ո՞ր գործողությունն է կատարվում քվեարկության արդյունքների ամփոփման նիստում` ժամը 20:00-ից մինչև քվեատուփը բացելը`"
                         },
                         new
                         {
                             Id = 94,
+                            QId = 94,
                             QuestionContent = "Նշվածներից ո՞ր գործողությունն է կատարվում քվեարկության արդյունքների ամփոփման նիստում` ժամը 20:00-ից մինչև քվեատուփը բացելը`"
                         },
                         new
                         {
                             Id = 95,
+                            QId = 95,
                             QuestionContent = "Նշվածներից ո՞ր գործողությունն է կատարվում քվեարկության արդյունքների ամփոփման նիստում` ժամը 20:00-ից մինչև քվեատուփը բացելը`"
                         },
                         new
                         {
                             Id = 96,
+                            QId = 96,
                             QuestionContent = "Նշվածներից ո՞ր գործողությունն է կատարվում քվեարկության արդյունքների ամփոփման նիստում` ժամը 20:00-ից մինչև քվեատուփը բացելը`"
                         },
                         new
                         {
                             Id = 97,
+                            QId = 97,
                             QuestionContent = "Հանձնաժողովի նախագահից բացի, ովքե՞ր իրավունք ունեն ստորագրելու հաշվարկված և տեսակավորված քվեաթերթիկների փաթեթների վրա`"
                         },
                         new
                         {
                             Id = 98,
+                            QId = 98,
                             QuestionContent = "Նշվածներից ի՞նչն է առձեռն ներկայացվում տարածքային ընտրական հանձնաժողով`"
                         },
                         new
                         {
                             Id = 99,
+                            QId = 99,
                             QuestionContent = "Նշվածներից ի՞նչն է առձեռն ներկայացվում տարածքային ընտրական հանձնաժողով`"
                         },
                         new
                         {
                             Id = 100,
+                            QId = 100,
                             QuestionContent = "Նշվածներից ի՞նչն է առձեռն ներկայացվում տարածքային ընտրական հանձնաժողով`"
                         },
                         new
                         {
                             Id = 101,
+                            QId = 101,
                             QuestionContent = "Տեղամասային ընտրական հանձնաժողովի նախագահը և քարտուղարը պարկը, քվեարկության արդյունքների արձանագրության երկու օրինակը, գրանցամատյանը, հանձնաժողովի կնիքը և տեխնիկական սարքավորումը քվեարկության ավարտից հետո՝"
                         },
                         new
                         {
                             Id = 102,
+                            QId = 102,
                             QuestionContent = "Քվեարկության ավարտից հետո՝ մինչև ընտրական տեղամասում քվեարկության արդյունքների վերաբերյալ արձանագրություն կազմելը, տեղամասային ընտրական հանձնաժողովի նիստը`"
                         },
                         new
                         {
                             Id = 103,
+                            QId = 103,
                             QuestionContent = "Քանի՞ օրինակից է կազմվում ընտրական տեղամասում քվեարկության արդյունքների արձանագրությունը`"
                         });
                 });
@@ -3755,6 +3862,8 @@ namespace TestExample.Migrations
 
                     b.Property<bool>("Cheked9");
 
+                    b.Property<int>("CurrentAttempt");
+
                     b.Property<int>("Id1");
 
                     b.Property<int>("Id10");
@@ -3876,6 +3985,72 @@ namespace TestExample.Migrations
                     b.Property<string>("Q8");
 
                     b.Property<string>("Q9");
+
+                    b.Property<bool>("QestEnd");
+
+                    b.Property<int>("Score1");
+
+                    b.Property<int>("Score10");
+
+                    b.Property<int>("Score11");
+
+                    b.Property<int>("Score12");
+
+                    b.Property<int>("Score13");
+
+                    b.Property<int>("Score14");
+
+                    b.Property<int>("Score15");
+
+                    b.Property<int>("Score16");
+
+                    b.Property<int>("Score17");
+
+                    b.Property<int>("Score18");
+
+                    b.Property<int>("Score19");
+
+                    b.Property<int>("Score2");
+
+                    b.Property<int>("Score20");
+
+                    b.Property<int>("Score21");
+
+                    b.Property<int>("Score22");
+
+                    b.Property<int>("Score23");
+
+                    b.Property<int>("Score24");
+
+                    b.Property<int>("Score25");
+
+                    b.Property<int>("Score26");
+
+                    b.Property<int>("Score27");
+
+                    b.Property<int>("Score28");
+
+                    b.Property<int>("Score29");
+
+                    b.Property<int>("Score3");
+
+                    b.Property<int>("Score30");
+
+                    b.Property<int>("Score4");
+
+                    b.Property<int>("Score5");
+
+                    b.Property<int>("Score6");
+
+                    b.Property<int>("Score7");
+
+                    b.Property<int>("Score8");
+
+                    b.Property<int>("Score9");
+
+                    b.Property<bool>("TestEnd");
+
+                    b.Property<bool>("TestStart");
 
                     b.HasKey("Id");
 

@@ -9,6 +9,8 @@ namespace TestExample.MyModels
     {
         public int Id { get; set; }
 
+        public int QId { get; set; }
+
         public string QuestionContent { get; set; }
 
     }
