@@ -40,18 +40,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Սկիզբ</a>
                         </li>
 
-                        @*<li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Խնդիր
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" asp-controller="Home"
-                                       asp-action="TestQ">Ընտրել</a>
-                                    <a class="dropdown-item" asp-controller="Home"
-                                       asp-action="Random">Պատահական</a>
-                                </div>
-                            </li>*@
+
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Questions" asp-action="Random">Թեստ</a>
@@ -63,11 +52,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Result">Իմ տվյալները</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Email">Ծանուցում</a>
-                        </li>
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Email">Ծանուցում</a>
+                            </li>
 
-                        <li class="nav-item dropdown">
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Կառավարում
@@ -77,11 +68,11 @@
                                        asp-action="ListQuestions">Հարցեր</a>
                                     <a class="dropdown-item" asp-controller="Administration"
                                        asp-action="ListAnswers">Պատասխաններ</a>
+                                    <a class="dropdown-item" asp-controller="Administration"
+                                       asp-action="ListRoles">Role-ներ</a>
                                 </div>
                             </li>
-
-
-
+                        }
 
                     </ul>
                 </div>

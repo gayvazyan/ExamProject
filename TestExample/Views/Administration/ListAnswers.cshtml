@@ -4,7 +4,8 @@
     ViewBag.Title = "Բոլոր պատասխանները";
 }
 
-<h1>Բոլոր պատասխանները</h1>
+<h2>Պատասխաններ</h2>
+<br />
 
 @if (Model.Any())
 {
@@ -30,7 +31,7 @@
 
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-primary">Փոփոխել</a>
+                <a href="#" class="btn btn-primary">Խմբագրել</a>
                 <a asp-controller="Administration" asp-action="DeleteAnswer" asp-route-AId=" @answer.Id" class="btn btn-danger">Հեռացնել</a>
             </div>
         </div>

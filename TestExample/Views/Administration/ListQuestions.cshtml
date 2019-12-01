@@ -4,7 +4,10 @@
     ViewBag.Title = "Բոլոր հարցերը";
 }
 
-<h1>Բոլոր հարցերը</h1>
+<h2>Հարցեր</h2>
+<br />
+<h5>Այս պահին բազայում առկա է @Model.Count()  հարց</h5>
+<br />
 
 @if (Model.Any())
 {
@@ -21,7 +24,7 @@
                 <h5 class="card-title">@question.QuestionContent</h5>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-primary">Փոփոխել</a>
+                <a href="#" class="btn btn-primary">Խմբագրել</a>
                 <a asp-controller="Administration" asp-action="DeleteQuestion" asp-route-QId="@question.QId" class="btn btn-danger">Հեռացնել</a>
             </div>
         </div>
