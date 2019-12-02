@@ -255,8 +255,8 @@ namespace TestExample.Controllers
             }
             CitizenReport citizenReport = _examDBContect.DbCitizenReport.FirstOrDefault(p => p.Passport == citizenUser.Passport);
 
-           // citizenReport.StartDate= DateTime.UtcNow.AddSeconds(2400);
-            citizenReport.StartDate= DateTime.UtcNow.AddSeconds(95);
+           citizenReport.StartDate= DateTime.UtcNow.AddSeconds(2400);
+           // citizenReport.StartDate= DateTime.UtcNow.AddSeconds(95);
             _examDBContect.DbCitizenReport.Update(citizenReport);
             _examDBContect.SaveChanges();
 
