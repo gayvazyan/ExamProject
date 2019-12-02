@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs/TestExample/v15/Server/sqlite3/db.lock
+/TestExample/Migrations/20191202072331_InitialMigration.cs
+/TestExample/Migrations/20191202072331_InitialMigration.Designer.cs
