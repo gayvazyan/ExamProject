@@ -137,3 +137,4 @@ C:\Users\Garegin\Source\Repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Te
 C:\Users\Garegin\Source\Repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.dll
 C:\Users\Garegin\Source\Repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.pdb
 C:\Users\Garegin\Source\Repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\TestExample.csproj.CopyComplete
+C:\Users\Garegin\Source\Repos\ExamProject\TestExample\obj\Debug\netcoreapp2.2\Razor\Views\Administration\ListUsers.g.cshtml.cs

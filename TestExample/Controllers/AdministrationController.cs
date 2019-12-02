@@ -11,7 +11,7 @@ using TestExample.ViewModels;
 
 namespace TestExample.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class AdministrationController : Controller
     {
         private readonly UserManager<CitizenUser> _userManager;
@@ -311,5 +311,14 @@ namespace TestExample.Controllers
         }
 
         //End Answer Part 
+
+        //Start Users Part 
+        [HttpGet]
+        public IActionResult ListUsers()
+        {
+            var users = _userManager.Users;
+            return View(users);
+        }
+        //End Users Part 
     }
 }
