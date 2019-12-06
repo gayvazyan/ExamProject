@@ -5,3 +5,9 @@
 /.vs/TestExample/v15/Server/sqlite3/db.lock
 /TestExample/Migrations/20191202072331_InitialMigration.cs
 /TestExample/Migrations/20191202072331_InitialMigration.Designer.cs
+/.vs/TestExample/config/applicationhost.config
+/TestExample/bin/Debug/netcoreapp2.2/appsettings.json
+/TestExample/bin/Debug/netcoreapp2.2/appsettings.Development.json
+/TestExample/Migrations/20191204103913_InitialMigration.cs
+/TestExample/Migrations/20191204103913_InitialMigration.Designer.cs
+/.vs/TestExample/v16/Server/sqlite3/db.lock

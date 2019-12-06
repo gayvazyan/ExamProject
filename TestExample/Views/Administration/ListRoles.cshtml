@@ -23,7 +23,7 @@
             <div class="card-footer">
                 <a asp-controller="Administration" asp-action="EditRole"
                    asp-route-id="@role.Id" class="btn btn-primary">Խմբագրել</a>
-                <a href="#" class="btn btn-danger">Հեռացնել</a>
+                <a onclick="return confirm('Դուք համոզված եք որ ցանկանում եք Հեռացնել')" asp-controller="Administration" asp-action="DeleteRole" asp-route-id="@role.Id" class="btn btn-danger">Հեռացնել</a>
             </div>
         </div>
     }
